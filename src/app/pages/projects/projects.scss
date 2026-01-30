@@ -1,0 +1,14 @@
+:host {
+  flex-grow: 1;
+  justify-content: center;
+  padding: 0.5rem;
+  .projects {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    overflow-y: hidden; // scroll handle inside each project
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  .year {
+    border: none;
+    border-bottom: 0.5px dotted;
+  }
+  #responsive-canvas {
+    background-color: lightgrey;
+
+    display: block;
+  }
+}
