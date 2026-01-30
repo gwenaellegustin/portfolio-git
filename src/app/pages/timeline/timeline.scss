@@ -1,12 +1,9 @@
 :host {
   display: block;
-  .year {
-    border: none;
-    border-bottom: 0.5px dotted;
-  }
-  #responsive-canvas {
-    background-color: lightgrey;
 
+  #canvas {
+    background-color: lightgrey;
+    padding: 0;
     display: block;
   }
 }
