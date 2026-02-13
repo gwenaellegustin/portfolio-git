@@ -1,45 +1,92 @@
 :host {
-  display: flex;
-  align-items: flex-start;
-
-  #canvas {
-    background-color: lightgrey;
-    padding: 0;
-    display: block;
+  .flex {
+    display: flex;
+    align-items: flex-start;
+    height: 100vh;
   }
 
-  .full-height {
+  .text-left {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
     width: 50%;
-    background-color: grey;
+    height: 100%;
     img {
-      width: 100%;
+      width: 50%;
+      padding-bottom: 20vh;
+    }
+    h4,
+    p {
+      width: 50%;
+      text-justify: auto;
+    }
+    .description {
+      flex-grow: 1;
     }
   }
 
-  .timelines {
-    width: 50%;
-    height: 10000px;
-    overflow-y: scroll;
-    background-color: auto;
-
-    .black {
-      display: flex;
-      flex-direction: column;
-      margin: auto;
-      gap: 10px;
-      height: 100%;
-      .dots {
-        background-color: black;
-        width: 10px;
-        height: 5px;
-        margin: auto;
-      }
-      .line {
-        background-color: black;
-        width: 10px;
-        height: 100%;
-        margin: auto;
-      }
+  .background {
+    display: flex;
+    flex-direction: column;
+    width: 0;
+    // overflow-x: visible;
+    z-index: -1;
+    height: 2300px;
+    .year {
+      width: 50vw;
+      height: 200px;
+      border-top: 1px solid grey;
+      text-align: right;
+      align-self: flex-end;
     }
+  }
+
+  .timelines-right {
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: flex-end;
+    .timelines {
+      margin: auto;
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .interact:hover {
+    opacity: 0.5;
+  }
+
+  .dots {
+    width: 10px;
+    height: 10px;
+  }
+  .line {
+    width: 10px;
+    margin: 5px;
+  }
+
+  .line.black {
+    height: 2300px;
+  }
+
+  .line.red {
+    margin-top: 300px;
+    height: 200px;
+  }
+
+  .black {
+    background-color: black;
+  }
+  .red {
+    background-color: red;
   }
 }

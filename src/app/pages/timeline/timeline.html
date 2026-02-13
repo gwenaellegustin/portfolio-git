@@ -1,17 +1,43 @@
 <!-- <canvas id="canvas" #canvas></canvas> -->
-<div class="full-height">
-  <img src="./Logo.png" />
-  <p>Hello</p>
-  <p>Contact me</p>
-</div>
-<div class="timelines">
-  <div class="black">
-    <div class="dots black"></div>
-    <div class="dots black"></div>
-    <div class="dots black"></div>
-    <div class="line"></div>
-    <div class="dots black"></div>
-    <div class="dots black"></div>
-    <div class="dots black"></div>
+<div class="flex">
+  <div class="text-left">
+    <img src="./Logo.png" />
+    <h4>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+      tincidunt ut laoreet.
+    </h4>
+    <p class="description">{{ description }}</p>
+    <p>Contact me</p>
+  </div>
+
+  <div class="timelines-right">
+    <div class="timelines">
+      <div class="timeline interact" (mouseenter)="onHover('black')" (mouseleave)="onHover('')">
+        <div class="dots black"></div>
+        <div class="dots black"></div>
+        <div class="dots black"></div>
+        <div class="line black"></div>
+        <div class="dots black"></div>
+        <div class="dots black"></div>
+        <div class="dots black"></div>
+      </div>
+      <div class="timeline interact" (mouseenter)="onHover('red')" (mouseleave)="onHover('')">
+        <div class="line red"></div>
+      </div>
+    </div>
+
+    <div class="background">
+      <div class="year">2026</div>
+      <div class="year">2025</div>
+      <div class="year">2024</div>
+      <div class="year">2023</div>
+      <div class="year">2022</div>
+      <div class="year">2021</div>
+      <div class="year">2020</div>
+      <div class="year">2019</div>
+      <div class="year">2018</div>
+      <div class="year">2017</div>
+      <div class="year">2016</div>
+    </div>
   </div>
 </div>
