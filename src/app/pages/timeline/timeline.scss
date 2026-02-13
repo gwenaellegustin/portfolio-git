@@ -1,9 +1,45 @@
 :host {
-  display: block;
+  display: flex;
+  align-items: flex-start;
 
   #canvas {
     background-color: lightgrey;
     padding: 0;
     display: block;
+  }
+
+  .full-height {
+    width: 50%;
+    background-color: grey;
+    img {
+      width: 100%;
+    }
+  }
+
+  .timelines {
+    width: 50%;
+    height: 10000px;
+    overflow-y: scroll;
+    background-color: auto;
+
+    .black {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      gap: 10px;
+      height: 100%;
+      .dots {
+        background-color: black;
+        width: 10px;
+        height: 5px;
+        margin: auto;
+      }
+      .line {
+        background-color: black;
+        width: 10px;
+        height: 100%;
+        margin: auto;
+      }
+    }
   }
 }

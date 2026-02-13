@@ -16,7 +16,7 @@ export class Timeline {
 
   ngAfterViewInit() {
     window.addEventListener('resize', () => this.resizeCanvas(), false);
-    this.resizeCanvas();
+    // this.resizeCanvas();
   }
 
   resizeCanvas() {
@@ -36,7 +36,7 @@ export class Timeline {
     const height = canvas.height;
     const centerX = width / 2;
     const fontSize = 20;
-    this.ctx.font = fontSize.toString() + 'px Numans';
+    this.ctx.font = fontSize.toString() + 'px tosh-a';
     const radius = 10;
     const marginTop = 20;
 
