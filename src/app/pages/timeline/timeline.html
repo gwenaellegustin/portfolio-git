@@ -1,28 +1,172 @@
-<!-- <canvas id="canvas" #canvas></canvas> -->
 <div class="flex">
   <div class="text-left">
     <img src="./Logo.png" />
-    <h4>
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-      tincidunt ut laoreet.
-    </h4>
-    <p class="description">{{ description }}</p>
-    <p>Contact me</p>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.</p>
+    <h4 id="description">{{ description }}</h4>
+    <div class="contact">
+      <img class="racoon-face" src="./GG_Racoon_Face.png" />
+      <p>Contact me</p>
+    </div>
   </div>
-
   <div class="timelines-right">
     <div class="timelines">
-      <div class="timeline interact" (mouseenter)="onHover('black')" (mouseleave)="onHover('')">
-        <div class="dots black"></div>
-        <div class="dots black"></div>
-        <div class="dots black"></div>
-        <div class="line black"></div>
-        <div class="dots black"></div>
-        <div class="dots black"></div>
-        <div class="dots black"></div>
+      <!-- DXD -->
+      <div
+        [class.not-hover]="description !== descriptionDXD && description !== defaultDescription"
+        class="timeline"
+      >
+        <div class="square blue"></div>
+        <div class="square blue"></div>
+        <div class="square blue"></div>
+        <div
+          class="line line-dxd blue interact"
+          (mouseenter)="onHover('dxd')"
+          (mouseleave)="onHover('')"
+        ></div>
       </div>
-      <div class="timeline interact" (mouseenter)="onHover('red')" (mouseleave)="onHover('')">
-        <div class="line red"></div>
+      <svg
+        [class.not-hover]="description !== descriptionDXD && description !== defaultDescription"
+        class="start-dxd"
+        width="50"
+        height="31"
+        viewBox="0 0 50 31"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M50 25.0847C5.0563 25.0847 5 0.0847168 5 0.0847168"
+          stroke="#354BE2"
+          stroke-width="10"
+        />
+      </svg>
+
+      <!-- Black -->
+      <div class="timeline interact" (mouseenter)="onHover('main')" (mouseleave)="onHover('')">
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="line black"></div>
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="square black"></div>
+        <div class="line black short"></div>
+        <div class="point black"></div>
+      </div>
+
+      <!-- PM -->
+      <svg
+        [class.not-hover]="description !== descriptionPM && description !== defaultDescription"
+        class="start-pm"
+        width="50"
+        height="31"
+        viewBox="0 0 50 31"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 25.0847C44.9437 25.0847 45 0.0847168 45 0.0847168"
+          stroke="#CE5E5D"
+          stroke-width="10"
+        />
+      </svg>
+
+      <div
+        [class.not-hover]="description !== descriptionPM && description !== defaultDescription"
+        class="timeline"
+      >
+        <div class="square pink"></div>
+        <div class="square pink"></div>
+        <div class="square pink"></div>
+        <div
+          class="line line-pm pink interact"
+          (mouseenter)="onHover('pm')"
+          (mouseleave)="onHover('')"
+        ></div>
+      </div>
+
+      <!-- HES -->
+
+      <svg
+        [class.not-hover]="description !== descriptionHES && description !== defaultDescription"
+        class="start-HES"
+        width="100"
+        height="31"
+        viewBox="0 0 100 31"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M-2.38419e-06 25.3831C94.8811 25.3831 95 0.383057 95 0.383057"
+          stroke="#4FA8E6"
+          stroke-width="10"
+        />
+      </svg>
+      <div
+        [class.not-hover]="description !== descriptionHES && description !== defaultDescription"
+        class="timeline interact"
+        (mouseenter)="onHover('HES')"
+        (mouseleave)="onHover('')"
+      >
+        <div class="line line-HES light-blue"></div>
+      </div>
+
+      <svg
+        [class.not-hover]="description !== descriptionHES && description !== defaultDescription"
+        class="end-HES"
+        width="100"
+        height="31"
+        viewBox="0 0 100 31"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M-2.38419e-06 5C94.8811 5 95 30 95 30" stroke="#4FA8E6" stroke-width="10" />
+      </svg>
+
+      <!-- <div
+        [class.not-hover]="
+          description !== descriptionHESproject && description !== defaultDescription
+        "
+        class="point light-blue commit-HES interact"
+        (mouseenter)="onHover('HES-project')"
+        (mouseleave)="onHover('')"
+      ></div> -->
+
+      <!-- Up4it -->
+      <svg
+        class="start-up4it"
+        [class.not-hover]="description !== descriptionUp4it && description !== defaultDescription"
+        width="150"
+        height="31"
+        viewBox="0 0 150 31"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M-4.76837e-06 25.8745C144.819 25.8745 145 0.874512 145 0.874512"
+          stroke="#41D8AE"
+          stroke-width="10"
+        />
+      </svg>
+
+      <div
+        [class.not-hover]="description !== descriptionUp4it && description !== defaultDescription"
+        class="timeline"
+      >
+        <div class="square green"></div>
+        <div class="square green"></div>
+        <div class="square green"></div>
+        <div
+          class="line line-up4it green interact"
+          (mouseenter)="onHover('up4it')"
+          (mouseleave)="onHover('')"
+        ></div>
       </div>
     </div>
 
@@ -37,7 +181,10 @@
       <div class="year">2019</div>
       <div class="year">2018</div>
       <div class="year">2017</div>
-      <div class="year">2016</div>
+      <div class="year">
+        <div class="racoon-body"><img src="./GG_Racoon_Body.png" /></div>
+      </div>
+      <div class="year">1996</div>
     </div>
   </div>
 </div>
