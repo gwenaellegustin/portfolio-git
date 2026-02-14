@@ -15,7 +15,7 @@
       .year {
         height: calc(240px + 1px); // year + 1 px of error ?
         width: 100vw;
-        border-bottom: 1px solid grey;
+        border-top: 1px solid grey;
         text-align: end; // Right align
         align-self: flex-end;
         position: relative;
@@ -89,22 +89,22 @@
   top: 0;
 }
 
-.title-container {
-  font-weight: bold;
-}
-
 .title-container.PM {
-  margin-top: 60px;
-  height: 220px;
+  margin-top: calc(20px * 3);
+  height: calc(20px * 11);
 }
 .title-container.HES {
-  height: 500px;
+  height: calc(25px * 21);
 }
 .title-container.DXD {
-  height: 310px;
+  height: calc(20px * 16);
 }
 .title-container.Up4it {
-  height: 340px;
+  height: calc(20px * 17);
+}
+.title-container.BSC {
+  padding-top: calc(20px * 7);
+  height: calc(20px * 48);
 }
 
 .project-container {
@@ -134,6 +134,10 @@
 
 .project-container.left {
   margin: -20px calc(-240px - 50px);
+}
+
+.project-container.hb {
+  margin: -20px calc(-240px - 80px);
 }
 
 .black {
