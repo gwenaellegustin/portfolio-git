@@ -1,24 +1,8 @@
 :host {
   overflow-wrap: break-word;
 
-  .top-bar {
-    display: flex;
-    padding: 10px;
-    height: 50px;
-    justify-content: space-between;
-
-    .contact {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      .racoon-face {
-        height: 40px;
-        width: auto;
-      }
-    }
-  }
   .titles {
-    padding: 20px;
+    padding: 0 15px 0 25px;
   }
   .timelines-area {
     display: flex;
@@ -110,8 +94,8 @@
 }
 
 .title-container.PM {
-  margin-top: 0;
-  height: 280px;
+  margin-top: 60px;
+  height: 220px;
 }
 .title-container.HES {
   height: 500px;
@@ -132,6 +116,7 @@
   background-color: white;
   border: 1px solid;
   border-radius: 10px;
+  text-decoration: none;
   .text,
   .img {
     display: flex;
@@ -203,5 +188,13 @@
   color: #41d8ae;
 }
 .green-background {
+  background-color: #41d8ae;
+}
+.green-border {
+  color: #41d8ae;
+  border-color: #41d8ae;
+}
+.project-container.green-border:hover {
+  color: white;
   background-color: #41d8ae;
 }

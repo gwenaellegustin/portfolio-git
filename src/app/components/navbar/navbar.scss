@@ -1,6 +1,22 @@
 :host {
-  // margin: 20px;
-  img {
+  .top-bar {
+    // position: sticky;
+    // top: 0;
+    // z-index: 1000;
+    background-color: white;
+    display: flex;
+    padding: 10px;
     height: 50px;
+    justify-content: space-between;
+
+    .contact {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      .racoon-face {
+        height: 40px;
+        width: auto;
+      }
+    }
   }
 }
