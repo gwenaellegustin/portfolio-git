@@ -36,10 +36,10 @@ h5 {
 }
 .tooltip-text {
   visibility: hidden; /* Hidden by default */
-  color: black;
-
+  color: white;
+  background-color: black;
   text-align: center;
-  padding: 6px;
+  padding: 0 6px;
   position: absolute;
   z-index: 1; /* Ensure tooltip is displayed above content */
 }

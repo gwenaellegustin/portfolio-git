@@ -92,7 +92,7 @@ export const projects = new Map<string, ProjectInterface>([
   [
     'hb',
     {
-      title: 'Happy birthday ! - custom game',
+      title: 'Happy birthday !',
       date: '02.2023',
       subtitle: 'Dev react18, UX',
       gitUrl: 'https://gitlab.com/gwenaelle.gustin/2023-anni-gaetan',
