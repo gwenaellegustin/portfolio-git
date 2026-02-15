@@ -1,11 +1,14 @@
 <div class="container">
-  <a href=".." class="back tooltip">
-    <img src="./logo/GG_Racoon_Body.png" />
-    <span class="tooltip-text">Go back</span>
-  </a>
   <div class="project-container">
     <div class="text">
-      <h1>{{ project.title }}</h1>
+      <div class="first-line">
+        <a href=".." class="back tooltip">
+          <img src="./logo/GG_Racoon_Body.png" />
+          <span class="tooltip-text">Go back</span>
+        </a>
+        <h1>{{ project.title }}</h1>
+      </div>
+
       <h5>{{ project.date }}</h5>
       <p>{{ project.description }}</p>
       <ul>
