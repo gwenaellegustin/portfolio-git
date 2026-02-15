@@ -6,3 +6,142 @@ body {
   // font-family: 'tosh-a';
   font-family: numans;
 }
+
+a {
+  text-decoration: none;
+}
+
+.no-size {
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip-text {
+  visibility: hidden; /* Hidden by default */
+  color: black;
+
+  text-align: center;
+  padding: 6px;
+  position: absolute;
+  z-index: 1; /* Ensure tooltip is displayed above content */
+}
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
+// ! COLORS -------------------------------
+.black {
+  color: black;
+}
+.black-background {
+  background-color: black;
+}
+.black-border {
+  color: black;
+}
+.project-container.black-border:hover {
+  color: white;
+  background-color: black;
+}
+
+// DXD
+.blue {
+  color: #354be2;
+}
+.blue-background {
+  background-color: #354be2;
+}
+.blue-border {
+  color: #354be2;
+  border-color: #354be2;
+}
+.project-container.blue-border:hover {
+  color: white;
+  background-color: #354be2;
+}
+// PM
+.pink {
+  color: #ce5e5d;
+}
+.pink-background {
+  background-color: #ce5e5d;
+}
+// HES
+.cyan {
+  color: #4fa8e6;
+}
+.cyan-background {
+  background-color: #4fa8e6;
+}
+.cyan-border {
+  color: #4fa8e6;
+  border-color: #4fa8e6;
+}
+.project-container.cyan-border:hover {
+  color: white;
+  background-color: #4fa8e6;
+}
+// UP4it
+.green {
+  color: #41d8ae;
+}
+.green-background {
+  background-color: #41d8ae;
+}
+
+.green-border {
+  color: #41d8ae;
+  border-color: #41d8ae;
+}
+.project-container.green-border:hover {
+  color: white;
+  background-color: #41d8ae;
+}
+// VDS
+.red {
+  color: #ba162c;
+}
+.red-background {
+  background-color: #ba162c;
+}
+// .red-border {
+//   color: #ba162c;
+//   border-color: #ba162c;
+// }
+// .project-container.red-border:hover {
+//   color: white;
+//   background-color: #ba162c;
+// }
+
+//SIR
+.purple {
+  color: #ba78e8;
+}
+.purple-background {
+  background-color: #ba78e8;
+}
+
+// beige
+.beige {
+  color: #c6c1b7;
+}
+.beige-background {
+  background-color: #c6c1b7;
+}
+
+// Orange
+.orange {
+  color: #e56758;
+}
+.orange-background {
+  background-color: #e56758;
+}

@@ -1,9 +1,30 @@
 :host {
   .container {
     display: flex;
+    flex-direction: column;
     min-height: 75vh; //how fill page
-
     padding: 20px;
+  }
+
+  .first-line {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .back {
+    img {
+      height: 20px;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
+
+  .project-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    border-bottom: 1px solid;
   }
   @media only screen and (max-width: 600px) {
     .container {
@@ -12,13 +33,14 @@
   }
 
   .text {
-    flex-grow: 1;
+    flex: 1;
   }
   .images {
-    flex-grow: 1;
-    max-width: 50vw;
+    display: flex;
+    flex: 1;
     img {
       width: 100%;
+      align-self: flex-end;
     }
   }
 }

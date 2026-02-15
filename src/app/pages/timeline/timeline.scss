@@ -1,18 +1,4 @@
 :host {
-  a {
-    text-decoration: none;
-  }
-
-  .no-size {
-    width: 0;
-    height: 0;
-    z-index: 10;
-  }
-  .sticky {
-    position: sticky;
-    top: 0;
-  }
-
   // ! TIMELINES and dots -------------------------------
   .timelines-area {
     display: flex;
@@ -34,11 +20,6 @@
           position: absolute;
           bottom: 0;
           right: 20px;
-          img {
-            height: 50px;
-            -webkit-transform: scaleX(-1);
-            transform: scaleX(-1);
-          }
         }
       }
     }
@@ -83,6 +64,12 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .racoon-face {
+    height: 40px;
   }
 }
 
@@ -148,6 +135,10 @@
   padding-top: calc(20px * 2);
   height: calc(20px * 8);
 }
+.right.black {
+  margin-left: 40px;
+  margin-top: -10px;
+}
 
 // ! PROJECT -------------------------------
 .project-container {
@@ -157,6 +148,14 @@
   background-color: white;
   border: 1px solid;
   border-radius: 10px;
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .subtitle {
+    font-size: x-small;
+  }
 
   .img {
     display: flex;
@@ -225,109 +224,4 @@
   .project-container.hb {
     margin: -20px calc(-30vw - 80px);
   }
-}
-
-// ! COLORS -------------------------------
-.black {
-  background-color: black;
-}
-.black-border {
-  color: black;
-}
-.project-container.black-border:hover {
-  color: white;
-  background-color: black;
-}
-
-// DXD
-.blue {
-  color: #354be2;
-}
-.blue-background {
-  background-color: #354be2;
-}
-.blue-border {
-  color: #354be2;
-  border-color: #354be2;
-}
-.project-container.blue-border:hover {
-  color: white;
-  background-color: #354be2;
-}
-// PM
-.pink {
-  color: #ce5e5d;
-}
-.pink-background {
-  background-color: #ce5e5d;
-}
-// HES
-.cyan {
-  color: #4fa8e6;
-}
-.cyan-background {
-  background-color: #4fa8e6;
-}
-.cyan-border {
-  color: #4fa8e6;
-  border-color: #4fa8e6;
-}
-.project-container.cyan-border:hover {
-  color: white;
-  background-color: #4fa8e6;
-}
-// UP4it
-.green {
-  color: #41d8ae;
-}
-.green-background {
-  background-color: #41d8ae;
-}
-
-.green-border {
-  color: #41d8ae;
-  border-color: #41d8ae;
-}
-.project-container.green-border:hover {
-  color: white;
-  background-color: #41d8ae;
-}
-// VDS
-.red {
-  color: #ba162c;
-}
-.red-background {
-  background-color: #ba162c;
-}
-// .red-border {
-//   color: #ba162c;
-//   border-color: #ba162c;
-// }
-// .project-container.red-border:hover {
-//   color: white;
-//   background-color: #ba162c;
-// }
-
-//SIR
-.purple {
-  color: #ba78e8;
-}
-.purple-background {
-  background-color: #ba78e8;
-}
-
-// beige
-.beige {
-  color: #c6c1b7;
-}
-.beige-background {
-  background-color: #c6c1b7;
-}
-
-// Orange
-.orange {
-  color: #e56758;
-}
-.orange-background {
-  background-color: #e56758;
 }

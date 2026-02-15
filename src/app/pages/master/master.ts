@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Project } from '../project/project';
 
 @Component({
   selector: 'app-master',
-  imports: [],
+  imports: [Project],
   templateUrl: './master.html',
-  styleUrl: './master.scss',
+  styleUrls: ['./master.scss', '../project/project.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Master { }
+export class Master {}

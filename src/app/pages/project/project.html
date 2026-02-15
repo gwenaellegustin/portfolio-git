@@ -1,9 +1,22 @@
 <div class="container">
-  <div class="text">
-    <h2>{{ project.title }}</h2>
-    <p>{{ project.description }}</p>
-  </div>
-  <div class="images">
-    <img [src]="project.imageUrl" onerror="this.style.visibility = 'hidden'" />
+  <a href=".." class="back tooltip">
+    <img src="./logo/GG_Racoon_Body.png" />
+    <span class="tooltip-text">Go back</span>
+  </a>
+  <div class="project-container">
+    <div class="text">
+      <h1>{{ project.title }}</h1>
+      <h5>{{ project.date }}</h5>
+      <p>{{ project.description }}</p>
+      <ul>
+        <li><a href="{{ project.siteUrl }}">Live website</a></li>
+        <li>
+          <a href="{{ project.gitUrl }}">Repository URL</a>
+        </li>
+      </ul>
+    </div>
+    <div class="images">
+      <img [src]="project.imageUrl" onerror="this.style.visibility = 'hidden'" />
+    </div>
   </div>
 </div>
