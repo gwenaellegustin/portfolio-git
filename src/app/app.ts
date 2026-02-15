@@ -10,5 +10,5 @@ import { Navbar } from './components/navbar/navbar';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('portfolio-git');
+  protected readonly title = signal('Gwen Gustin');
 }

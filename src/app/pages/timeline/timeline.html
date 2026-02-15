@@ -45,12 +45,13 @@
       <!-- line -->
       <div class="point cyan-background"></div>
       <div class="no-size">
-        <div class="project-container left cyan-border">
-          <div class="text">Swiss Cyber Grid</div>
-          <div class="img">
-            <img src="./hes/swisscybergrid/mini.png" onerror="this.style.visibility = 'hidden'" />
-          </div>
-        </div>
+        <a [routerLink]="['/project', 'scg']">
+          <div class="project-container left cyan-border">
+            <div class="text">Swiss Cyber Grid</div>
+            <div class="img">
+              <img src="./hes/swisscybergrid/mini.png" onerror="this.style.visibility = 'hidden'" />
+            </div></div
+        ></a>
       </div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
@@ -236,15 +237,16 @@
 
       <div class="point blue-background"></div>
       <div class="no-size">
-        <div class="project-container right blue-border">
-          <div class="text">Projects semester 1</div>
-          <div class="img">
-            <img
-              src="./master/s1-papiliorama/PAGE Home.png"
-              onerror="this.style.visibility = 'hidden'"
-            />
-          </div>
-        </div>
+        <a [routerLink]="['/master']">
+          <div class="project-container right blue-border">
+            <div class="text">Projects semester 1</div>
+            <div class="img">
+              <img
+                src="./master/s1-papiliorama/PAGE Home.png"
+                onerror="this.style.visibility = 'hidden'"
+              />
+            </div></div
+        ></a>
       </div>
       <div class="point blue-background"></div>
       <div class="point blue-background"></div>
@@ -366,10 +368,9 @@
     <div class="title-container DXD">
       <div class="sticky blue align-right">Master Digital Experience Design, ECAL</div>
     </div>
-    <a href="https://up4it.io/" class="title-container Up4it">
+    <div href="https://up4it.io/" class="title-container Up4it">
       <div class="sticky green align-right">Dev and design, Up4it</div>
-    </a>
-
+    </div>
     <div class="title-container BSC">
       <div class="sticky cyan align-right">Bachelor Business IT, HES-SO</div>
     </div>
