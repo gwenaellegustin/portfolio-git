@@ -46,7 +46,7 @@
       margin: 0 auto;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: auto;
       width: 100vw;
     }
   }
@@ -87,11 +87,20 @@
 }
 
 // ! TITLES (job/school) -------------------------------
+
 .titles {
-  padding: 0 20px;
+  padding: 0 25px;
+  max-width: 15vw;
+  opacity: 0.5;
+}
+@media only screen and (max-width: 600px) {
+  .titles {
+    display: none;
+  }
 }
 .titles-right {
   text-align: right;
+  margin-right: 40px;
 }
 .title-container {
   .point {
@@ -113,7 +122,8 @@
   height: calc(25px * 15);
 }
 .title-container.DXD {
-  height: calc(20px * 16);
+  margin-top: calc(20px * 3);
+  height: calc(20px * 13);
 }
 .title-container.Up4it {
   height: calc(20px * 17);
@@ -141,37 +151,83 @@
 
 // ! PROJECT -------------------------------
 .project-container {
-  display: flex;
-  justify-content: space-between;
-  width: 240px;
   padding: 5px 10px;
+  display: flex;
   gap: 5px;
   background-color: white;
   border: 1px solid;
   border-radius: 10px;
-  .text,
+
   .img {
     display: flex;
-    justify-content: center;
-  }
-  img {
-    max-height: 100px;
-    width: 100%;
+    img {
+      height: auto;
+      width: 100%;
+    }
   }
 }
 
 .project-container.right {
-  margin: -20px 30px;
+  margin: -20px calc(1 * 20px);
 }
 
 .project-container.left {
-  margin: -20px calc(-240px - 50px);
+  margin: -20px calc(-20vw - 2 * 20px);
 }
 
 .project-container.hb {
-  margin: -20px calc(-240px - 120px);
+  margin: -20px calc(-20vw - 80px);
 }
 
+@media only screen and (min-width: 1000px) {
+  .project-container {
+    justify-content: space-evenly;
+    width: 20vw;
+    gap: 5px;
+  }
+  .text,
+  .img {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .project-container {
+    flex-direction: column;
+    width: 15vw;
+  }
+
+  .text {
+    font-size: small;
+    word-break: break-all;
+  }
+
+  .project-container.left {
+    margin: -20px calc(-15vw - 40px);
+  }
+
+  .project-container.hb {
+    margin: -20px calc(-15vw - 80px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .project-container {
+    justify-content: space-evenly;
+    width: 30vw;
+    gap: 5px;
+  }
+
+  .project-container.left {
+    margin: -20px calc(-30vw - 40px);
+  }
+
+  .project-container.hb {
+    margin: -20px calc(-30vw - 80px);
+  }
+}
+
+// ! COLORS -------------------------------
 .black {
   background-color: black;
 }
@@ -183,7 +239,6 @@
   background-color: black;
 }
 
-// ! COLORS -------------------------------
 // DXD
 .blue {
   color: #354be2;
