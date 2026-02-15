@@ -12,7 +12,7 @@ export class Project {
   project: ProjectInterface = {
     title: 'Project now found',
     description: 'Please check the url.',
-    imageUrl: './logo/GG_Racoon_Body.png',
+    imageUrl: './logo/GG_Racoon_Face.png',
   };
 
   constructor(private route: ActivatedRoute) {

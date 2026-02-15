@@ -12,10 +12,15 @@
       <h5>{{ project.date }}</h5>
       <p>{{ project.description }}</p>
       <ul>
-        <li><a href="{{ project.siteUrl }}">Live website</a></li>
+        @if(project.siteUrl){
+        <li>
+          <a href="{{ project.siteUrl }}">Live website</a>
+        </li>
+        } @if(project.gitUrl){
         <li>
           <a href="{{ project.gitUrl }}">Repository URL</a>
         </li>
+        }
       </ul>
     </div>
     <div class="images">
