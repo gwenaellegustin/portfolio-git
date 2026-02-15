@@ -168,6 +168,10 @@
   }
 }
 
+.project-container:active {
+  filter: brightness(90%);
+}
+
 .project-container.right {
   margin: -20px calc(1 * 20px);
 }
