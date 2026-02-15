@@ -116,6 +116,24 @@
   padding-top: calc(20px * 7);
   height: calc(20px * 48);
 }
+.title-container.SIR {
+  padding-top: calc(20px * 2);
+  height: calc(20px * 10);
+}
+.title-container.FITSPRO {
+  padding-top: calc(20px);
+  height: calc(20px * 4);
+}
+.title-container.EPFL {
+  padding-top: calc(20px);
+  height: calc(20px * 4);
+}
+.title-container.MAT {
+  padding-top: calc(20px * 2);
+  height: calc(20px * 8);
+}
+
+// PROJECT
 
 .project-container {
   display: flex;
@@ -221,11 +239,35 @@
 .red-background {
   background-color: #ba162c;
 }
-.red-border {
-  color: #ba162c;
-  border-color: #ba162c;
+// .red-border {
+//   color: #ba162c;
+//   border-color: #ba162c;
+// }
+// .project-container.red-border:hover {
+//   color: white;
+//   background-color: #ba162c;
+// }
+
+//SIR
+.purple {
+  color: #ba78e8;
 }
-.project-container.red-border:hover {
-  color: white;
-  background-color: #ba162c;
+.purple-background {
+  background-color: #ba78e8;
+}
+
+// beige
+.beige {
+  color: #c6c1b7;
+}
+.beige-background {
+  background-color: #c6c1b7;
+}
+
+// Orange
+.orange {
+  color: #e56758;
+}
+.orange-background {
+  background-color: #e56758;
 }
