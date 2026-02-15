@@ -9,7 +9,8 @@
         <h1>{{ project.title }}</h1>
       </div>
 
-      <h5>{{ project.date }}</h5>
+      <h5 [ngClass]="color">{{ project.context }}</h5>
+      <h5>{{ project.date }} - {{ project.subtitle }}</h5>
       <p>{{ project.description }}</p>
       <ul>
         @if(project.siteUrl){

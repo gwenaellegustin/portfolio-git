@@ -1,9 +1,10 @@
+import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-project',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './project.html',
   styleUrl: './project.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -14,6 +15,7 @@ export class Project {
     description: 'Please check the url.',
     imageUrl: './logo/GG_Racoon_Face.png',
   };
+  color = 'black';
 
   constructor(private route: ActivatedRoute) {
     const key = this.route.snapshot.paramMap.get('key');
@@ -22,6 +24,12 @@ export class Project {
       const foundProject = projects.get(key);
       if (foundProject) {
         this.project = foundProject;
+
+        // Define color
+        if (this.project.context) {
+          const foundColor = colors.get(this.project.context);
+          if (foundColor) this.color = foundColor;
+        }
       }
     }
   }
@@ -29,6 +37,7 @@ export class Project {
 
 export class ProjectInterface {
   title: string = '';
+  context?: string;
   date?: string;
   subtitle?: string;
   gitUrl?: string;
@@ -37,7 +46,24 @@ export class ProjectInterface {
   imageUrl: string = '';
 }
 
+export const colors = new Map<string, string>([
+  ['Job HES-SO', 'cyan'],
+  ['Bsc Business IT HES-SO', 'cyan'],
+  ['MA DXD ECAL', 'blue'],
+]);
+
 export const projects = new Map<string, ProjectInterface>([
+  [
+    'gg',
+    {
+      title: 'This website',
+      date: 'Since 02.2026',
+      subtitle: 'Dev and design',
+      description:
+        'I wanted to create a website that would allow visitors to view projects in their context (school, work) and in chronological order. The principle of git, used in development, was perfect for this. So I used it as inspiration for this portfolio. The page with the timelines was created from scratch using HTML and CSS.',
+      imageUrl: '/gg.png',
+    },
+  ],
   [
     'up4',
     {
@@ -46,7 +72,7 @@ export const projects = new Map<string, ProjectInterface>([
       subtitle: 'Dev and design',
       siteUrl: 'https://up4it.io/',
       description:
-        'A social network that aims to encourage people to organize real life activities with friends. ',
+        'A social network that aims to encourage people to organize real life activities with friends.',
       imageUrl: './up4it/up4it_logo.png',
     },
   ],
@@ -54,6 +80,7 @@ export const projects = new Map<string, ProjectInterface>([
     'vst',
     {
       title: 'Visualization tool',
+      context: 'Job HES-SO',
       date: '07.2025',
       subtitle: 'Dev Angular 20, UX',
       gitUrl: 'https://vlhtuleap.hevs.ch/plugins/git/git-eranet/Visualization_tool',
@@ -67,6 +94,7 @@ export const projects = new Map<string, ProjectInterface>([
     'scg',
     {
       title: 'Swiss Cyber grid',
+      context: 'Job HES-SO',
       date: '12.2024',
       subtitle: 'Dev Angular 18, UX',
       gitUrl: 'https://github.com/GeeeHesso/AramisFrontend',
@@ -80,6 +108,7 @@ export const projects = new Map<string, ProjectInterface>([
     'pa',
     {
       title: 'Pantagruel - Bachelor Thesis',
+      context: 'Bsc Business IT HES-SO',
       date: '08.2023',
       subtitle: 'Dev Angular 15, UX',
       gitUrl: 'https://github.com/GeeeHesso/pantafrontend',
@@ -107,6 +136,7 @@ export const projects = new Map<string, ProjectInterface>([
     'vast',
     {
       title: 'VAST app',
+      context: 'Bsc Business IT HES-SO',
       date: '06.2022',
       subtitle: 'react18, PWA',
       gitUrl: 'https://gitlab.com/gwenaelle.gustin/semestre7_vast',
@@ -120,6 +150,7 @@ export const projects = new Map<string, ProjectInterface>([
     'drop',
     {
       title: 'Droppy',
+      context: 'Bsc Business IT HES-SO',
       date: '06.2021',
       subtitle: 'JavaScript',
       gitUrl: 'https://gitlab.com/hesantonymarques/604_3/624-2-ria',
