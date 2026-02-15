@@ -2,7 +2,10 @@
   overflow-wrap: break-word;
 
   .titles {
-    padding: 0 15px 0 25px;
+    padding: 0 20px;
+  }
+  .titles-right {
+    text-align: right;
   }
   .timelines-area {
     display: flex;
@@ -96,6 +99,13 @@
 .title-container.HES {
   height: calc(25px * 21);
 }
+.title-container.VDS2 {
+  height: calc(25px * 15);
+}
+.title-container.VDS1 {
+  margin-top: calc(20px * 23);
+  height: calc(25px * 15);
+}
 .title-container.DXD {
   height: calc(20px * 16);
 }
@@ -109,6 +119,8 @@
 
 .project-container {
   display: flex;
+  justify-content: space-between;
+
   // flex-wrap: wrap;
   width: 240px;
   padding: 5px 10px;
@@ -137,7 +149,7 @@
 }
 
 .project-container.hb {
-  margin: -20px calc(-240px - 80px);
+  margin: -20px calc(-240px - 120px);
 }
 
 .black {
@@ -201,4 +213,19 @@
 .project-container.green-border:hover {
   color: white;
   background-color: #41d8ae;
+}
+// VDS
+.red {
+  color: #ba162c;
+}
+.red-background {
+  background-color: #ba162c;
+}
+.red-border {
+  color: #ba162c;
+  border-color: #ba162c;
+}
+.project-container.red-border:hover {
+  color: white;
+  background-color: #ba162c;
 }
