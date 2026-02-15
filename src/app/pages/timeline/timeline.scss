@@ -1,12 +1,19 @@
 :host {
-  overflow-wrap: break-word;
+  a {
+    text-decoration: none;
+  }
 
-  .titles {
-    padding: 0 20px;
+  .no-size {
+    width: 0;
+    height: 0;
+    z-index: 10;
   }
-  .titles-right {
-    text-align: right;
+  .sticky {
+    position: sticky;
+    top: 0;
   }
+
+  // ! TIMELINES and dots -------------------------------
   .timelines-area {
     display: flex;
 
@@ -18,7 +25,8 @@
       .year {
         height: calc(240px + 1px); // year + 1 px of error ?
         width: 100vw;
-        border-top: 1px solid grey;
+        border-top: 1px solid;
+        opacity: 0.2;
         text-align: end; // Right align
         align-self: flex-end;
         position: relative;
@@ -42,24 +50,20 @@
       width: 100vw;
     }
   }
-
   .timeline {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .year {
     width: 10px;
     height: 240px;
   }
-
   .month {
     width: 10px;
     height: 22px;
     margin: -1px 0;
   }
-
   .dots {
     display: flex;
     flex-direction: column;
@@ -82,16 +86,18 @@
   }
 }
 
-.no-size {
-  width: 0;
-  height: 0;
-  z-index: 10;
+// ! TITLES (job/school) -------------------------------
+.titles {
+  padding: 0 20px;
 }
-.sticky {
-  position: sticky;
-  top: 0;
+.titles-right {
+  text-align: right;
 }
-
+.title-container {
+  .point {
+    border: white 1px solid;
+  }
+}
 .title-container.PM {
   margin-top: calc(20px * 3);
   height: calc(20px * 11);
@@ -133,20 +139,16 @@
   height: calc(20px * 8);
 }
 
-// PROJECT
-
+// ! PROJECT -------------------------------
 .project-container {
   display: flex;
   justify-content: space-between;
-
-  // flex-wrap: wrap;
   width: 240px;
   padding: 5px 10px;
   gap: 5px;
   background-color: white;
   border: 1px solid;
   border-radius: 10px;
-  text-decoration: none;
   .text,
   .img {
     display: flex;
@@ -180,6 +182,8 @@
   color: white;
   background-color: black;
 }
+
+// ! COLORS -------------------------------
 // DXD
 .blue {
   color: #354be2;
@@ -224,6 +228,7 @@
 .green-background {
   background-color: #41d8ae;
 }
+
 .green-border {
   color: #41d8ae;
   border-color: #41d8ae;
