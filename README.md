@@ -47,8 +47,10 @@ For more information on using the Angular CLI, including detailed command refere
 ## To develop
 
 # Bug
+- Born date width
 - Favicon deform
 - Image project deform
+- Opacity/color job
 # Feat
 - Loader image
 - Hover + click on job/school
