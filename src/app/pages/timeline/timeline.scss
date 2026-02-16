@@ -144,11 +144,14 @@
 
 // ! PROJECT -------------------------------
 .project-container {
-  padding: 10px;
   display: flex;
+  justify-content: space-evenly;
+  width: 20vw;
+  padding: 10px;
   background-color: white;
   border: 1px solid;
   border-radius: 10px;
+
   .text {
     display: flex;
     flex: 1;
@@ -162,6 +165,8 @@
   .img {
     display: flex;
     flex: 1;
+
+    align-items: center;
     img {
       height: auto;
       width: 100%;
@@ -173,10 +178,6 @@
   filter: brightness(90%);
 }
 
-.project-container.right {
-  margin: -20px calc(1 * 20px);
-}
-
 .project-container.left {
   margin: -20px calc(-20vw - 2 * 20px);
 }
@@ -185,20 +186,13 @@
   margin: -20px calc(-20vw - 80px);
 }
 
-@media only screen and (min-width: 1000px) {
-  .project-container {
-    justify-content: space-evenly;
-    width: 20vw;
-    gap: 5px;
-  }
-  .text,
-  .img {
-    width: 50%;
-  }
+.project-container.right {
+  margin: -20px 20px;
 }
 
 @media only screen and (max-width: 1000px) {
   .project-container {
+    padding: 5px;
     flex-direction: column;
     width: 15vw;
   }
@@ -209,19 +203,17 @@
   }
 
   .project-container.left {
-    margin: -20px calc(-15vw - 40px);
+    margin: -20px calc(-15vw - 30px);
   }
 
   .project-container.hb {
-    margin: -20px calc(-15vw - 80px);
+    margin: -20px calc(-15vw - 70px);
   }
 }
 
 @media only screen and (max-width: 600px) {
   .project-container {
-    justify-content: space-evenly;
     width: 30vw;
-    gap: 5px;
   }
 
   .project-container.left {
