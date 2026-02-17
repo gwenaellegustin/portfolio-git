@@ -38,6 +38,7 @@
     <div class="images">
       @for (image of project.images; track $index) {
       <div class="image">
+        <span>{{ image.legend }}</span>
         @if(image.url.endsWith(".mov")){
         <video width="100%" autoplay loop>
           <source [src]="image.url" type="video/mp4" />
@@ -45,7 +46,6 @@
         } @else{
         <img [src]="image.url" onerror="this.style.visibility = 'hidden'" />
         }
-        <span>{{ image.legend }}</span>
       </div>
       }
     </div>

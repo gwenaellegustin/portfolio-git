@@ -105,7 +105,7 @@ export const contexts = new Map<string, contextAndColor>([
 
 export const projects = new Map<string, ProjectInterface>([
   [
-    'GG',
+    'gg',
     {
       title: 'This website',
       context: 'On my free time',
@@ -117,7 +117,51 @@ export const projects = new Map<string, ProjectInterface>([
     },
   ],
   [
-    'UP4',
+    's1rc',
+    {
+      title: 'Reality Check',
+      context: 'DXD',
+      date: '01.2026',
+      subtitle: 'UX research',
+      description: '<p>....</p>',
+      images: [{ url: '' }],
+    },
+  ],
+  [
+    's1pp',
+    {
+      title: 'Pixel Perfect',
+      context: 'DXD',
+      date: '12.2025',
+      subtitle: 'Interactive prototype Figma',
+      description: '<p>....</p>',
+      images: [
+        { url: './master/s1-papiliorama/PAGE Home.png' },
+        { url: './master/s1-papiliorama/demo.mov', legend: 'Video demo' },
+        { url: './master/s1-papiliorama/PAGE Visit.png', legend: 'Pages' },
+        { url: './master/s1-papiliorama/PAGE Exhibits.png' },
+        { url: './master/s1-papiliorama/PAGE News.png' },
+        { url: './master/s1-papiliorama/PAGE Foundation.png' },
+      ],
+    },
+  ],
+  [
+    's1mm',
+    {
+      title: 'Modular Mindset',
+      context: 'DXD',
+      date: '11.2025',
+      subtitle: 'Cavalry Workshop',
+      description: '<p>....</p>',
+      images: [
+        { url: '/master/s1-cavalry/1/cover.png' },
+        { url: '/master/s1-cavalry/2/cover.png' },
+        { url: '/master/s1-cavalry/3/cover.png' },
+      ],
+    },
+  ],
+  [
+    'up4it',
     {
       title: 'Dev and design',
       context: 'UP4',
@@ -130,7 +174,7 @@ export const projects = new Map<string, ProjectInterface>([
     },
   ],
   [
-    'VST',
+    'vst',
     {
       title: 'Visualization tool',
       context: 'HES',
@@ -152,7 +196,7 @@ export const projects = new Map<string, ProjectInterface>([
     },
   ],
   [
-    'SCG',
+    'scg',
     {
       title: 'Swiss Cyber grid',
       context: 'HES',
@@ -166,7 +210,7 @@ export const projects = new Map<string, ProjectInterface>([
     },
   ],
   [
-    'PA',
+    'pan',
     {
       title: 'Pantagruel - Bachelor Thesis',
       context: 'BSC',
@@ -183,7 +227,7 @@ export const projects = new Map<string, ProjectInterface>([
     },
   ],
   [
-    'HB',
+    'hb',
     {
       title: 'Happy birthday !',
       context: 'On my free time',
@@ -197,9 +241,9 @@ export const projects = new Map<string, ProjectInterface>([
     },
   ],
   [
-    'VAST',
+    'vast',
     {
-      title: 'VAST app',
+      title: 'vast app',
       context: 'BSC',
       date: '06.2022',
       subtitle: 'react18, PWA',
@@ -211,7 +255,7 @@ export const projects = new Map<string, ProjectInterface>([
     },
   ],
   [
-    'DROP',
+    'droppy',
     {
       title: 'Droppy',
       context: 'BSC',

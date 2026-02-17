@@ -31,7 +31,7 @@
       <div class="point cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="point cyan-background"></div>
-      <app-min-project [key]="'VST'" [color]="'cyan-border'" [position]="'left'"></app-min-project>
+      <app-min-project [key]="'vst'" [color]="'cyan-border'" [position]="'left'"></app-min-project>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
@@ -39,7 +39,7 @@
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="point cyan-background"></div>
-      <app-min-project [key]="'SCG'" [color]="'cyan-border'" [position]="'left'"></app-min-project>
+      <app-min-project [key]="'scg'" [color]="'cyan-border'" [position]="'left'"></app-min-project>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
@@ -125,7 +125,7 @@
       <div class="month black-background"></div>
       <div class="month black-background"></div>
       <div class="point black-background"></div>
-      <app-min-project [key]="'GG'" [color]="'black-border'" [position]="'hb'"></app-min-project>
+      <app-min-project [key]="'gg'" [color]="'black-border'" [position]="'hb'"></app-min-project>
       <div class="month black-background"></div>
       <!-- line -->
       <div class="year black-background"></div>
@@ -141,7 +141,7 @@
       <div class="month black-background"></div>
       <div class="month black-background"></div>
       <div class="point black-background"></div>
-      <app-min-project [key]="'HB'" [color]="'black-border'" [position]="'hb'"></app-min-project>
+      <app-min-project [key]="'hb'" [color]="'black-border'" [position]="'hb'"></app-min-project>
       <div class="month black-background"></div>
       <div class="year black-background"></div>
       <div class="year black-background"></div>
@@ -216,7 +216,7 @@
       </div>
       <div class="month blue-background"></div>
       <app-min-project
-        [key]="'UP4'"
+        [key]="'up4it'"
         [color]="'green-border'"
         [position]="'right'"
       ></app-min-project>
@@ -229,16 +229,30 @@
       <div class="month blue-background"></div>
       <div class="point blue-background"></div>
       <div class="no-size">
-        <a [routerLink]="['/master']">
-          <div class="project-container right blue-border">
-            <div class="text">Projects semester 1</div>
-            <div class="img">
-              <img
-                src="./master/s1-papiliorama/PAGE Home.png"
-                onerror="this.style.visibility = 'hidden'"
-              />
-            </div></div
-        ></a>
+        <div class="project-container right blue-border">
+          <div class="text">
+            <div class="title">Semester 1</div>
+            <div class="subtitle">
+              <ul>
+                <li>
+                  <a [routerLink]="['/project/s1mm']" class="li-dxd">Modular Mindset (Cavalry)</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/project/s1pp']" class="li-dxd">Pixel Perfect (UI)</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/project/s1rc']" class="li-dxd">Reality Check (UX)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="img">
+            <img
+              src="./master/s1-papiliorama/PAGE Home.png"
+              onerror="this.style.visibility = 'hidden'"
+            />
+          </div>
+        </div>
       </div>
       <div class="point blue-background"></div>
       <div class="point blue-background"></div>
@@ -249,7 +263,7 @@
 
       <!-- Bachelor -->
       <div class="point cyan-background"></div>
-      <app-min-project [key]="'PA'" [color]="'cyan-border'" [position]="'right'"></app-min-project>
+      <app-min-project [key]="'pan'" [color]="'cyan-border'" [position]="'right'"></app-min-project>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
@@ -266,7 +280,7 @@
       <div class="month cyan-background"></div>
       <div class="point cyan-background"></div>
       <app-min-project
-        [key]="'VAST'"
+        [key]="'vast'"
         [color]="'cyan-border'"
         [position]="'right'"
       ></app-min-project>
@@ -284,7 +298,7 @@
       <div class="month cyan-background"></div>
       <div class="point cyan-background"></div>
       <app-min-project
-        [key]="'DROP'"
+        [key]="'droppy'"
         [color]="'cyan-border'"
         [position]="'right'"
       ></app-min-project>
@@ -350,8 +364,8 @@
       </h4>
     </div>
     <div href="https://up4it.io/" class="title-container Up4it">
-      <h4 class="sticky" [class]="projectsService.getContext('UP4').color">
-        {{ projectsService.getContext('UP4').context }}
+      <h4 class="sticky" [class]="projectsService.getContext('up4it').color">
+        {{ projectsService.getContext('up4it').context }}
       </h4>
     </div>
     <div class="title-container BSC">

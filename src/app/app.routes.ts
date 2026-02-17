@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { Master } from './pages/master/master';
 import { Project } from './pages/project/project';
 import { Timeline } from './pages/timeline/timeline';
 
@@ -8,10 +7,6 @@ export const routes: Routes = [
   {
     path: 'project/:key',
     component: Project,
-  },
-  {
-    path: 'master',
-    component: Master,
   },
   {
     path: '**',
