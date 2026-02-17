@@ -125,7 +125,7 @@
   padding-top: calc(20px * 2);
   height: calc(20px * 10);
 }
-.title-container.FITSPRO {
+.title-container.FTI {
   padding-top: calc(20px);
   height: calc(20px * 4);
 }
@@ -152,6 +152,7 @@
   background-color: white;
   border: 1px solid;
   border-radius: 10px;
+  max-height: 150px;
 
   .text {
     display: flex;
@@ -166,7 +167,7 @@
   .img {
     display: flex;
     flex: 1;
-
+    overflow: hidden;
     align-items: center;
     img {
       height: auto;

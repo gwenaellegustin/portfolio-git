@@ -1,31 +1,53 @@
 <div class="container">
   <div class="project-container">
     <div class="text">
-      <div class="first-line">
-        <div onclick="history.back()" class="back tooltip">
-          <img src="./logo/GG_Racoon_Body.png" />
-          <span class="tooltip-text">Back</span>
-        </div>
-        <h1>{{ project.title }}</h1>
+      <div class="line back tooltip" onclick="history.back()">
+        <img src="./logo/GG_Racoon_Body.png" />
+        <span class="tooltip-text">Back</span>
       </div>
+      <h1>{{ project.title }}</h1>
 
-      <h5 [ngClass]="color">{{ project.context }}</h5>
-      <h5>{{ project.date }} - {{ project.subtitle }}</h5>
-      <p>{{ project.description }}</p>
+      <h5>
+        <div class="line">
+          @if (project.date){
+          <span>{{ project.date }}</span>
+          } @if (project.subtitle){
+          <span>{{ project.subtitle }}</span>
+          }
+        </div>
+        @if (project.context){
+        <span [ngClass]="color">{{ context }}</span>
+        }
+      </h5>
+
+      <p class="intro-text" [innerHTML]="project.description"></p>
+
       <ul>
         @if(project.siteUrl){
         <li>
-          <a href="{{ project.siteUrl }}">Live website</a>
+          <a href="{{ project.siteUrl }}" target="_blank">Live website</a>
         </li>
         } @if(project.gitUrl){
         <li>
-          <a href="{{ project.gitUrl }}">Repository URL</a>
+          <a href="{{ project.gitUrl }}" target="_blank">Repository URL</a>
         </li>
         }
       </ul>
     </div>
+
     <div class="images">
-      <img [src]="project.imageUrl" onerror="this.style.visibility = 'hidden'" />
+      @for (image of project.images; track $index) {
+      <div class="image">
+        @if(image.url.endsWith(".mov")){
+        <video width="100%" autoplay loop>
+          <source [src]="image.url" type="video/mp4" />
+        </video>
+        } @else{
+        <img [src]="image.url" onerror="this.style.visibility = 'hidden'" />
+        }
+        <span>{{ image.legend }}</span>
+      </div>
+      }
     </div>
   </div>
 </div>

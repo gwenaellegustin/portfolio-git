@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, forwardRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, forwardRef, inject, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ProjectInterface, projects } from '../project/project';
+import { ProjectInterface, projects, ProjectsService } from '../project/projects.service';
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.html',
@@ -10,7 +10,7 @@ import { ProjectInterface, projects } from '../project/project';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Timeline {
-  projectsCopy = projects;
+  readonly projectsService = inject(ProjectsService);
   constructor() {}
 }
 
@@ -25,7 +25,7 @@ export class MiniProject {
   project: ProjectInterface = {
     title: 'Project now found',
     description: 'Please check the url.',
-    imageUrl: './logo/GG_Racoon_Body.png',
+    images: [{ url: './logo/GG_Racoon_Face.png' }],
   };
 
   @Input() key = '';

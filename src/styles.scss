@@ -21,6 +21,11 @@ h5 {
   line-height: 1.2em;
 }
 
+ul {
+  padding-left: 20px;
+  list-style-type: square;
+}
+
 .no-size {
   width: 0;
   height: 0;
@@ -37,10 +42,9 @@ h5 {
 }
 .tooltip-text {
   visibility: hidden; /* Hidden by default */
-  color: white;
-  background-color: black;
   text-align: center;
   padding: 0 6px;
+  margin-left: 60px;
   position: absolute;
   z-index: 1; /* Ensure tooltip is displayed above content */
 }
@@ -66,6 +70,7 @@ h5 {
 // DXD
 .blue {
   color: #354be2;
+  stroke: #354be2;
 }
 .blue-background {
   background-color: #354be2;

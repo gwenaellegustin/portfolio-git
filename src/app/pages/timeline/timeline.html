@@ -4,13 +4,19 @@
       <h4 class="sticky pink">IT manager and administrative assistant, Pentamedia Sàrl</h4>
     </div>
     <div class="title-container HES">
-      <h4 class="sticky cyan">Research assistant, HES-SO Valais Wallis</h4>
+      <h4 class="sticky" [class]="projectsService.getContext('HES').color">
+        {{ projectsService.getContext('HES').context }}
+      </h4>
     </div>
     <div class="title-container VDS2">
-      <h4 class="sticky red">IT assistant, Ville de Sion</h4>
+      <h4 class="sticky" [class]="projectsService.getContext('VDS').color">
+        {{ projectsService.getContext('VDS').context }}
+      </h4>
     </div>
     <div class="title-container VDS1">
-      <h4 class="sticky red">IT intern, Ville de Sion</h4>
+      <h4 class="sticky" [class]="projectsService.getContext('VDS').color">
+        IT intern, Ville de Sion
+      </h4>
     </div>
   </div>
 
@@ -25,7 +31,7 @@
       <div class="point cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="point cyan-background"></div>
-      <app-min-project [key]="'vst'" [color]="'cyan-border'" [position]="'left'"></app-min-project>
+      <app-min-project [key]="'VST'" [color]="'cyan-border'" [position]="'left'"></app-min-project>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
@@ -33,7 +39,7 @@
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="point cyan-background"></div>
-      <app-min-project [key]="'scg'" [color]="'cyan-border'" [position]="'left'"></app-min-project>
+      <app-min-project [key]="'SCG'" [color]="'cyan-border'" [position]="'left'"></app-min-project>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
@@ -119,7 +125,7 @@
       <div class="month black-background"></div>
       <div class="month black-background"></div>
       <div class="point black-background"></div>
-      <app-min-project [key]="'gg'" [color]="'black-border'" [position]="'hb'"></app-min-project>
+      <app-min-project [key]="'GG'" [color]="'black-border'" [position]="'hb'"></app-min-project>
       <div class="month black-background"></div>
       <!-- line -->
       <div class="year black-background"></div>
@@ -135,7 +141,7 @@
       <div class="month black-background"></div>
       <div class="month black-background"></div>
       <div class="point black-background"></div>
-      <app-min-project [key]="'hb'" [color]="'black-border'" [position]="'hb'"></app-min-project>
+      <app-min-project [key]="'HB'" [color]="'black-border'" [position]="'hb'"></app-min-project>
       <div class="month black-background"></div>
       <div class="year black-background"></div>
       <div class="year black-background"></div>
@@ -210,7 +216,7 @@
       </div>
       <div class="month blue-background"></div>
       <app-min-project
-        [key]="'up4'"
+        [key]="'UP4'"
         [color]="'green-border'"
         [position]="'right'"
       ></app-min-project>
@@ -243,7 +249,7 @@
 
       <!-- Bachelor -->
       <div class="point cyan-background"></div>
-      <app-min-project [key]="'pa'" [color]="'cyan-border'" [position]="'right'"></app-min-project>
+      <app-min-project [key]="'PA'" [color]="'cyan-border'" [position]="'right'"></app-min-project>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
@@ -260,7 +266,7 @@
       <div class="month cyan-background"></div>
       <div class="point cyan-background"></div>
       <app-min-project
-        [key]="'vast'"
+        [key]="'VAST'"
         [color]="'cyan-border'"
         [position]="'right'"
       ></app-min-project>
@@ -278,7 +284,7 @@
       <div class="month cyan-background"></div>
       <div class="point cyan-background"></div>
       <app-min-project
-        [key]="'drop'"
+        [key]="'DROP'"
         [color]="'cyan-border'"
         [position]="'right'"
       ></app-min-project>
@@ -339,25 +345,39 @@
 
   <div class="titles titles-right">
     <div class="title-container DXD">
-      <h4 class="sticky blue align-right">Master Digital Experience Design, ECAL</h4>
+      <h4 class="sticky" [class]="projectsService.getContext('DXD').color">
+        {{ projectsService.getContext('DXD').context }}
+      </h4>
     </div>
     <div href="https://up4it.io/" class="title-container Up4it">
-      <h4 class="sticky green align-right">Dev and design, Up4it</h4>
+      <h4 class="sticky" [class]="projectsService.getContext('UP4').color">
+        {{ projectsService.getContext('UP4').context }}
+      </h4>
     </div>
     <div class="title-container BSC">
-      <h4 class="sticky cyan align-right">Bachelor Business IT, HES-SO</h4>
+      <h4 class="sticky" [class]="projectsService.getContext('BSC').color">
+        {{ projectsService.getContext('BSC').context }}
+      </h4>
     </div>
     <div class="title-container SIR">
-      <h4 class="sticky purple align-right">Certification SIR, HES-SO</h4>
+      <h4 class="sticky" [class]="projectsService.getContext('SIR').color">
+        {{ projectsService.getContext('SIR').context }}
+      </h4>
     </div>
-    <div class="title-container FITSPRO">
-      <h4 class="sticky beige align-right">Fitness trainer, FITSPRO</h4>
+    <div class="title-container FTI">
+      <h4 class="sticky" [class]="projectsService.getContext('FTI').color">
+        {{ projectsService.getContext('FTI').context }}
+      </h4>
     </div>
     <div class="title-container EPFL">
-      <h4 class="sticky beige align-right">Bsc Computer Science (disenrolled), EPFL</h4>
+      <h4 class="sticky" [class]="projectsService.getContext('EPFL').color">
+        {{ projectsService.getContext('EPFL').context }}
+      </h4>
     </div>
     <div class="title-container MAT">
-      <h4 class="sticky orange align-right">Maturité gymnasiale</h4>
+      <h4 class="sticky" [class]="projectsService.getContext('MAT').color">
+        {{ projectsService.getContext('MAT').context }}
+      </h4>
     </div>
   </div>
 
