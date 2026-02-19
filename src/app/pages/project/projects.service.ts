@@ -64,6 +64,7 @@ export const contexts = new Map<string, contextAndColor>([
       color: 'cyan',
     },
   ],
+  // @TODO: SDC (text of porfolioV4 - ECAL)
   [
     'VDS',
     {
@@ -274,6 +275,7 @@ export const projects = new Map<string, ProjectInterface>([
       ],
       description:
         "<p>In order to present the work of <a href='https://etranselec.ch/' target='_blank'>Prof. Philippe Jacquod's team</a> on the impact of a computer attack on Swiss power grid data, this web application with two synchronized maps has been created. <p/> <p>It was the first project I was responsible for, but several of us on the team worked on the frontend. The backend has been developed by Marc Gillioz.</p> <p> I have worked diligently to make feedback instantaneous and have incorporated help elements for the more technical parts. The site is mobile-friendly. </p>",
+      // @TODO: text of porfolioV4 - ECAL
       images: [
         { url: '/2024-swisscybergrid/mini.png' },
         { url: '/2024-swisscybergrid/swisscybergrid.mp4', text: 'Video demo' },
@@ -296,10 +298,11 @@ export const projects = new Map<string, ProjectInterface>([
         },
       ],
       description:
-        '<p>PanTaGruEl is a dynamical grid model designed to investigate the propagation of disturbances in the continental European transmission grid, created by Prof. Philippe Jacquod (responsible of <a href="https://etranselec.ch/" target="_blank">Electrical Energy Efficiency Group - GEEE</a> ) and Laurent Pagnier. The aim of my Bachelor\'s thesis was to represent and manipulate PanTaGruEl data as efficiently as possible. The backend part has been developped in their team by Julian Fritzsch</p><p>The written work related to this application is available <a href="https://sonar.rero.ch/hesso/documents/326901" target="_blank">here</a> in French under the name "Développment d\'une interface user friendly pour le pilotage de simulation de réseau électrique intelligent" .</p> ',
+        '<p>PanTaGruEl is a dynamical grid model designed to investigate the propagation of disturbances in the continental European transmission grid, created by Prof. Philippe Jacquod (responsible of <a href="https://etranselec.ch/" target="_blank">Electrical Energy Efficiency Group - GEEE</a> ) and Laurent Pagnier. The aim of my Bachelor\'s thesis was to represent and manipulate PanTaGruEl data as efficiently as possible. The backend part has been developped in their team by Julian Fritzsch</p><p>The written work related to this application is available <a href="https://sonar.rero.ch/hesso/documents/326901" target="_blank">here</a> in French under the name "Développment d\'une interface user friendly pour le pilotage de simulation de réseau électrique intelligent".</p> <p>The application was designed to quickly test their algorithm in order to improve it, present it to demonstrate their result (and get more funding) and ideally use it to demonstrate flaws in various grids.</p> <p>It was important that a non-engineer would be able to use the platform but that engineers can activate more options. This need, coupled with the requirement to represent a variety of elements on the map and their characteristics led to the creation of this menu.</p> <p>The user has the possibility to modify grid elements from the map. Modified element, which appear on the side list, can be refocused on the map or reset.</p> ',
       images: [
         { url: '/2020-2023-bachelor/2023-pantagruel/mini.png' },
         { url: '/2020-2023-bachelor/2023-pantagruel/pantagruel courte 2.mp4', text: 'Demo' },
+        // @TODO: details of settings
       ],
     },
   ],
@@ -319,9 +322,11 @@ export const projects = new Map<string, ProjectInterface>([
       ],
       description:
         "<p>Website of small puzzles that can only be solved by the person for whom the site was created. I created this site for a friend as a time capsule with his current nickname, favorite video games, favorite quotes and favorite music.</p> <h4>Answers</h6> <p>Level 1:&nbsp;Only correct letters are accepted :</p><ul><li>Skraydd</li></ul><p>Level 2:&nbsp;you have to guess which game the screenshot was taken from, in order:</p><ul><li>Borderlands 3</li><li>Firewatch</li><li>Horizon Zero Dawn</li><li>Bioshock Infinite</li><li>Outlast 2</li><li>Everybody's Gone to the Rapture</li><li>The Outer Worlds</li><li>The Vanishing of Ethan Carter</li><li>Tomb raider</li><li>Minecraft</li></ul><p>Level 3:&nbsp;The central word column must form several specific quotations. The order of quotations in not important. Green means that the previous and next word are correct, blue that the next is correct and yellow that previous is correct.</p><ul><li>Dream - bigger</li><li>Apologies - but when - Claptrap - speaks - I feel - my brain - cells - committing - suicide - one by one</li><li>Everyone - is a cookie - from deep - inside and - cookies - are perfect. - So you too</li><li>Booker, - are you - afraid - of God? - No, but - I'm afraid - of you...</li></ul><p>Level 4 :&nbsp;8 songs are played at the same time. When you find an artist, the music of this artist is isolated for 3 seconds. When you find the title, the music is stopped</p><ul><li >Oh No (artist: Bring me the horizon)</li><li >One Night (artist 1: Matthew Koma, artist 2: Vicetone)</li><li >Beautiful Now (artsit: Zedd, artist 2: Jon Bellion)</li><li >Spotlight (artist 1: Marshmello, artist 2: Lil Peep)</li><li >With you, friends (long drive) (artist: SKRILLEX)</li><li >Don't Let Me Go (artist 1: Armin van Buuren, artist 2: Matluck)</li><li >The Spark (artist 1: Afrojack, artist 2: Spree Wilson)</li><li >Pizza (artist: Martin Garrix)</li></ul>",
+      // @TODO: text of porfolioV4 - ECAL
       images: [{ url: '/2023-happy_birthday/mini.png' }],
     },
   ],
+  // @TODO: tlearning (text of porfolioV4 - ECAL)
   [
     'vast',
     {
@@ -344,6 +349,7 @@ export const projects = new Map<string, ProjectInterface>([
       // @TODO: Photo of real usage
     },
   ],
+  // @TODO: SwissVia (text of porfolioV4 - ECAL)
   [
     'droppy',
     {
@@ -360,6 +366,7 @@ export const projects = new Map<string, ProjectInterface>([
       ],
       description:
         '<p>As part of our JavaScript course, we had to create a game within an HTML and CSS website. My team made a game with levels featuring a drop of water that has to escape, whose life influences its size and speed. Each level was designed to bring a new challenge to the player.</p><p>I brought the idea of the gameplay, created the designs and took part in the coding.</p><p>Team: <ul><li>Marques Antony : Git manager and architect</li><li>Baechler Stéphanie : content and layout</li><li>Me: concept and design </li></ul> </p>',
+      // @TODO: text of porfolioV4 - ECAL
       images: [
         { url: '/2020-2023-bachelor/2021-droppy/mini.png' },
         { url: '/2020-2023-bachelor/2021-droppy/droppy_short.mp4', text: 'Video demo' },
@@ -367,4 +374,6 @@ export const projects = new Map<string, ProjectInterface>([
       ],
     },
   ],
+  // @TODO: mam&co (text of porfolioV4 - ECAL)
+  // @TODO: custom t-shirts (text of porfolioV4 - ECAL)
 ]);

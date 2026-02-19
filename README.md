@@ -38,19 +38,21 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Deploy
 
-## Additional Resources
+```bash
+ng build --configuration github
+git push
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-## To develop
+## Backlogs
 
 # Bug
 - Image project crop
-- Job/school title:how display on mobile
 # Feat
+- Update projects info (see todo in projects.service.ts)
 - Loader image
+- Job/school title: mobile display
 - Hover + click on job/school
 - Dynamic possibility to change color et context
 - Json for timeline info 
