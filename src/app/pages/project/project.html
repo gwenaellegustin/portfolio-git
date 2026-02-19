@@ -35,12 +35,13 @@
     <div class="images">
       @for (image of project.images; track $index) {
       <div class="image">
+        @if(image.url.endsWith(".mp4")){
         <span>{{ image.text }}</span>
-        @if(image.url.endsWith(".mov") || image.url.endsWith(".mp4")){
         <video width="100%" autoplay loop controls>
           <source [src]="image.url" type="video/mp4" />
         </video>
         } @else{
+        <span>{{ image.text }}</span>
         <img [src]="image.url" onerror="this.style.visibility = 'hidden'" />
         }
       </div>

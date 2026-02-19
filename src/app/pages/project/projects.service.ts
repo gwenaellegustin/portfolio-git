@@ -210,7 +210,7 @@ export const projects = new Map<string, ProjectInterface>([
           url: '/2025-2027-master/s1-cavalry/square-and-vertical-border.mov',
           text: 'Spotify like animation',
         },
-        { url: '/2025-2027-master/s1-cavalry/horizontal blue.mp4', text: 'Animated billboard' },
+        { url: '/2025-2027-master/s1-cavalry/horizontal blue.mov', text: 'Animated billboard' },
       ],
     },
   ],
@@ -246,7 +246,7 @@ export const projects = new Map<string, ProjectInterface>([
       images: [
         { url: '/2024-2025-visualization_tool/mockup.jpg' },
         { url: '/2024-2025-visualization_tool/old.png', text: 'Previous version' },
-        { url: '/2024-2025-visualization_tool/expert_review.mov', text: 'Expert review' },
+        { url: '/2024-2025-visualization_tool/expert_review.mp4', text: 'Expert review' },
         {
           url: '/2024-2025-visualization_tool/multisite.png',
           text: 'One code base, several websites',
@@ -299,7 +299,7 @@ export const projects = new Map<string, ProjectInterface>([
         '<p>PanTaGruEl is a dynamical grid model designed to investigate the propagation of disturbances in the continental European transmission grid, created by Prof. Philippe Jacquod (responsible of <a href="https://etranselec.ch/" target="_blank">Electrical Energy Efficiency Group - GEEE</a> ) and Laurent Pagnier. The aim of my Bachelor\'s thesis was to represent and manipulate PanTaGruEl data as efficiently as possible. The backend part has been developped in their team by Julian Fritzsch</p><p>The written work related to this application is available <a href="https://sonar.rero.ch/hesso/documents/326901" target="_blank">here</a> in French under the name "Développment d\'une interface user friendly pour le pilotage de simulation de réseau électrique intelligent" .</p> ',
       images: [
         { url: '/2020-2023-bachelor/2023-pantagruel/mini.png' },
-        { url: '/2020-2023-bachelor/2023-pantagruel/pantagruel courte 2.mov', text: 'Demo' },
+        { url: '/2020-2023-bachelor/2023-pantagruel/pantagruel courte 2.mp4', text: 'Demo' },
       ],
     },
   ],
@@ -362,7 +362,7 @@ export const projects = new Map<string, ProjectInterface>([
         '<p>As part of our JavaScript course, we had to create a game within an HTML and CSS website. My team made a game with levels featuring a drop of water that has to escape, whose life influences its size and speed. Each level was designed to bring a new challenge to the player.</p><p>I brought the idea of the gameplay, created the designs and took part in the coding.</p><p>Team: <ul><li>Marques Antony : Git manager and architect</li><li>Baechler Stéphanie : content and layout</li><li>Me: concept and design </li></ul> </p>',
       images: [
         { url: '/2020-2023-bachelor/2021-droppy/mini.png' },
-        { url: '/2020-2023-bachelor/2021-droppy/droppy_short.mov', text: 'Video demo' },
+        { url: '/2020-2023-bachelor/2021-droppy/droppy_short.mp4', text: 'Video demo' },
         { url: '/2020-2023-bachelor/2021-droppy/character.png', text: 'Characters' },
       ],
     },
