@@ -47,16 +47,31 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all",
-              "outputPath": {
-                "base": "./docs",
-                "browser": ""
-              }
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "gihtub": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "outputPath": {
+                "base": "./docs",
+                "browser": ""
+              }
             }
           },
           "defaultConfiguration": "production"
