@@ -47,13 +47,10 @@ For more information on using the Angular CLI, including detailed command refere
 ## To develop
 
 # Bug
-- Born date width
-- Favicon deform
-- Image project deform
-- Opacity/color job
+- Image project crop
+- Job/school title:how display on mobile
 # Feat
 - Loader image
 - Hover + click on job/school
-- Dynamic possiblity to change color et context
-- Project Master reuse component
+- Dynamic possibility to change color et context
 - Json for timeline info 
