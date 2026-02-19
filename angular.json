@@ -54,7 +54,7 @@
               "extractLicenses": false,
               "sourceMap": true
             },
-            "gihtub": {
+            "github": {
               "budgets": [
                 {
                   "type": "initial",
