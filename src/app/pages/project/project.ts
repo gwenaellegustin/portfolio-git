@@ -1,11 +1,11 @@
 import { NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProjectInterface, projects, ProjectsService } from './projects.service';
 
 @Component({
   selector: 'app-project',
-  imports: [NgClass],
+  imports: [NgClass, RouterLink],
   templateUrl: './project.html',
   styleUrl: './project.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -9,6 +9,16 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+li a:hover,
+h5 a:hover {
+  text-decoration: underline;
 }
 
 h1,
