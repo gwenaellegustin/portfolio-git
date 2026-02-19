@@ -207,10 +207,10 @@ export const projects = new Map<string, ProjectInterface>([
       images: [
         { url: '/2025-2027-master/s1-cavalry/3cover.png', text: 'Album sleeves' },
         {
-          url: '/2025-2027-master/s1-cavalry/square-and-vertical-border.mov',
+          url: '/2025-2027-master/s1-cavalry/square-and-vertical-border.mp4',
           text: 'Spotify like animation',
         },
-        { url: '/2025-2027-master/s1-cavalry/horizontal blue.mov', text: 'Animated billboard' },
+        { url: '/2025-2027-master/s1-cavalry/horizontal blue.mp4', text: 'Animated billboard' },
       ],
     },
   ],
@@ -246,7 +246,7 @@ export const projects = new Map<string, ProjectInterface>([
       images: [
         { url: '/2024-2025-visualization_tool/mockup.jpg' },
         { url: '/2024-2025-visualization_tool/old.png', text: 'Previous version' },
-        { url: '/2024-2025-visualization_tool/expert_review.mp4', text: 'Expert review' },
+        { url: '/2024-2025-visualization_tool/review.mp4', text: 'Expert review' },
         {
           url: '/2024-2025-visualization_tool/multisite.png',
           text: 'One code base, several websites',
