@@ -41,24 +41,6 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
-docs/3rdpartylicenses.txt
-docs/prerendered-routes.json
-docs/browser/favicon.ico
-docs/browser/github.png
-docs/browser/index.html
-docs/browser/main-RHJT2WQT.js
-docs/browser/styles-V2HYU5YC.css
-docs/browser/2023-happybirthday/mini.png
-docs/browser/bachelor/mini.png
-docs/browser/bachelor/vast-mini.png
-docs/browser/bachelor/droppy/mini.png
-docs/browser/hes/swisscybergrid/mini.png
-docs/browser/hes/visualization_tool/mockup.jpg
-docs/browser/logo/GG_Racoon_Body.png
-docs/browser/logo/GG_Racoon_Face.png
-docs/browser/logo/Logo.png
-docs/browser/master/s1-papiliorama/PAGE Exhibits.png
-docs/browser/master/s1-papiliorama/PAGE Foundation.png
-docs/browser/master/s1-papiliorama/PAGE Home.png
-docs/browser/master/s1-papiliorama/PAGE News.png
-docs/browser/master/s1-papiliorama/PAGE Visit.png
+
+CNAME
+docs/*
