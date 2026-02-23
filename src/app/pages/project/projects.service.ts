@@ -110,7 +110,7 @@ export const projects = new Map<string, ProjectInterface>([
       title: 'This website',
       context: 'On my free time',
       date: '02.2026',
-      subtitle: 'UI/UX and dev (Angular 21)',
+      subtitle: 'Angular 21',
 
       description:
         'I wanted to create a website that would allow visitors to view projects in their context (school, work) and in chronological order. The principle of git, used in development, was perfect for this. So I used it as inspiration for this portfolio. The page with the timelines was created from scratch using HTML and CSS.',
@@ -208,7 +208,6 @@ export const projects = new Map<string, ProjectInterface>([
       description:
         '<p>During a week-long workshop, we were trained on Calvary by Antonin Waterkeyn. It was my first experience with animation.</p><p>We had to create animated covers for three albums (by the same artist or label) with vertical variations, as well as a horizontal format for a billboard. I chose to illustrate the work of Paul Sabin.</p>',
       images: [
-        { url: '' },
         { url: '/2025-2027-master/s1-cavalry/3cover.png', text: 'Album sleeves' },
         {
           url: '/2025-2027-master/s1-cavalry/square-and-vertical-border.mp4',
@@ -237,7 +236,7 @@ export const projects = new Map<string, ProjectInterface>([
       title: 'Visualization tool',
       context: 'HES',
       date: '07.2025',
-      subtitle: 'Dev (Angular 20), UX',
+      subtitle: 'Angular 20',
       urls: [
         { url: 'https://citiwatts.eu/', text: 'Website' },
         {
@@ -264,7 +263,7 @@ export const projects = new Map<string, ProjectInterface>([
       title: 'Swiss Cyber grid',
       context: 'HES',
       date: '12.2024',
-      subtitle: 'Dev (Angular 18), UX',
+      subtitle: 'Angular 18',
       urls: [
         { url: 'https://swisscybergrid.iigweb.hevs.ch/', text: 'Website' },
         {
@@ -292,7 +291,7 @@ export const projects = new Map<string, ProjectInterface>([
       title: 'Pantagruel - Bachelor Thesis',
       context: 'BSC',
       date: '08.2023',
-      subtitle: 'Dev (Angular 15), UX',
+      subtitle: 'Angular 15',
       urls: [
         { url: 'https://etranselec.ch/pantafrontend/', text: 'Website' },
         {
@@ -315,7 +314,7 @@ export const projects = new Map<string, ProjectInterface>([
       title: 'Happy birthday !',
       context: 'On my free time',
       date: '02.2023',
-      subtitle: 'Dev (react18), UX',
+      subtitle: 'React18',
       urls: [
         { url: 'https://skraydd-birthday-2022.netlify.app/', text: 'Website' },
         {
@@ -336,7 +335,7 @@ export const projects = new Map<string, ProjectInterface>([
       title: 'VAST app',
       context: 'BSC',
       date: '06.2022',
-      subtitle: 'Dev (react18), PWA',
+      subtitle: 'React18, PWA',
       urls: [
         { url: 'https://vast-hes.netlify.app/', text: 'Website' },
         //@TODO: Private

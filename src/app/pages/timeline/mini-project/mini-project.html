@@ -2,7 +2,10 @@
   <a [routerLink]="['/project', key]">
     <div class="project-container" [ngClass]="color" [class]="position">
       <div class="text">
-        <div class="title">{{ project.title }}</div>
+        <div class="point blue-background"></div>
+        <div class="title">
+          {{ project.title }}
+        </div>
         <div class="subtitle">{{ project.subtitle }}</div>
       </div>
 

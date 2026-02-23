@@ -11,7 +11,7 @@
       .year {
         height: calc(240px + 1px); // year + 1 px of error ?
         width: 100vw;
-        border-top: 1px solid;
+        border-bottom: 1px solid;
         opacity: 0.5;
         text-align: end; // Right align
         align-self: flex-end;
