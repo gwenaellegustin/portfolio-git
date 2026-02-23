@@ -3,7 +3,7 @@
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    min-height: 75vh; //how fill page
+    min-height: 80vh; //how fill page
     padding: 20px;
   }
 
@@ -12,7 +12,7 @@
     gap: 40px;
     margin-bottom: 20px;
     max-width: 1000px;
-    margin: auto;
+    margin: 0 auto;
   }
   @media only screen and (max-width: 600px) {
     .project-container {
