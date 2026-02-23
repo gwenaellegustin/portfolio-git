@@ -22,7 +22,13 @@
 
   <div class="timelines">
     <!-- HES -->
-    <div class="timeline">
+    <div
+      class="timeline"
+      [class.not-hover]="
+        this.projectsService.colorHovered !== 'cyan-border' &&
+        this.projectsService.colorHovered !== ''
+      "
+    >
       <div class="year"></div>
       <div class="month"></div>
       <div class="month"></div>
@@ -86,7 +92,13 @@
     </div>
 
     <!-- PM -->
-    <div class="timeline">
+    <div
+      class="timeline"
+      [class.not-hover]="
+        this.projectsService.colorHovered !== 'pink-border' &&
+        this.projectsService.colorHovered !== ''
+      "
+    >
       <div class="dots end">
         <div class="pink-background"></div>
         <div class="pink-background"></div>
@@ -111,7 +123,13 @@
     </div>
 
     <!-- black-background -->
-    <div class="timeline">
+    <div
+      class="timeline"
+      [class.not-hover]="
+        this.projectsService.colorHovered !== 'black-border' &&
+        this.projectsService.colorHovered !== ''
+      "
+    >
       <div class="dots end">
         <div class="black-background"></div>
         <div class="black-background"></div>
@@ -180,7 +198,13 @@
     </div>
 
     <!-- Up4it -->
-    <div class="timeline">
+    <div
+      class="timeline"
+      [class.not-hover]="
+        this.projectsService.colorHovered !== 'green-border' &&
+        this.projectsService.colorHovered !== ''
+      "
+    >
       <div class="dots end">
         <div class="green-background"></div>
         <div class="green-background"></div>
@@ -208,7 +232,13 @@
     </div>
 
     <!-- School -->
-    <div class="timeline">
+    <div
+      class="timeline"
+      [class.not-hover]="
+        this.projectsService.colorHovered !== 'blue-border' &&
+        this.projectsService.colorHovered !== ''
+      "
+    >
       <div class="dots end">
         <div class="blue-background"></div>
         <div class="blue-background"></div>

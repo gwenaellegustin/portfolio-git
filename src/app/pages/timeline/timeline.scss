@@ -1,4 +1,9 @@
 :host {
+  .not-hover {
+    filter: grayscale(1);
+    opacity: 0.5;
+  }
+
   // ! TIMELINES and dots -------------------------------
   .timelines-area {
     display: flex;

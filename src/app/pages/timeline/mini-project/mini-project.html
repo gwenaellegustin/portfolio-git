@@ -1,6 +1,15 @@
 <div class="no-size">
   <a [routerLink]="['/project', key]">
-    <div class="project-container" [ngClass]="color" [class]="position">
+    <div
+      class="project-container"
+      [ngClass]="color"
+      [class.not-hover]="
+        this.projectsService.colorHovered !== this.color && this.projectsService.colorHovered !== ''
+      "
+      [class]="position"
+      (mouseenter)="onHover(true)"
+      (mouseleave)="onHover(false)"
+    >
       <div class="text">
         <div class="title">{{ project.title }}</div>
         <div class="subtitle">{{ project.subtitle }}</div>

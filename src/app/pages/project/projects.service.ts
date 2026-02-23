@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ProjectsService {
+  colorHovered = '';
   constructor() {}
 
   getContext(key: string) {
@@ -33,6 +34,7 @@ export class ProjectInterface {
 export class contextAndColor {
   context: string = '';
   color: string = '';
+  link?: string;
 }
 
 export const contexts = new Map<string, contextAndColor>([
@@ -99,6 +101,7 @@ export const contexts = new Map<string, contextAndColor>([
     {
       context: 'Maturité gymnasiale',
       color: 'orange',
+      link: '/mat',
     },
   ],
 ]);
