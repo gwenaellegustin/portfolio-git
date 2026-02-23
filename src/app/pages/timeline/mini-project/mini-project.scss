@@ -1,0 +1,93 @@
+:host {
+  .project-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20vw;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 10px;
+    max-height: 150px;
+
+    .text {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    .subtitle {
+      font-size: x-small;
+    }
+
+    .img {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      align-items: center;
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  .project-container:hover {
+    z-index: 100;
+    filter: grayscale(0);
+  }
+  .project-container:active {
+    filter: brightness(90%);
+  }
+
+  .project-container.left {
+    margin: -20px calc(-20vw - 2 * 20px);
+  }
+
+  .project-container.hb {
+    margin: -20px calc(-20vw - 80px);
+  }
+
+  .project-container.right {
+    margin: -20px 20px;
+  }
+
+  //First semester mini project card
+  .blue-border .text .subtitle ul li {
+    list-style-type: disc;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .project-container {
+      padding: 5px;
+      flex-direction: column;
+      width: 15vw;
+    }
+
+    .text {
+      font-size: small;
+      word-break: break-all;
+    }
+
+    .project-container.left {
+      margin: -20px calc(-15vw - 30px);
+    }
+
+    .project-container.hb {
+      margin: -20px calc(-15vw - 70px);
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .project-container {
+      width: 30vw;
+    }
+
+    .project-container.left {
+      margin: -20px calc(-30vw - 40px);
+    }
+
+    .project-container.hb {
+      margin: -20px calc(-30vw - 80px);
+    }
+  }
+}

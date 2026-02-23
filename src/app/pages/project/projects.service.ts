@@ -133,6 +133,7 @@ export const projects = new Map<string, ProjectInterface>([
       description:
         '<p>In order to conduct a UX study, we chose a technology used in the workplace or at school. I decided to rethink the user experience of the Windows file explorer in the context of higher education in order to meet the specific needs of students: less freedom and less navigation.</p> <p>File explorers can be both a pleasure and a pain, even if you like organising. The scope has been restricted to the Windows file manager for the purposes of the course in order to follow a specific use case. The interviews with users were extended to include a Mac and Linux user in order to gain additional perspectives.</p> Research methodology<ul><li>Define a research question : What influences the organisation of students’ academic file structure, how do they interact with it, and how do the features of File Manager impact said organisation ?</li>  <li>Semi-structured interviews with 9 participants, including a digital artefact walkthrough in the current and previous semester,  and a photo elicitation of other representations of architecture files</li>  <li>Experience sampling (~1 a week) with digital aterfact walkthrough</li>  <li>Analysis with a journey mapping (by participant and then merge). Five main stages were identified through the interviews: before the semester, during course (download a file), after class, during next course (re-acces the file), at the end of the semester</li>  <li>Find key insights</li>  <li>Additional methods: interview with an archivist, analysis of Google Drive and Figma</li></ul> <p>My proposal rethinks both the UI and the UX. In terms of the interface, the sidebar, which was only used for a few shortcuts, is no longer present. The shortcuts are located below the navigation bar, as in standard web browsers. The numerous display options have been restricted in order to encourage users to explore them. During interviews, some people complained about the absence of features that were actually available. In addition, access to the preview is highlighted, as this feature is a necessity for the vast majority of users.</p> <p>In regards to user experience, navigation and sorting were the main issues. The hierarchy that allowed for order required numerous clicks. The succession of folders  has been replaced by the creation of binders  and dividers. In addition, the status of binder remains unchanged during navigation, which improves efficiency. It is possible to group documents together in dividers with paper clips.Sorting is no longer based on name but on the order in which items were added, and files can be moved using drag and drop. This allows the name to regain its original function and eliminates the need for the prefixes previously used for sorting.</p>',
       images: [
+        { url: '' },
         { url: '/2025-2027-master/s1-file-explorer/Drag.png' },
         {
           url: '/2025-2027-master/s1-file-explorer/2 Shelf - As you left it.mp4',
@@ -163,7 +164,7 @@ export const projects = new Map<string, ProjectInterface>([
       title: 'Pixel Perfect',
       context: 'DXD',
       date: '12.2025',
-      subtitle: 'Interactive prototype Figma',
+      subtitle: 'UI Figma',
       urls: [
         {
           url: 'https://www.figma.com/proto/HRBdl3imYbH3SjBYAsWTw6/Pixel-Perfect---Gwenaelle-Gustin---Papiliorama?page-id=62%3A4554&node-id=4211-63407&viewport=241%2C235%2C0.02&t=IwCMsfXynocl9R8b-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4211%3A63407',
@@ -177,6 +178,7 @@ export const projects = new Map<string, ProjectInterface>([
       description:
         "<p>In this course, we had to reinterpret the visuals and navigation of a museum website so that the site would reflect its unique universe. I chose the <a href='https://www.papiliorama.ch/en/' target='_blank'>Papiliorama site</a>. After analyzing the site map and reproducing the current website as a mock-up on Figma, I created a new navigation system and design system for this interactive prototype.</p><p>In my proposition, the page structure uses more organic shapes than simple rectangles, drawing inspiration from the outline of the dome and the triangles that compose it. Different colour variations are used to represent the diversity of the museum's exhibitions. The layout incorporates better highlighting of images.</p>",
       images: [
+        { url: '' },
         { url: '/2025-2027-master/s1-papiliorama/PAGE Home.png' },
         { url: '/2025-2027-master/s1-papiliorama/demo.mp4', text: 'Video demo' },
         {
@@ -206,6 +208,7 @@ export const projects = new Map<string, ProjectInterface>([
       description:
         '<p>During a week-long workshop, we were trained on Calvary by Antonin Waterkeyn. It was my first experience with animation.</p><p>We had to create animated covers for three albums (by the same artist or label) with vertical variations, as well as a horizontal format for a billboard. I chose to illustrate the work of Paul Sabin.</p>',
       images: [
+        { url: '' },
         { url: '/2025-2027-master/s1-cavalry/3cover.png', text: 'Album sleeves' },
         {
           url: '/2025-2027-master/s1-cavalry/square-and-vertical-border.mp4',

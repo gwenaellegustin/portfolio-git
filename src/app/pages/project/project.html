@@ -33,7 +33,7 @@
     </div>
 
     <div class="images">
-      @for (image of project.images; track $index) {
+      @for (image of project.images; track $index) { @if(image.url !== ""){
       <div class="image">
         @if(image.url.endsWith(".mp4")){
         <span>{{ image.text }}</span>
@@ -45,7 +45,7 @@
         <img [src]="image.url" onerror="this.style.visibility = 'hidden'" />
         }
       </div>
-      }
+      } }
     </div>
   </div>
 </div>
