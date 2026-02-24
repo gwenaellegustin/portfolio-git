@@ -52,7 +52,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      img {
+      img,
+      video {
+        max-height: 80vh;
         width: 100%;
       }
     }

@@ -328,7 +328,28 @@ export const projects = new Map<string, ProjectInterface>([
       images: [{ url: '/2023-happy_birthday/mini.png' }],
     },
   ],
+
   // @TODO: tlearning (text of porfolioV4 - ECAL)
+  [
+    'tl',
+    {
+      title: 'Tlearning',
+      context: 'BSC',
+      date: '09.2022',
+      subtitle: 'Flutter',
+      urls: [
+        // Private
+        // {
+        //   url: 'https://github.com/asytahFIG/6452_Flutter_Tlearning_SBGGRC',
+        //   text: 'Repository',
+        // },
+      ],
+
+      description:
+        '<p>...</p><p>....</p> <p>Team: <ul><li>Stéphanie Baechler</li><li>Rémi Cohu</li><li>Me</li></ul></p>',
+      images: [{ url: '' }, { url: '' }, { url: '', text: 'Video' }],
+    },
+  ],
   [
     'vast',
     {
@@ -338,7 +359,7 @@ export const projects = new Map<string, ProjectInterface>([
       subtitle: 'React18, PWA',
       urls: [
         { url: 'https://vast-hes.netlify.app/', text: 'Website' },
-        //@TODO: Private
+        // Private
         // {
         //   url: 'https://gitlab.com/gwenaelle.gustin/semestre7_vast',
         //   text: 'Repository',
@@ -351,7 +372,30 @@ export const projects = new Map<string, ProjectInterface>([
       // @TODO: Photo of real usage
     },
   ],
-  // @TODO: SwissVia (text of porfolioV4 - ECAL)
+  [
+    'sv',
+    {
+      title: 'SwissVia',
+      context: 'BSC',
+      date: '02.2022',
+      subtitle: 'Java Android',
+      urls: [
+        //@TODO: Private
+        // {
+        //   url: 'https://github.com/asytahFIG/6441_MobileDvlp_SwissVia',
+        //   text: 'Repository',
+        // },
+      ],
+
+      description:
+        '<p>As part of the Android course, we had to create an app and deploy it on the Play store. A colleague had the need for an application to find via ferrata routes and was not satisfied with existing sites at that time, so we coded that idea.</p><p>The application has been designed with an account to allow modification of information by administrators, and later included the possibility for other users to suggest modifications. The login (account or Google), dark mode and language change are features that we decided to add to the project as a bonus.</p> <p>Team: <ul><li>Stéphanie Baechler</li><li>Me</li></ul></p>',
+      images: [
+        { url: '/2020-2023-bachelor/2021-swissvia/Picture1.png' },
+        { url: '/2020-2023-bachelor/2021-swissvia/Picture2.png' },
+        { url: '/2020-2023-bachelor/2021-swissvia/swissvia.mp4', text: 'Video' },
+      ],
+    },
+  ],
   [
     'droppy',
     {
