@@ -236,7 +236,7 @@ export const projects = new Map<string, ProjectInterface>([
       title: 'Visualization tool',
       context: 'HES',
       date: '07.2025',
-      subtitle: 'Angular 20',
+      subtitle: 'Angular 20, UX',
       urls: [
         { url: 'https://citiwatts.eu/', text: 'Website' },
         {

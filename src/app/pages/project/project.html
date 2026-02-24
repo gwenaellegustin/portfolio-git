@@ -20,14 +20,12 @@
         @if (project.context){
         <span [ngClass]="color">{{ context }}</span>
         }
-        <ul>
-          @for(url of project.urls; track $index){
-          <li>
-            <a href="{{ url.url }}" target="_blank">{{ url.text }}</a>
-          </li>
-          }
-        </ul>
       </h5>
+      <div class="buttons">
+        @for(url of project.urls; track $index){
+        <a href="{{ url.url }}" target="_blank" class="button">{{ url.text }}</a>
+        }
+      </div>
 
       <p class="intro-text" [innerHTML]="project.description"></p>
     </div>
