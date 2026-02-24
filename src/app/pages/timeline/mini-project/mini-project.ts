@@ -6,7 +6,7 @@ import { ProjectInterface, projects } from '../../project/projects.service';
 @Component({
   selector: 'app-min-project',
   templateUrl: './mini-project.html',
-  styleUrl: '../timeline.scss',
+  styleUrl: './mini-project.scss',
   imports: [RouterLink, NgClass],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

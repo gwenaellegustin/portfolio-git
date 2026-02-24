@@ -11,7 +11,7 @@
       .year {
         height: calc(240px + 1px); // year + 1 px of error ?
         width: 100vw;
-        border-top: 1px solid;
+        border-bottom: 1px solid;
         opacity: 0.5;
         text-align: end; // Right align
         align-self: flex-end;
@@ -71,163 +71,73 @@
   .racoon-face {
     height: 40px;
   }
-}
 
-// ! TITLES (job/school) -------------------------------
-
-.titles {
-  padding: 0 25px;
-  max-width: 15vw;
-  opacity: 0.6;
-}
-@media only screen and (max-width: 600px) {
+  // ! TITLES (job/school) -------------------------------
   .titles {
-    display: none;
+    padding: 0 25px;
+    max-width: 15vw;
+    opacity: 0.6;
   }
-}
-.titles-right {
-  text-align: right;
-  margin-right: 40px;
-}
-.title-container {
-  .sticky {
-    background-color: white;
-    padding: 10px 0;
-  }
-}
-
-.title-container.PM {
-  margin-top: calc(20px * 3);
-  height: calc(20px * 11);
-}
-.title-container.HES {
-  height: calc(25px * 21);
-}
-.title-container.VDS2 {
-  height: calc(25px * 15);
-}
-.title-container.VDS1 {
-  margin-top: calc(20px * 23);
-  height: calc(25px * 15);
-}
-.title-container.DXD {
-  margin-top: calc(20px * 3);
-  height: calc(20px * 13);
-}
-.title-container.Up4it {
-  height: calc(20px * 17);
-}
-.title-container.BSC {
-  padding-top: calc(20px * 7);
-  height: calc(20px * 48);
-}
-.title-container.SIR {
-  padding-top: calc(20px * 2);
-  height: calc(20px * 10);
-}
-.title-container.FTI {
-  padding-top: calc(20px);
-  height: calc(20px * 4);
-}
-.title-container.EPFL {
-  padding-top: calc(20px);
-  height: calc(20px * 4);
-}
-.title-container.MAT {
-  padding-top: calc(20px * 2);
-  height: calc(20px * 8);
-}
-.right.black {
-  width: 20vw;
-  margin-left: 40px;
-  margin-top: -10px;
-}
-
-// ! PROJECT -------------------------------
-.project-container {
-  display: flex;
-  justify-content: space-evenly;
-  width: 20vw;
-  padding: 10px;
-  background-color: white;
-  border: 1px solid;
-  border-radius: 10px;
-  max-height: 150px;
-
-  .text {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-  .subtitle {
-    font-size: x-small;
-  }
-
-  .img {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-    align-items: center;
-    img {
-      height: auto;
-      width: 100%;
+  @media only screen and (max-width: 600px) {
+    .titles {
+      display: none;
     }
   }
-}
-
-.project-container:active {
-  filter: brightness(90%);
-}
-
-.project-container.left {
-  margin: -20px calc(-20vw - 2 * 20px);
-}
-
-.project-container.hb {
-  margin: -20px calc(-20vw - 80px);
-}
-
-.project-container.right {
-  margin: -20px 20px;
-}
-
-//First semester mini project card
-.blue-border .text .subtitle ul li {
-  list-style-type: disc;
-}
-
-@media only screen and (max-width: 1000px) {
-  .project-container {
-    padding: 5px;
-    flex-direction: column;
-    width: 15vw;
+  .titles-right {
+    text-align: right;
+    margin-right: 40px;
+  }
+  .title-container {
+    .sticky {
+      background-color: white;
+      padding: 10px 0;
+    }
   }
 
-  .text {
-    font-size: small;
-    word-break: break-all;
+  .title-container.PM {
+    margin-top: calc(20px * 3);
+    height: calc(20px * 11);
   }
-
-  .project-container.left {
-    margin: -20px calc(-15vw - 30px);
+  .title-container.HES {
+    height: calc(25px * 21);
   }
-
-  .project-container.hb {
-    margin: -20px calc(-15vw - 70px);
+  .title-container.VDS2 {
+    height: calc(25px * 15);
   }
-}
-
-@media only screen and (max-width: 600px) {
-  .project-container {
-    width: 30vw;
+  .title-container.VDS1 {
+    margin-top: calc(20px * 23);
+    height: calc(25px * 15);
   }
-
-  .project-container.left {
-    margin: -20px calc(-30vw - 40px);
+  .title-container.DXD {
+    margin-top: calc(20px * 3);
+    height: calc(20px * 13);
   }
-
-  .project-container.hb {
-    margin: -20px calc(-30vw - 80px);
+  .title-container.Up4it {
+    height: calc(20px * 17);
+  }
+  .title-container.BSC {
+    padding-top: calc(20px * 7);
+    height: calc(20px * 48);
+  }
+  .title-container.SIR {
+    padding-top: calc(20px * 2);
+    height: calc(20px * 10);
+  }
+  .title-container.FTI {
+    padding-top: calc(20px);
+    height: calc(20px * 4);
+  }
+  .title-container.EPFL {
+    padding-top: calc(20px);
+    height: calc(20px * 4);
+  }
+  .title-container.MAT {
+    padding-top: calc(20px * 2);
+    height: calc(20px * 8);
+  }
+  .right.black {
+    width: 20vw;
+    margin-left: 40px;
+    margin-top: -10px;
   }
 }

@@ -225,45 +225,36 @@
       <div class="month blue-background"></div>
       <div class="month blue-background"></div>
       <div class="month blue-background"></div>
+      <app-min-project
+        [key]="'s1rc'"
+        [color]="'blue-border'"
+        [position]="'right'"
+      ></app-min-project>
       <div class="month blue-background"></div>
       <div class="month blue-background"></div>
       <div class="point blue-background"></div>
-      <div class="no-size">
-        <div class="project-container right blue-border">
-          <div class="text">
-            <div class="title">Semester 1</div>
-            <div class="subtitle">
-              <ul>
-                <li>
-                  <a [routerLink]="['/project/s1mm']" class="li-dxd">Modular Mindset (Cavalry)</a>
-                </li>
-                <li>
-                  <a [routerLink]="['/project/s1pp']" class="li-dxd">Pixel Perfect (UI)</a>
-                </li>
-                <li>
-                  <a [routerLink]="['/project/s1rc']" class="li-dxd">Reality Check (UX)</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="img">
-            <img
-              src="/2025-2027-master/s1-papiliorama/PAGE Home.png"
-              onerror="this.style.visibility = 'hidden'"
-            />
-          </div>
-        </div>
-      </div>
+      <app-min-project
+        [key]="'s1pp'"
+        [color]="'blue-border'"
+        [position]="'right'"
+      ></app-min-project>
+
       <div class="point blue-background"></div>
       <div class="point blue-background"></div>
+
       <div class="month blue-background"></div>
+      <app-min-project
+        [key]="'s1mm'"
+        [color]="'blue-border'"
+        [position]="'right'"
+      ></app-min-project>
       <div class="point blue-background"></div>
       <div class="year"></div>
       <div class="year"></div>
 
       <!-- Bachelor -->
-      <div class="point cyan-background"></div>
       <app-min-project [key]="'pan'" [color]="'cyan-border'" [position]="'right'"></app-min-project>
+      <div class="point cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
@@ -273,9 +264,11 @@
       <div class="month cyan-background"></div>
       <!-- 2022 -->
       <div class="month cyan-background"></div>
+      <app-min-project [key]="'tl'" [color]="'cyan-border'" [position]="'right'"></app-min-project>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
-      <div class="month cyan-background"></div>
+      <div class="point cyan-background"></div>
+
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="point cyan-background"></div>
@@ -284,11 +277,11 @@
         [color]="'cyan-border'"
         [position]="'right'"
       ></app-min-project>
-
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
-      <div class="month cyan-background"></div>
+      <div class="point cyan-background"></div>
+      <app-min-project [key]="'sv'" [color]="'cyan-border'" [position]="'right'"></app-min-project>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
       <div class="month cyan-background"></div>
