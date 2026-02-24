@@ -328,8 +328,6 @@ export const projects = new Map<string, ProjectInterface>([
       images: [{ url: '/2023-happy_birthday/mini.png' }],
     },
   ],
-
-  // @TODO: tlearning (text of porfolioV4 - ECAL)
   [
     'tl',
     {
@@ -346,8 +344,12 @@ export const projects = new Map<string, ProjectInterface>([
       ],
 
       description:
-        '<p>...</p><p>....</p> <p>Team: <ul><li>Stéphanie Baechler</li><li>Rémi Cohu</li><li>Me</li></ul></p>',
-      images: [{ url: '' }, { url: '' }, { url: '', text: 'Video' }],
+        '<p>The purpose of this application is to allow the organization of alpine events, both by guides and by participants.</p><p>We had to design two flows. An event can be created by a guide or participant. This will impact the price logic of the event (total price / prices per person). An event must be taken by a guide to be confirmed, and the participant must no longer have rights to write on it. To manage the complete flow, notifications have been implemented. Through it, the guide can also send information to the participant.</p> <p>Team: <ul><li>Stéphanie Baechler</li><li>Rémi Cohu</li><li>Me</li></ul></p>',
+      images: [
+        { url: '/2020-2023-bachelor/2022-tlearning/Picture1.png' },
+        { url: '/2020-2023-bachelor/2022-tlearning/Picture2.png' },
+        { url: '/2020-2023-bachelor/2022-tlearning/Picture3.png' },
+      ],
     },
   ],
   [
