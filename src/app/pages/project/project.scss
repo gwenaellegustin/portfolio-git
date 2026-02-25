@@ -6,6 +6,20 @@
     min-height: 80vh; //how fill page
     padding: 20px;
   }
+  .top-line {
+    display: flex;
+    align-items: center;
+    .line {
+      height: 10px;
+      flex-grow: 1;
+      margin: 0 -2px;
+    }
+    .point {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+  }
 
   .project-container {
     display: flex;
