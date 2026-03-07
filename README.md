@@ -1,5 +1,3 @@
-
-
 # PortfolioGit
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
@@ -47,12 +45,32 @@ git push
 
 ## Backlogs
 
+# Content
+
+- Drawings maturité
+- TM
+- Certificat SIR
+- Happy Birthday text
+- Photo VAST in context
+- Video modular Mindset
+- Me page
+- SDC
+
 # Bug
-- Image project crop
+
+- "This website" must be under vs tools
+
 # Feat
-- Update projects info (see todo in projects.service.ts)
-- Loader image
-- Job/school title: mobile display
-- Hover + click on job/school
-- Dynamic possibility to change color et context
-- Json for timeline info 
+
+- Mail contact
+- Hover on job/school (click on mobile)
+- Dark mode
+- Loader image/video
+
+# Refactor
+
+- Json for timeline info
+
+# UI
+
+- Summary bigger + 1 sentence
