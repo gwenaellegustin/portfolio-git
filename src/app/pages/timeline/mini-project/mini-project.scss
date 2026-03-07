@@ -1,3 +1,5 @@
+@import '../../../../variables';
+
 .project-container {
   display: flex;
   justify-content: space-evenly;
@@ -12,7 +14,6 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: space-evenly;
   }
   .subtitle {
     font-size: x-small;
@@ -39,15 +40,15 @@
 }
 
 .project-container.left {
-  margin: -20px calc(-20vw - 2 * 20px);
+  margin: -20px calc(-20vw - 2 * $month);
 }
 
 .project-container.hb {
-  margin: -20px calc(-20vw - 80px);
+  margin: -20px calc(-20vw - 4 * $month);
 }
 
 .project-container.right {
-  margin: -20px 20px;
+  margin: -20px $month;
 }
 
 //First semester mini project card
@@ -68,11 +69,11 @@
   }
 
   .project-container.left {
-    margin: -20px calc(-15vw - 30px);
+    margin: -20px calc(-15vw - $month - 10px);
   }
 
   .project-container.hb {
-    margin: -20px calc(-15vw - 70px);
+    margin: -20px calc(-15vw - 3 * $month - 10px);
   }
 }
 
@@ -82,10 +83,10 @@
   }
 
   .project-container.left {
-    margin: -20px calc(-30vw - 40px);
+    margin: -20px calc(-30vw - 2 * $month);
   }
 
   .project-container.hb {
-    margin: -20px calc(-30vw - 80px);
+    margin: -20px calc(-30vw - 4 * $month);
   }
 }

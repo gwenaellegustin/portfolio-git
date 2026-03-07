@@ -1,3 +1,6 @@
+@import '../../../variables';
+$racoon-face-size: $width-line * 4;
+
 :host {
   // ! TIMELINES and dots -------------------------------
   .timelines-area {
@@ -7,9 +10,9 @@
       display: flex;
       flex-direction: column;
       z-index: -1;
-      height: calc(240px * 12);
+      height: calc($year * 12);
       .year {
-        height: calc(240px + 1px); // year + 1 px of error ?
+        height: calc($year + 1px);
         width: 100vw;
         border-bottom: 1px solid;
         opacity: 0.5;
@@ -37,39 +40,39 @@
     align-items: center;
   }
   .year {
-    width: 10px;
-    height: 240px;
+    width: $width-line;
+    height: $year;
   }
   .month {
-    width: 10px;
-    height: 24px;
+    width: $width-line;
+    height: calc($month + 4px);
     margin: -2px 0;
   }
   .dots {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: $month/2;
     div {
-      width: 10px;
-      height: 10px;
+      width: $width-line;
+      height: $month/2;
     }
   }
   .dots.end {
-    margin-bottom: 10px;
+    margin-bottom: $month/2;
   }
   .dots.start {
-    margin-top: 10px;
+    margin-top: $month/2;
   }
   .point {
-    width: 20px;
-    height: 20px;
+    width: $month;
+    height: $month;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .racoon-face {
-    height: 40px;
+    height: $racoon-face-size;
   }
 
   // ! TITLES (job/school) -------------------------------
@@ -95,49 +98,49 @@
   }
 
   .title-container.PM {
-    margin-top: calc(20px * 3);
-    height: calc(20px * 11);
+    margin-top: calc($month * 3);
+    height: calc($month * 11);
   }
   .title-container.HES {
-    height: calc(25px * 21);
+    height: calc($month * 21);
   }
   .title-container.VDS2 {
-    height: calc(25px * 15);
+    height: calc($month * 15);
   }
   .title-container.VDS1 {
-    margin-top: calc(20px * 23);
-    height: calc(25px * 15);
+    margin-top: calc($month * 23);
+    height: calc($month * 15);
   }
   .title-container.DXD {
-    margin-top: calc(20px * 3);
-    height: calc(20px * 13);
+    margin-top: calc($month * 3);
+    height: calc($month * 13);
   }
   .title-container.Up4it {
-    height: calc(20px * 17);
+    height: calc($month * 17);
   }
   .title-container.BSC {
-    padding-top: calc(20px * 7);
-    height: calc(20px * 48);
+    padding-top: calc($month * 7);
+    height: calc($month * 48);
   }
   .title-container.SIR {
-    padding-top: calc(20px * 2);
-    height: calc(20px * 10);
+    padding-top: calc($month * 2);
+    height: calc($month * 10);
   }
   .title-container.FTI {
-    padding-top: calc(20px);
-    height: calc(20px * 4);
+    padding-top: calc($month);
+    height: calc($month * 4);
   }
   .title-container.EPFL {
-    padding-top: calc(20px);
-    height: calc(20px * 4);
+    padding-top: calc($month);
+    height: calc($month * 4);
   }
   .title-container.MAT {
-    padding-top: calc(20px * 2);
-    height: calc(20px * 8);
+    padding-top: calc($month * 2);
+    height: calc($month * 8);
   }
   .right.black {
     width: 20vw;
-    margin-left: 40px;
+    margin-left: $racoon-face-size;
     margin-top: -10px;
   }
 }
