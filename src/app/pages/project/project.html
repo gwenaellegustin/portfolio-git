@@ -9,18 +9,18 @@
       </div>
       <h1>{{ project.title }}</h1>
 
-      <h5>
+      <h3>
         <div class="subtitle-group">
-          @if (project.date){
-          <span>{{ project.date }}</span>
-          } @if (project.subtitle){
+          @if (project.subtitle){
           <span>{{ project.subtitle }}</span>
+          } @if (project.date){
+          <span>{{ project.date }}</span>
           }
         </div>
         @if (project.context){
         <span [ngClass]="color">{{ context }}</span>
         }
-      </h5>
+      </h3>
       <div class="buttons">
         @for(url of project.urls; track $index){
         <a href="{{ url.url }}" target="_blank" class="button">{{ url.text }}</a>

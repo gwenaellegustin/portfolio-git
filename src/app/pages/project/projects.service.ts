@@ -201,7 +201,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Modular Mindset',
       context: 'DXD',
-      date: '11.2025',
+      date: '17-21.11.2025',
       subtitle: 'Cavalry Workshop',
       description:
         '<p>During a week-long workshop, we were trained on Calvary by Antonin Waterkeyn. It was my first experience with animation.</p><p>We had to create animated covers for three albums (by the same artist or label) with vertical variations, as well as a horizontal format for a billboard. I chose to illustrate the work of Paul Sabin.</p>',
