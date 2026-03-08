@@ -31,10 +31,12 @@
       margin: 16px;
       img {
         height: 50%;
+      }
+      a {
         filter: grayscale(100%);
         opacity: 50%;
       }
-      img:hover {
+      a:hover {
         filter: grayscale(0);
         opacity: 100%;
       }

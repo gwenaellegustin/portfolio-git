@@ -43,34 +43,31 @@ ng build --configuration github
 git push
 ```
 
-## Backlogs
+## Backlogs (todo)
 
-# Content
+### Content
 
+- Me page
+- SDC
 - Drawings maturité
 - TM
 - Certificat SIR
 - Happy Birthday text
 - Photo VAST in context
 - Video modular Mindset
-- Me page
-- SDC
+- 1 sentence summary by projects
 
-# Bug
-
-- "This website" must be under vs tools
-
-# Feat
+### Feat
 
 - Mail contact
 - Hover on job/school (click on mobile)
 - Dark mode
 - Loader image/video
 
-# Refactor
+### Refactor
 
 - Json for timeline info
 
-# UI
+### Bug
 
-- Summary bigger + 1 sentence
+-

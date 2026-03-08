@@ -206,6 +206,7 @@ export const projects = new Map<string, ProjectInterface>([
       description:
         '<p>During a week-long workshop, we were trained on Calvary by Antonin Waterkeyn. It was my first experience with animation.</p><p>We had to create animated covers for three albums (by the same artist or label) with vertical variations, as well as a horizontal format for a billboard. I chose to illustrate the work of Paul Sabin.</p>',
       images: [
+        { url: '/2025-2027-master/s1-cavalry/install.png' },
         { url: '/2025-2027-master/s1-cavalry/3cover.png', text: 'Album sleeves' },
         {
           url: '/2025-2027-master/s1-cavalry/square-and-vertical-border.mp4',
