@@ -1,14 +1,17 @@
+@import '../../../variables';
+
 :host {
   .top-bar {
-    // position: sticky;
-    // top: 0;
-    // z-index: 1000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    height: 10vw;
-    max-height: 40px;
+    height: $app-bar-height;
     border-bottom: 1px solid;
 
     a {
@@ -19,26 +22,6 @@
         height: auto;
         max-height: 100%;
         max-width: 40vw;
-      }
-    }
-
-    .contact {
-      max-width: 40vw;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 16px;
-      img {
-        height: 50%;
-      }
-      a {
-        filter: grayscale(100%);
-        opacity: 50%;
-      }
-      a:hover {
-        filter: grayscale(0);
-        opacity: 100%;
       }
     }
   }

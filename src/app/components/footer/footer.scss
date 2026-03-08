@@ -1,8 +1,41 @@
+@import '../../../variables';
+
 :host {
   .footer-container {
     border-top: 1px solid;
-    p {
-      text-align: center;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: $month;
+    justify-content: center;
+    padding: $month;
+    text-align: center;
+
+    .ai-mention {
+      font-size: 0.75em;
+    }
+
+    .contact {
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: $month;
+
+      .button {
+        height: 100%;
+        filter: grayscale(100%);
+        opacity: 50%;
+        cursor: pointer;
+      }
+      .button:hover {
+        filter: grayscale(0);
+        opacity: 100%;
+      }
+
+      img {
+        height: 100%;
+      }
     }
   }
 }

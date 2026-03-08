@@ -59,7 +59,6 @@ git push
 
 ### Feat
 
-- Mail contact
 - Hover on job/school (click on mobile)
 - Dark mode
 - Loader image/video

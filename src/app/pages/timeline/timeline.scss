@@ -100,7 +100,8 @@ $racoon-face-size: $width-line * 4;
   .title-container {
     .sticky {
       background-color: rgba(255, 255, 255, 0.5);
-      padding: 10px 0;
+      padding: 0 0;
+      top: calc($app-bar-height + 30px);
     }
   }
 
