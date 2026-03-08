@@ -1,4 +1,10 @@
 <div class="container">
+  @for (project of projects; track $index) {
+  {{ project[0] }}
+  {{ project[1].context }}
+  {{ projectsService.getColor(project[1].context) + '-background' }}
+  <div class="point" [ngClass]="projectsService.getColor(project[0]) + '-background'"></div>
+  }
   <div class="project-container">
     <div class="text">
       <div class="line">

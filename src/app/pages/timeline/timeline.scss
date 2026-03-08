@@ -1,5 +1,6 @@
-@import '../../../variables';
-$racoon-face-size: $width-line * 4;
+@use '../../../variables' as var;
+
+$racoon-face-size: var.$width-line * 4;
 
 :host {
   // ! TIMELINES and dots -------------------------------
@@ -10,9 +11,9 @@ $racoon-face-size: $width-line * 4;
       display: flex;
       flex-direction: column;
       z-index: -1;
-      height: calc($year * 12);
+      height: calc(var.$year * 12);
       .year {
-        height: calc($year + 1px);
+        height: calc(var.$year + 1px);
         width: 100vw;
         border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
         opacity: 50%;
@@ -40,12 +41,12 @@ $racoon-face-size: $width-line * 4;
     align-items: center;
   }
   .year {
-    width: $width-line;
-    height: $year;
+    width: var.$width-line;
+    height: var.$year;
   }
   .month {
-    width: $width-line;
-    height: calc($month + 4px);
+    width: var.$width-line;
+    height: calc(var.$month + 4px);
     margin: -2px 0;
   }
   .start {
@@ -57,23 +58,23 @@ $racoon-face-size: $width-line * 4;
   .dots {
     display: flex;
     flex-direction: column;
-    gap: $month/2;
+    gap: calc(var.$month/2);
     div {
-      width: $width-line;
+      width: var.$width-line;
 
       border-radius: 50%;
-      height: $month/2;
+      height: calc(var.$month/2);
     }
   }
   .dots.end {
-    margin-bottom: $month/2;
+    margin-bottom: calc(var.$month/2);
   }
   .dots.start {
-    margin-top: $month/2;
+    margin-top: calc(var.$month/2);
   }
   .point {
-    width: $month;
-    height: $month;
+    width: var.$month;
+    height: var.$month;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -101,50 +102,50 @@ $racoon-face-size: $width-line * 4;
     .sticky {
       background-color: rgba(255, 255, 255, 0.5);
       padding: 0 0;
-      top: calc($app-bar-height + 30px);
+      top: calc(var.$app-bar-height + 30px);
     }
   }
 
   .title-container.PM {
-    margin-top: calc($month * 3);
-    height: calc($month * 11);
+    margin-top: calc(var.$month * 3);
+    height: calc(var.$month * 11);
   }
   .title-container.HES {
-    height: calc($month * 24);
+    height: calc(var.$month * 24);
   }
   .title-container.VDS2 {
-    height: calc($month * 22);
+    height: calc(var.$month * 22);
   }
   .title-container.VDS1 {
-    margin-top: calc($month * 21);
-    height: calc($month * 15);
+    margin-top: calc(var.$month * 21);
+    height: calc(var.$month * 15);
   }
   .title-container.DXD {
-    margin-top: calc($month * 3);
-    height: calc($month * 13);
+    margin-top: calc(var.$month * 3);
+    height: calc(var.$month * 13);
   }
   .title-container.Up4it {
-    height: calc($month * 17);
+    height: calc(var.$month * 17);
   }
   .title-container.BSC {
-    padding-top: calc($month * 7);
-    height: calc($month * 48);
+    padding-top: calc(var.$month * 7);
+    height: calc(var.$month * 48);
   }
   .title-container.SIR {
-    padding-top: calc($month * 2);
-    height: calc($month * 10);
+    padding-top: calc(var.$month * 2);
+    height: calc(var.$month * 10);
   }
   .title-container.FTI {
-    padding-top: calc($month);
-    height: calc($month * 4);
+    padding-top: calc(var.$month);
+    height: calc(var.$month * 4);
   }
   .title-container.EPFL {
-    padding-top: calc($month);
-    height: calc($month * 4);
+    padding-top: calc(var.$month);
+    height: calc(var.$month * 4);
   }
   .title-container.MAT {
-    padding-top: calc($month * 2);
-    height: calc($month * 8);
+    padding-top: calc(var.$month * 2);
+    height: calc(var.$month * 8);
   }
   .right.black {
     width: 20vw;

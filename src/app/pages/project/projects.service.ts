@@ -13,6 +13,12 @@ export class ProjectsService {
     }
     return { context: key, color: 'black' };
   }
+
+  getColor(key: string) {
+    console.log(key);
+    console.log(this.getContext(key));
+    return this.getContext(key).color;
+  }
 }
 
 export class Url {
@@ -22,7 +28,7 @@ export class Url {
 
 export class ProjectInterface {
   title: string = '';
-  context?: string = '';
+  context: string = '';
   date?: string = '';
   subtitle?: string = '';
   urls?: Url[] = [];
@@ -111,7 +117,6 @@ export const projects = new Map<string, ProjectInterface>([
       context: 'On my free time',
       date: '02.2026',
       subtitle: 'Angular 21',
-
       description:
         'I wanted to create a website that would allow visitors to view projects in their context (school, work) and in chronological order. The principle of git, used in development, was perfect for this. So I used it as inspiration for this portfolio. The page with the timelines was created from scratch using HTML and CSS.',
       images: [{ url: '/gg.png' }],

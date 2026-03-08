@@ -1,10 +1,18 @@
+@use '../../../variables' as var;
+
 :host {
   .container {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    min-height: 80vh; //how fill page
+    // min-height: 80vh; //how fill page
     padding: 20px;
+  }
+
+  .point {
+    width: var.$month;
+    height: var.$month;
+    border-radius: 50%;
   }
 
   .project-container {

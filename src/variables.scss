@@ -1,4 +1,4 @@
 $month: 16px;
 $year: $month * 12;
-$width-line: $month/2;
+$width-line: calc($month/2);
 $app-bar-height: min(10vw, 30px);
