@@ -167,11 +167,11 @@ export const projects = new Map<string, ProjectInterface>([
       urls: [
         {
           url: 'https://www.figma.com/proto/HRBdl3imYbH3SjBYAsWTw6/Pixel-Perfect---Gwenaelle-Gustin---Papiliorama?page-id=62%3A4554&node-id=4211-63407&viewport=241%2C235%2C0.02&t=IwCMsfXynocl9R8b-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4211%3A63407',
-          text: 'My design (Figma prototype)',
+          text: 'My design (Figma)',
         },
         {
           url: 'https://www.figma.com/proto/XAyeeEAJ1YghNGJWoiQuH0/V2-reproduce-website?page-id=2032%3A2584&node-id=2175-2602&p=f&viewport=118%2C319%2C0.04&t=91UQww6XdO1OfOfO-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2175%3A2602',
-          text: 'Reproduction (Figma prototype)',
+          text: 'Reproduction (Figma)',
         },
       ],
       description:
@@ -181,7 +181,7 @@ export const projects = new Map<string, ProjectInterface>([
         { url: '/2025-2027-master/s1-papiliorama/demo.mp4', text: 'Video demo' },
         {
           url: '/2025-2027-master/s1-papiliorama/previous.png',
-          text: 'Analyzed website website',
+          text: 'Analyzed website',
         },
         {
           url: '/2025-2027-master/s1-papiliorama/reproduction-2pages.png',
@@ -207,12 +207,12 @@ export const projects = new Map<string, ProjectInterface>([
         '<p>During a week-long workshop, we were trained on Calvary by Antonin Waterkeyn. It was my first experience with animation.</p><p>We had to create animated covers for three albums (by the same artist or label) with vertical variations, as well as a horizontal format for a billboard. I chose to illustrate the work of Paul Sabin.</p>',
       images: [
         { url: '/2025-2027-master/s1-cavalry/install.png' },
-        { url: '/2025-2027-master/s1-cavalry/3cover.png', text: 'Album sleeves' },
         {
           url: '/2025-2027-master/s1-cavalry/square-and-vertical-border.mp4',
           text: 'Spotify like animation',
         },
         { url: '/2025-2027-master/s1-cavalry/horizontal blue.mp4', text: 'Animated billboard' },
+        { url: '/2025-2027-master/s1-cavalry/3cover.png', text: 'Album sleeves' },
       ],
     },
   ],
