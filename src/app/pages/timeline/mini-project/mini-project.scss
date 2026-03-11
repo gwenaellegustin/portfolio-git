@@ -40,20 +40,11 @@
 }
 
 .project-container.left {
-  margin: -20px calc(-20vw - 2 * $month);
-}
-
-.project-container.hb {
-  margin: -20px calc(-20vw - 4 * $month);
+  margin: -$month calc(-20vw - 2.5 * $month);
 }
 
 .project-container.right {
-  margin: -20px $month;
-}
-
-//First semester mini project card
-.blue-border .text .subtitle ul li {
-  list-style-type: disc;
+  margin: -$month $month;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -69,11 +60,7 @@
   }
 
   .project-container.left {
-    margin: -20px calc(-15vw - $month - 10px);
-  }
-
-  .project-container.hb {
-    margin: -20px calc(-15vw - 3 * $month - 10px);
+    margin: -$month calc(-15vw - $month - 10px);
   }
 }
 
@@ -83,10 +70,6 @@
   }
 
   .project-container.left {
-    margin: -20px calc(-30vw - 2 * $month);
-  }
-
-  .project-container.hb {
-    margin: -20px calc(-30vw - 4 * $month);
+    margin: -$month calc(-30vw - 2 * $month);
   }
 }

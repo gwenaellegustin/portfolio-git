@@ -14,8 +14,8 @@ $racoon-face-size: $width-line * 4;
       .year {
         height: calc($year + 1px);
         width: 100vw;
-        border-bottom: 1px solid;
-        opacity: 0.5;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
+        opacity: 50%;
         text-align: end; // Right align
         align-self: flex-end;
         position: relative;
@@ -48,12 +48,20 @@ $racoon-face-size: $width-line * 4;
     height: calc($month + 4px);
     margin: -2px 0;
   }
+  .start {
+    border-radius: 0 0 10px 10px;
+  }
+  .end {
+    border-radius: 10px 10px 0 0;
+  }
   .dots {
     display: flex;
     flex-direction: column;
     gap: $month/2;
     div {
       width: $width-line;
+
+      border-radius: 50%;
       height: $month/2;
     }
   }
@@ -79,7 +87,6 @@ $racoon-face-size: $width-line * 4;
   .titles {
     padding: 0 25px;
     max-width: 15vw;
-    opacity: 0.6;
   }
   @media only screen and (max-width: 600px) {
     .titles {
@@ -92,8 +99,9 @@ $racoon-face-size: $width-line * 4;
   }
   .title-container {
     .sticky {
-      background-color: white;
-      padding: 10px 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 0 0;
+      top: calc($app-bar-height + 30px);
     }
   }
 
@@ -102,13 +110,13 @@ $racoon-face-size: $width-line * 4;
     height: calc($month * 11);
   }
   .title-container.HES {
-    height: calc($month * 21);
+    height: calc($month * 24);
   }
   .title-container.VDS2 {
-    height: calc($month * 15);
+    height: calc($month * 22);
   }
   .title-container.VDS1 {
-    margin-top: calc($month * 23);
+    margin-top: calc($month * 21);
     height: calc($month * 15);
   }
   .title-container.DXD {

@@ -3,6 +3,7 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
+  padding: 0;
   // font-family: 'tosh-a';
   font-family: numans;
 }
@@ -25,7 +26,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
   line-height: 1.2em;
@@ -44,39 +46,6 @@ ul {
 .sticky {
   position: sticky;
   top: 0;
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-.tooltip-text {
-  visibility: hidden; /* Hidden by default */
-  text-align: center;
-  padding: 0 6px;
-  margin-left: 60px;
-  position: absolute;
-  z-index: 1; /* Ensure tooltip is displayed above content */
-}
-.tooltip:hover .tooltip-text {
-  visibility: visible;
-}
-
-.buttons {
-  display: flex;
-  gap: 5px;
-}
-.button {
-  padding: 3px 5px;
-  border: 1px solid;
-  border-radius: 10px;
-}
-.button:hover {
-  color: white;
-  background-color: black;
-}
-.button:active {
-  filter: brightness(90%);
 }
 
 // ! COLORS -------------------------------
@@ -112,10 +81,10 @@ ul {
 }
 // PM
 .pink {
-  color: #ce5e5d;
+  color: #DB66A7// #ce5e5d;
 }
 .pink-background {
-  background-color: #ce5e5d;
+  background-color: #db66a7;
 }
 // HES
 .cyan {
