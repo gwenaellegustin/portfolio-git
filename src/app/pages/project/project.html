@@ -3,7 +3,7 @@
     <div class="text">
       <div class="line">
         <div class="back tooltip" onclick="history.back()">
-          <img src="./logo/GG_Racoon_Body.png" />
+          <img src="./logo/GG_Racoon_Body.gif" />
           <span class="tooltip-text">Back</span>
         </div>
       </div>
@@ -33,7 +33,7 @@
     <div class="images">
       @for (image of project.images; track $index) { @if(image.url !== ""){
       <div class="image">
-        @if(image.url.endsWith(".mp4")){
+        @if(image.url.endsWith(".mp4") || image.url.endsWith(".mov") ){
         <span>{{ image.text }}</span>
         <video autoplay loop controls>
           <source [src]="image.url" type="video/mp4" />

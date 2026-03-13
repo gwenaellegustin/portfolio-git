@@ -206,13 +206,14 @@ export const projects = new Map<string, ProjectInterface>([
       description:
         '<p>During a week-long workshop, we were trained on Calvary by Antonin Waterkeyn. It was my first experience with animation.</p><p>We had to create animated covers for three albums (by the same artist or label) with vertical variations, as well as a horizontal format for a billboard. I chose to illustrate the work of Paul Sabin.</p>',
       images: [
-        { url: '/2025-2027-master/s1-cavalry/install.png' },
+        { url: '/2025-2027-master/s1-cavalry/install2.png' },
         {
           url: '/2025-2027-master/s1-cavalry/square-and-vertical-border.mp4',
           text: 'Spotify like animation',
         },
         { url: '/2025-2027-master/s1-cavalry/horizontal blue.mp4', text: 'Animated billboard' },
         { url: '/2025-2027-master/s1-cavalry/3cover.png', text: 'Album sleeves' },
+        { url: '/2025-2027-master/s1-cavalry/install.mov', text: 'Interaction for the workshop' },
       ],
     },
   ],
@@ -382,7 +383,6 @@ export const projects = new Map<string, ProjectInterface>([
       date: '02.2022',
       subtitle: 'Java Android',
       urls: [
-        //@TODO: Private
         // {
         //   url: 'https://github.com/asytahFIG/6441_MobileDvlp_SwissVia',
         //   text: 'Repository',
@@ -413,8 +413,7 @@ export const projects = new Map<string, ProjectInterface>([
         },
       ],
       description:
-        '<p>As part of our JavaScript course, we had to create a game within an HTML and CSS website. My team made a game with levels featuring a drop of water that has to escape, whose life influences its size and speed. Each level was designed to bring a new challenge to the player.</p><p>I brought the idea of the gameplay, created the designs and took part in the coding.</p><p>Team: <ul><li>Marques Antony : Git manager and architect</li><li>Baechler Stéphanie : content and layout</li><li>Me: concept and design </li></ul> </p>',
-      // @TODO: text of porfolioV4 - ECAL
+        '<b>As part of our JavaScript course, we had to create a game within an HTML and CSS website. My team made a game with levels featuring a drop of water that has to escape, whose life influences its size and speed. Each level was designed to bring a new challenge to the player.</b><p>I brought the idea of the gameplay, created the designs and took part in the coding.</p><p>Team: <ul><li>Marques Antony : Git manager and architect</li><li>Baechler Stéphanie : content and layout</li><li>Me: concept and design </li></ul> </p><p>Menu: Drag and drop your Droppy in the sink to start.</p> <p>Level 1: The soaps reverse the commands and the hands remove a life.</p> <p>Level 2: Small flakes slow down and large flakes take a life.</p> <p>Level 3: Small fires take away visibility, large ones take a life.</p> <p>Level 4: In the maze, the temperature rises continuously and removes life.</p> <p>Level 5: The leaves turn into flowers if they are watered and take a life to Droppy. The snails just take a life.</p> <p>Level 6: You have to hit the crab 6 times with drops to kill it. Once dead, the crab barrier to the sea opens.</p> <p>At the end, you can save your score and see scores of others</p>',
       images: [
         { url: '/2020-2023-bachelor/2021-droppy/mini.png' },
         { url: '/2020-2023-bachelor/2021-droppy/droppy_short.mp4', text: 'Video demo' },
