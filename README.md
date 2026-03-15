@@ -47,18 +47,18 @@ git push
 
 ### Content
 
-- Me page
 - SDC
-- Drawings maturité
+- Drawing maturité
 - TM
 - Certificat SIR
-- Happy Birthday text
+- Happy Birthday images
 - Photo VAST in context
-- Video modular Mindset
 - 1 sentence summary by projects
+- College + Ortega Schule
 
 ### Feat
 
+- Breadcrum
 - Hover on job/school (click on mobile)
 - Dark mode
 - Loader image/video
