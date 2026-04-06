@@ -1,20 +1,32 @@
 <div class="footer-container">
   <div class="contact">
-    <span class="material-symbols-outlined button" (click)="scrollToTop()">north</span>
+    <a class="button" href="/"><img src="./logo/LogoMini.png" matTooltip="Home" /></a>
 
-    <a href="mailto:contact@gwengustin.ch" class="button"
-      ><span class="material-symbols-outlined"> mail </span></a
-    >
+    <span class="button" (click)="scrollToTop()" matTooltip="To top"
+      ><img src="./vertical_align_top.png"
+    /></span>
 
-    <a class="button" href="https://www.linkedin.com/in/gwenaelle-gustin/" target="_blank"
+    <a class="button" href="mailto:contact@gwengustin.ch" matTooltip="Contact by mail"
+      ><img src="./send.png"
+    /></a>
+
+    <a
+      class="button"
+      href="https://www.linkedin.com/in/gwenaelle-gustin/"
+      target="_blank"
+      matTooltip="LinkedIn"
       ><img src="./LinkedIn_icon.svg"
     /></a>
 
-    <a class="button" href="https://github.com/gwenaellegustin" target="_blank"
+    <a class="button" href="https://github.com/gwenaellegustin" target="_blank" matTooltip="GitHub"
       ><img src="./Github_logo.svg"
     /></a>
 
-    <a class="button" href="https://www.instagram.com/gwengustin/" target="_blank"
+    <a
+      class="button"
+      href="https://www.instagram.com/gwengustin/"
+      target="_blank"
+      matTooltip="Instagram"
       ><img src="./Instagram_logo.svg"
     /></a>
   </div>

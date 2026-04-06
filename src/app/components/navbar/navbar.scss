@@ -12,13 +12,21 @@
     justify-content: space-between;
     padding: 10px;
     height: $app-bar-height;
-    border-bottom: 1px solid;
+    //border-bottom: 1px solid;
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      height: 75%;
+    }
 
     a {
       height: 100%;
       display: flex;
       align-items: center;
-      .logo {
+      .logo,
+      img {
         height: auto;
         max-height: 100%;
         max-width: 40vw;
