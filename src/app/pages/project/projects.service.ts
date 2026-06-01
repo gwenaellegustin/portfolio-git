@@ -260,7 +260,7 @@ export const projects = new Map<string, ProjectInterface>([
   [
     'scg',
     {
-      title: 'Swiss Cyber grid',
+      title: 'Swiss Cyber Grid',
       context: 'HES',
       date: '12.2024',
       subtitle: 'Angular 18',
