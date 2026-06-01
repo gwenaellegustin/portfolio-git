@@ -20,7 +20,7 @@
   }
 
   .img {
-    display: flex;
+    display: none;
     flex: 1;
     overflow: hidden;
     align-items: center;
@@ -34,6 +34,9 @@
 .project-container:hover {
   z-index: 100;
   filter: grayscale(0);
+  .img {
+    display: flex;
+  }
 }
 .project-container:active {
   filter: brightness(90%);
