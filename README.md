@@ -47,6 +47,8 @@ git push
 
 ### Content
 
+- Bio
+- Semestre 2 DXD project
 - SDC
 - Drawing maturité
 - TM
@@ -58,8 +60,11 @@ git push
 
 ### Feat
 
+- email: copy and not open mail software
+- Improve hierarchy of text
 - Breadcrum
 - Hover on job/school (click on mobile)
+- Title info on mobile
 - Dark mode
 - Loader image/video
 - robot.txt / indexation

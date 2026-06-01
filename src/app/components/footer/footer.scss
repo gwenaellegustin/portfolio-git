@@ -6,7 +6,7 @@
     padding: 0 10px;
     display: flex;
     flex-direction: column;
-    gap: $month;
+    gap: $month / 2;
     justify-content: center;
     padding: $month;
     text-align: center;
@@ -23,8 +23,11 @@
       }
     }
 
-    .ai-mention {
+    .small-mention {
       font-size: 0.75em;
+    }
+    a {
+      text-decoration: underline;
     }
   }
 }
