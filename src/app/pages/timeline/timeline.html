@@ -6,7 +6,7 @@
     <div class="column">Column2</div>
 
     <div class="column">
-      @for (timeline of contexts | keyvalue; track timeline.key) {
+      @for (timeline of contexts | keyvalue; track $index) {
         <div class="timeline">
           @for (item of dateMap | keyvalue; track item.key) {
             @if (isBetweenTimeline(item.value, timeline.value)) {

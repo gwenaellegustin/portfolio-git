@@ -41,18 +41,18 @@ export class context {
 
 export const contexts = new Map<string, context>([
   [
-    'MAIN',
+    '1-Job',
     {
-      context: '',
-      color: 'black',
-      yearStart: 1996,
-      monthStart: 6,
-      yearEnd: 0,
-      monthEnd: 0,
+      context: 'Research assistant, HES-SO Valais Wallis',
+      color: 'cyan',
+      yearStart: 2023,
+      monthStart: 10,
+      yearEnd: 2025,
+      monthEnd: 9,
     },
   ],
   [
-    'PM',
+    '2-Job',
     {
       context: 'IT and administration, Pentamedia Sàrl',
       color: 'pink',
@@ -63,7 +63,19 @@ export const contexts = new Map<string, context>([
     },
   ],
   [
-    'UP4',
+    '3-Main',
+    {
+      context: '',
+      color: 'black',
+      yearStart: 1996,
+      monthStart: 6,
+      yearEnd: 0,
+      monthEnd: 0,
+    },
+  ],
+
+  [
+    '4-Extra',
     {
       context: 'Team member, Up4it',
       color: 'green',
@@ -74,7 +86,7 @@ export const contexts = new Map<string, context>([
     },
   ],
   [
-    'DXD',
+    '5School',
     {
       context: 'Master Digital Experience Design, ECAL',
       color: 'blue',
@@ -84,17 +96,7 @@ export const contexts = new Map<string, context>([
       monthEnd: 0,
     },
   ],
-  [
-    'HES',
-    {
-      context: 'Research assistant, HES-SO Valais Wallis',
-      color: 'cyan',
-      yearStart: 2023,
-      monthStart: 10,
-      yearEnd: 2025,
-      monthEnd: 9,
-    },
-  ],
+
   // [
   //   'BSC',
   //   {
