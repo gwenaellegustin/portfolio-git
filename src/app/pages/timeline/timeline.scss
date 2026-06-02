@@ -3,7 +3,7 @@ $racoon-face-size: $width-line * 4;
 
 :host {
   // ! TIMELINES and dots -------------------------------
-  .timelines-area {
+  .container {
     display: flex;
 
     .background {
@@ -26,129 +26,16 @@ $racoon-face-size: $width-line * 4;
         }
       }
     }
-    .timelines {
-      margin: 0 auto;
+    .columns {
       display: flex;
+      gap: $space-biggest;
+      width: 100svw;
+      margin: 0 $space-biggest;
       justify-content: center;
-      gap: auto;
-      width: 100vw;
+      .column {
+        flex: 1;
+        background-color: lightblue;
+      }
     }
-  }
-  .timeline {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .year {
-    width: $width-line;
-    height: $year;
-  }
-  .month {
-    width: $width-line;
-    height: calc($month + 4px);
-    margin: -2px 0;
-  }
-  .start {
-    border-radius: 0 0 10px 10px;
-  }
-  .end {
-    border-radius: 10px 10px 0 0;
-  }
-  .dots {
-    display: flex;
-    flex-direction: column;
-    gap: calc($month/2);
-    div {
-      width: $width-line;
-
-      border-radius: 50%;
-      height: calc($month/2);
-    }
-  }
-  .dots.end {
-    margin-bottom: calc($month/2);
-  }
-  .dots.start {
-    margin-top: calc($month/2);
-  }
-  .point {
-    width: $month;
-    height: $month;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .racoon-face {
-    height: $racoon-face-size;
-  }
-
-  // ! TITLES (job/school) -------------------------------
-  .titles {
-    padding: 0 $space;
-    max-width: 15vw;
-  }
-  @media only screen and (max-width: 600px) {
-    .titles {
-      display: none;
-    }
-  }
-  .titles-right {
-    text-align: right;
-    margin-right: 40px;
-  }
-  .title-container {
-    .sticky {
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 0 0;
-      top: calc($app-bar-height + 30px);
-    }
-  }
-
-  .title-container.PM {
-    margin-top: calc($month * 3);
-    height: calc($month * 11);
-  }
-  .title-container.HES {
-    height: calc($month * 24);
-  }
-  .title-container.VDS2 {
-    height: calc($month * 22);
-  }
-  .title-container.VDS1 {
-    margin-top: calc($month * 21);
-    height: calc($month * 15);
-  }
-  .title-container.DXD {
-    margin-top: calc($month * 3);
-    height: calc($month * 13);
-  }
-  .title-container.Up4it {
-    height: calc($month * 17);
-  }
-  .title-container.BSC {
-    padding-top: calc($month * 7);
-    height: calc($month * 48);
-  }
-  .title-container.SIR {
-    padding-top: calc($month * 2);
-    height: calc($month * 10);
-  }
-  .title-container.FTI {
-    padding-top: calc($month);
-    height: calc($month * 4);
-  }
-  .title-container.EPFL {
-    padding-top: calc($month);
-    height: calc($month * 4);
-  }
-  .title-container.MAT {
-    padding-top: calc($month * 2);
-    height: calc($month * 8);
-  }
-  .right.black {
-    width: 20vw;
-    margin-left: $racoon-face-size;
-    margin-top: -10px;
   }
 }
