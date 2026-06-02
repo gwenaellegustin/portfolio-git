@@ -1,24 +1,55 @@
 <div class="container">
   <div class="columns">
-    <div class="column">Column1</div>
+    <div class="column">
+      Column1<br />2<br />3<br />4<br />5<br />6<br />8<br />9<br />10<br />11<br />12
+    </div>
     <div class="column">Column2</div>
-    <div class="column">Column3</div>
+
+    <div class="column">
+      @for (timeline of contexts | keyvalue; track timeline.key) {
+        <div class="timeline">
+          @for (item of dateMap | keyvalue; track item.key) {
+            @if (isBetweenTimeline(item.value, timeline.value)) {
+              <div
+                [id]="timeline.key + item.key"
+                class="month"
+                [ngClass]="timeline.value.color + '-background'"
+              ></div>
+            } @else if (item.key >= 13 && item.key <= 24) {
+              <!-- year with no date "..." -->
+              @if (timeline.key == 'MAIN') {
+                <div
+                  class="dot"
+                  [id]="timeline.key + item.key"
+                  [ngClass]="timeline.value.color + '-background'"
+                ></div>
+              } @else {
+                <div [id]="timeline.key + item.key" class="month"></div>
+              }
+            } @else {
+              <!-- invisible -->
+              <div [id]="timeline.key + item.key" class="month"></div>
+            }
+          }
+          @if (timeline.value.yearEnd == 0 && timeline.value.monthEnd == 0) {
+            <div class="dot" [ngClass]="timeline.value.color + '-background'"></div>
+            <div class="dot" [ngClass]="timeline.value.color + '-background'"></div>
+            <div class="dot" [ngClass]="timeline.value.color + '-background'"></div>
+          }
+        </div>
+      }
+    </div>
     <div class="column">Column4</div>
     <div class="column">Column5</div>
   </div>
 
   <div class="background no-size">
-    <div class="year"><div class="text">2027</div></div>
-    <div class="year"><div class="text">2026</div></div>
-    <div class="year"><div class="text">2025</div></div>
-    <div class="year"><div class="text">2024</div></div>
-    <div class="year"><div class="text">2023</div></div>
-    <div class="year"><div class="text">2022</div></div>
-    <div class="year"><div class="text">2021</div></div>
-    <div class="year"><div class="text">2020</div></div>
-    <div class="year"><div class="text">2019</div></div>
-    <div class="year"><div class="text">2018</div></div>
-    <div class="year"><div class="text">2017</div></div>
+    @for (year of years | keyvalue; track year) {
+      <div class="year">
+        <div class="text">{{ year.value }}</div>
+      </div>
+    }
+
     <div class="year">
       <div class="text">...</div>
     </div>

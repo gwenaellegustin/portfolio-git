@@ -1,43 +1,71 @@
+import { A11yModule } from '@angular/cdk/a11y';
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ProjectsService } from '../project/projects.service';
+import { context, contexts, ProjectsService } from '../project/projects.service';
 import { MiniProject } from './mini-project/mini-project';
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.html',
   styleUrl: './timeline.scss',
-  imports: [MiniProject],
+  imports: [CommonModule, MiniProject, A11yModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Timeline {
   readonly projectsService = inject(ProjectsService);
-  constructor() {}
-}
+  contexts = contexts;
 
-export class TimeLineInterface {
-  title: string = '';
-  yearStart: number = 0;
-  monthStart: number = 0;
-  yearEnd: number = 0;
-  monthEnd: number = 0;
-}
-export const timeline = new Map<string, TimeLineInterface>([
-  [
-    'MAIN',
-    {
-      title: 'main',
-      yearStart: 1996,
-      monthStart: 6,
-      yearEnd: 2026,
-      monthEnd: 6,
-    },
-  ],
-]);
+  currentYear = new Date().getFullYear();
+  currentMonth = new Date().getMonth();
+  years = Array.from({ length: this.currentYear - 2017 + 1 }, (_, i) => this.currentYear - i);
+  yearsAndStart = [...this.years].reverse();
+  dateMap = new Map<number, string>();
 
-function monthDiff(y1: number, m1: number, y2: number, m2: number) {
-  var months;
-  months = (y2 - y1) * 12;
-  months -= m1;
-  months += m2;
-  return months <= 0 ? 0 : months;
+  constructor() {
+    this.fillDateMap();
+  }
+
+  // Create a map between position from the bottom to date like 01.2026
+  private fillDateMap() {
+    let index = 1;
+    const add = (value: string) => this.dateMap.set(index++, value);
+
+    for (let month = 1; month <= 12; month++) {
+      add(`${month.toString().padStart(2, '0')}.1996`);
+    }
+
+    for (let emptyIndex = 13; emptyIndex <= 24; emptyIndex++) {
+      add('');
+    }
+
+    for (const year of this.yearsAndStart) {
+      const lastMonth = year === this.currentYear ? this.currentMonth : 12;
+      for (let month = 1; month <= lastMonth; month++) {
+        add(`${month.toString().padStart(2, '0')}.${year}`);
+      }
+    }
+  }
+
+  isBetweenTimeline(dateKey: string, value: context): boolean {
+    let yearEnd = value.yearEnd;
+    let montEnd = value.monthEnd;
+    if (value.yearEnd == 0 && value.monthEnd == 0) {
+      const d = new Date();
+      yearEnd = d.getFullYear();
+      montEnd = d.getMonth() + 1;
+    }
+
+    const date = this.dateKeyToNumber(dateKey);
+    const start = value.yearStart * 100 + value.monthStart;
+    const end = yearEnd * 100 + montEnd;
+    return date >= start && date <= end;
+  }
+
+  private dateKeyToNumber(key: string): number {
+    if (!key) {
+      return 0;
+    }
+    const [month, year] = key.split('.').map(Number);
+    return year * 100 + month;
+  }
 }

@@ -7,7 +7,7 @@ $space-biggest: 64px;
 $space-giant: 72px;
 $space-gargantuan: 128px;
 
-$month: $space;
+$month: 18px; // line height
 $year: calc($month * 12);
 $width-line: calc($month/2);
 $app-bar-height: min(10vw, $space-bigger);

@@ -30,17 +30,47 @@ export class ProjectInterface {
   images: Url[] = [];
 }
 
-export class contextAndColor {
+export class context {
   context: string = '';
   color: string = '';
+  yearStart: number = 0;
+  monthStart: number = 0;
+  yearEnd: number = 0;
+  monthEnd: number = 0;
 }
 
-export const contexts = new Map<string, contextAndColor>([
+export const contexts = new Map<string, context>([
+  [
+    'MAIN',
+    {
+      context: '',
+      color: 'black',
+      yearStart: 1996,
+      monthStart: 6,
+      yearEnd: 0,
+      monthEnd: 0,
+    },
+  ],
+  [
+    'PM',
+    {
+      context: 'IT and administration, Pentamedia Sàrl',
+      color: 'pink',
+      yearStart: 2020,
+      monthStart: 11,
+      yearEnd: 0,
+      monthEnd: 0,
+    },
+  ],
   [
     'UP4',
     {
       context: 'Team member, Up4it',
       color: 'green',
+      yearStart: 2024,
+      monthStart: 4,
+      yearEnd: 0,
+      monthEnd: 0,
     },
   ],
   [
@@ -48,6 +78,10 @@ export const contexts = new Map<string, contextAndColor>([
     {
       context: 'Master Digital Experience Design, ECAL',
       color: 'blue',
+      yearStart: 2025,
+      monthStart: 9,
+      yearEnd: 0,
+      monthEnd: 0,
     },
   ],
   [
@@ -55,52 +89,79 @@ export const contexts = new Map<string, contextAndColor>([
     {
       context: 'Research assistant, HES-SO Valais Wallis',
       color: 'cyan',
+      yearStart: 2023,
+      monthStart: 10,
+      yearEnd: 2025,
+      monthEnd: 9,
     },
   ],
-  [
-    'BSC',
-    {
-      context: 'Bachelor Business IT, HES-SO',
-      color: 'cyan',
-    },
-  ],
+  // [
+  //   'BSC',
+  //   {
+  //     context: 'Bachelor Business IT, HES-SO',
+  //     color: 'cyan',
+  //     yearStart: 0,
+  //     monthStart: 0,
+  //     yearEnd: 0,
+  //     monthEnd: 0,
+  //   },
+  // ],
   // @TODO: SDC (text of porfolioV4 - ECAL)
-  [
-    'VDS',
-    {
-      context: 'IT assistant, Ville de Sion',
-      color: 'red',
-    },
-  ],
-  [
-    'SIR',
-    {
-      context: 'Certification SIR, HES-SO',
-      color: 'purple',
-    },
-  ],
-  [
-    'FTI',
-    {
-      context: 'Fitness trainer, FITSPRO',
-      color: 'beige',
-    },
-  ],
-  [
-    'EPFL',
-    {
-      context: 'Bsc Computer Science (disenrolled), EPFL',
-      color: 'beige',
-    },
-  ],
-
-  [
-    'MAT',
-    {
-      context: 'Maturité gymnasiale',
-      color: 'orange',
-    },
-  ],
+  // [
+  //   'VDS',
+  //   {
+  //     context: 'IT assistant, Ville de Sion',
+  //     color: 'red',
+  //     yearStart: 0,
+  //     monthStart: 0,
+  //     yearEnd: 0,
+  //     monthEnd: 0,
+  //   },
+  // ],
+  // [
+  //   'SIR',
+  //   {
+  //     context: 'Certification SIR, HES-SO',
+  //     color: 'purple',
+  //     yearStart: 0,
+  //     monthStart: 0,
+  //     yearEnd: 0,
+  //     monthEnd: 0,
+  //   },
+  // ],
+  // [
+  //   'FTI',
+  //   {
+  //     context: 'Fitness trainer, FITSPRO',
+  //     color: 'beige',
+  //     yearStart: 0,
+  //     monthStart: 0,
+  //     yearEnd: 0,
+  //     monthEnd: 0,
+  //   },
+  // ],
+  // [
+  //   'EPFL',
+  //   {
+  //     context: 'Bsc Computer Science (disenrolled), EPFL',
+  //     color: 'beige',
+  //     yearStart: 0,
+  //     monthStart: 0,
+  //     yearEnd: 0,
+  //     monthEnd: 0,
+  //   },
+  // ],
+  // [
+  //   'MAT',
+  //   {
+  //     context: 'Maturité gymnasiale',
+  //     color: 'orange',
+  //     yearStart: 0,
+  //     monthStart: 0,
+  //     yearEnd: 0,
+  //     monthEnd: 0,
+  //   },
+  // ],
 ]);
 
 export const projects = new Map<string, ProjectInterface>([

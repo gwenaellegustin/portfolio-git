@@ -5,6 +5,37 @@ $racoon-face-size: $width-line * 4;
   // ! TIMELINES and dots -------------------------------
   .container {
     display: flex;
+    .columns {
+      display: flex;
+      gap: $space-biggest;
+      width: 100svw;
+      margin: 0 $space-biggest;
+      justify-content: center;
+      .column {
+        flex: 1;
+        background-color: lightblue;
+        display: flex;
+        justify-content: center;
+        gap: $width-line;
+      }
+    }
+
+    .timeline {
+      flex: 1;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .month {
+      width: $width-line;
+      height: $month;
+    }
+    .dot {
+      margin: calc($month/4) 0;
+      height: $month/2;
+      width: $month/2;
+      // border-radius: $month;
+    }
 
     .background {
       display: flex;
@@ -12,7 +43,7 @@ $racoon-face-size: $width-line * 4;
       z-index: -1; // Background
       height: calc($year * 12);
       .year {
-        height: calc($year + 1px);
+        height: calc($year);
         width: 100vw;
         border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
         opacity: 50%;
@@ -24,17 +55,6 @@ $racoon-face-size: $width-line * 4;
           bottom: 0;
           right: $space;
         }
-      }
-    }
-    .columns {
-      display: flex;
-      gap: $space-biggest;
-      width: 100svw;
-      margin: 0 $space-biggest;
-      justify-content: center;
-      .column {
-        flex: 1;
-        background-color: lightblue;
       }
     }
   }
