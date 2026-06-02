@@ -1,11 +1,8 @@
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin will define CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
-// Learn more about theming and how to use it for your application's
-// custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+
 @import './variables';
 
+// MATERIAL (for tootlip)
 html {
   //height: 100%;
   @include mat.theme(
@@ -19,7 +16,6 @@ html {
     )
   );
 }
-
 body {
   // Default the application to a light color theme. This can be changed to
   // `dark` to enable the dark color theme, or to `light dark` to defer to the
@@ -29,23 +25,25 @@ body {
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
-  background-color: white; //var(--mat-sys-surface);
-  color: black; //var(--mat-sys-on-surface);
+  background-color: $white; //var(--mat-sys-surface);
+  color: $black; //var(--mat-sys-on-surface);
   //font: var(--mat-sys-body-medium);
 
   // Reset the user agent margin.
   //margin: 0;
   //height: 100%;
 }
+// END OF MATERIAL
 
-/* You can add global styles to this file, and also import other style files */
+/* global styles */
 html {
-  height: 100%;
+  height: 100svh;
 }
 body {
-  width: 100%;
+  width: 100svw;
   margin: 0;
   padding: 0;
+  // box-sizing: border-box; // To not do math
   // font-family: 'tosh-a';
   font-family: numans, sans-serif;
 }
@@ -83,13 +81,14 @@ ul {
 .no-size {
   width: 0;
   height: 0;
-  z-index: 1; // hover background
+  z-index: 1; // over background
 }
 .sticky {
   position: sticky;
   top: 0;
 }
 
+// ! button
 .button {
   height: 100%;
   filter: grayscale(100%);
@@ -101,6 +100,7 @@ ul {
   opacity: 100%;
 }
 
+// ! back button
 .back {
   display: flex;
   align-items: center;
@@ -119,6 +119,7 @@ ul {
   opacity: 100%;
 }
 
+// ! custom tooltip (back button)-------------------------------
 .tooltip {
   position: relative;
   display: inline-block;
@@ -126,7 +127,7 @@ ul {
 .tooltip-text {
   visibility: hidden;
   text-align: center;
-  padding: 0 10px;
+  padding: 0 $space-smallest;
   position: absolute;
   z-index: 100; /* Ensure tooltip is displayed above content */
 }
@@ -136,111 +137,111 @@ ul {
 
 // ! COLORS -------------------------------
 .black {
-  color: black;
+  color: $black;
 }
 .black-background {
-  background-color: black;
+  background-color: $black;
 }
 .black-border {
-  color: black;
+  color: $black;
 }
 .project-container.black-border:hover {
-  color: white;
-  background-color: black;
+  color: $white;
+  background-color: $black;
 }
 
 // DXD
 .blue {
-  color: #354be2;
-  stroke: #354be2;
+  color: $blue;
+  stroke: $blue;
 }
 .blue-background {
-  background-color: #354be2;
+  background-color: $blue;
 }
 .blue-border {
-  color: #354be2;
-  border-color: #354be2;
+  color: $blue;
+  border-color: $blue;
 }
 .project-container.blue-border:hover {
-  color: white;
-  background-color: #354be2;
+  color: $white;
+  background-color: $blue;
 }
 // PM
 .pink {
-  color: #DB66A7// #ce5e5d;
+  color: $pink;
 }
 .pink-background {
-  background-color: #db66a7;
+  background-color: $pink;
 }
 // HES
 .cyan {
-  color: #4fa8e6;
+  color: $cyan;
 }
 .cyan-background {
-  background-color: #4fa8e6;
+  background-color: $cyan;
 }
 .cyan-border {
-  color: #4fa8e6;
-  border-color: #4fa8e6;
+  color: $cyan;
+  border-color: $cyan;
 }
 .project-container.cyan-border:hover {
-  color: white;
-  background-color: #4fa8e6;
+  color: $white;
+  background-color: $cyan;
 }
 // UP4it
 .green {
-  color: #41d8ae;
+  color: $green;
 }
 .green-background {
-  background-color: #41d8ae;
+  background-color: $green;
 }
 
 .green-border {
-  color: #41d8ae;
-  border-color: #41d8ae;
+  color: $green;
+  border-color: $green;
 }
 .project-container.green-border:hover {
-  color: white;
-  background-color: #41d8ae;
+  color: $white;
+  background-color: $green;
 }
 // VDS
 .red {
-  color: #ba162c;
+  color: $red;
 }
 .red-background {
-  background-color: #ba162c;
+  background-color: $red;
 }
 // .red-border {
-//   color: #ba162c;
-//   border-color: #ba162c;
+//   color: $red;
+//   border-color: $red;
 // }
 // .project-container.red-border:hover {
-//   color: white;
-//   background-color: #ba162c;
+//   color: $white;
+//   background-color: $red;
 // }
 
 //SIR
 .purple {
-  color: #ba78e8;
+  color: $purple;
 }
 .purple-background {
-  background-color: #ba78e8;
+  background-color: $purple;
 }
 
 // beige
 .beige {
-  color: #c6c1b7;
+  color: $beige;
 }
 .beige-background {
-  background-color: #c6c1b7;
+  background-color: $beige;
 }
 
 // Orange
 .orange {
-  color: #e56758;
+  color: $orange;
 }
 .orange-background {
-  background-color: #e56758;
+  background-color: $orange;
 }
 
 // Transition

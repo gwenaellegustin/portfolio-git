@@ -24,8 +24,8 @@
     border-radius: $space-small;
   }
   .button:hover {
-    color: white;
-    background-color: black;
+    color: $white;
+    background-color: $white;
   }
   .button:active {
     filter: brightness(90%);
