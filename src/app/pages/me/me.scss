@@ -2,15 +2,15 @@
   .page {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: $space;
     max-width: 1200px;
     margin: 0 auto;
   }
 
   .paragraph {
     display: flex;
-    gap: 40px;
-    margin-bottom: 20px;
+    gap: $space-bigger;
+    margin-bottom: $space;
     align-items: center;
     .text,
     .image {

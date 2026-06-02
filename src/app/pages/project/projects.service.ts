@@ -213,7 +213,10 @@ export const projects = new Map<string, ProjectInterface>([
         },
         { url: '/2025-2027-master/s1-cavalry/horizontal blue.mp4', text: 'Animated billboard' },
         { url: '/2025-2027-master/s1-cavalry/3cover.png', text: 'Album sleeves' },
-        { url: '/2025-2027-master/s1-cavalry/install.mov', text: 'Interaction for the workshop' },
+        {
+          url: '/2025-2027-master/s1-cavalry/install.mov',
+          text: 'Demonstration system used for the workshop presentation (provided by the school)',
+        },
       ],
     },
   ],
