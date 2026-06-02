@@ -1,11 +1,10 @@
 @import '../../../variables';
 
 :host {
+  flex: 1;
   .container {
     display: flex;
-    flex: 1 1 auto;
     flex-direction: column;
-    min-height: 80vh; //how fill page
     padding: $space;
     view-transition-name: open-project;
   }
