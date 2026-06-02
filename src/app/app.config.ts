@@ -9,7 +9,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(
       routes,
       withInMemoryScrolling({
-        scrollPositionRestoration: 'enabled',
+        scrollPositionRestoration: 'enabled', // TODO: fix, no more working since correct flex behavior for main content
       }),
       withViewTransitions()
     ),
