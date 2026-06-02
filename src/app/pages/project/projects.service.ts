@@ -34,7 +34,8 @@ export interface timeline {
 export interface ProjectInterface {
   title: string;
   context?: string;
-  date?: string;
+  month?: number;
+  year?: number;
   subtitle?: string;
   urls?: Url[];
   description: string;
@@ -221,7 +222,8 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'This website',
       context: 'MAIN',
-      date: '02.2026',
+      month: 2,
+      year: 2026,
       subtitle: 'Angular 21',
 
       description:
@@ -234,7 +236,8 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Reality Check',
       context: 'DXD',
-      date: '01.2026',
+      month: 1,
+      year: 2026,
       subtitle: 'UX research',
       urls: [
         {
@@ -274,7 +277,8 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Pixel Perfect',
       context: 'DXD',
-      date: '12.2025',
+      month: 12,
+      year: 2025,
       subtitle: 'UI Figma',
       urls: [
         {
@@ -313,7 +317,9 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Modular Mindset',
       context: 'DXD',
-      date: '17-21.11.2025',
+      // date: '17-21.11.2025',
+      month: 11,
+      year: 2025,
       subtitle: 'Cavalry Workshop',
       description:
         '<p>During a week-long workshop, we were trained on Calvary by Antonin Waterkeyn. It was my first experience with animation.</p><p>We had to create animated covers for three albums (by the same artist or label) with vertical variations, as well as a horizontal format for a billboard. I chose to illustrate the work of Paul Sabin.</p>',
@@ -332,25 +338,26 @@ export const projects = new Map<string, ProjectInterface>([
       ],
     },
   ],
-  [
-    'up4it',
-    {
-      title: 'Dev and design',
-      context: 'UP4',
-      date: 'Since 04.2024',
-      subtitle: '',
-      urls: [{ url: 'https://up4it.io/', text: 'Website' }],
-      description:
-        "<p>Up4it is social network that aims to encourage people to organize real life activities with friends.<p/><p>I first joined the development team to improve my knowledge of Angular. Since late 2025, I have been contributing my knowledge, acquired during my master's degree, to UX and participating in UI.</p>",
-      images: [{ url: '/2024-2026-up4it/up4it_logo.png' }, { url: '/2024-2026-up4it/figma2.png' }],
-    },
-  ],
+  // [
+  //   'up4it',
+  //   {
+  //     title: 'Dev and design',
+  //     context: 'UP4',
+  //     date: 'Since 04.2024',
+  //     subtitle: '',
+  //     urls: [{ url: 'https://up4it.io/', text: 'Website' }],
+  //     description:
+  //       "<p>Up4it is social network that aims to encourage people to organize real life activities with friends.<p/><p>I first joined the development team to improve my knowledge of Angular. Since late 2025, I have been contributing my knowledge, acquired during my master's degree, to UX and participating in UI.</p>",
+  //     images: [{ url: '/2024-2026-up4it/up4it_logo.png' }, { url: '/2024-2026-up4it/figma2.png' }],
+  //   },
+  // ],
   [
     'vst',
     {
       title: 'Visualization tool',
       context: 'HES',
-      date: '07.2025',
+      month: 7,
+      year: 2025,
       subtitle: 'Angular 20, UX',
       urls: [
         { url: 'https://citiwatts.eu/', text: 'Website' },
@@ -377,7 +384,8 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Swiss Cyber Grid',
       context: 'HES',
-      date: '12.2024',
+      month: 12,
+      year: 2024,
       subtitle: 'Angular 18',
       urls: [
         { url: 'https://swisscybergrid.iigweb.hevs.ch/', text: 'Website' },
@@ -405,7 +413,8 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Pantagruel - Bachelor Thesis',
       context: 'BSC',
-      date: '08.2023',
+      month: 8,
+      year: 2023,
       subtitle: 'Angular 15',
       urls: [
         { url: 'https://etranselec.ch/pantafrontend/', text: 'Website' },
@@ -427,8 +436,9 @@ export const projects = new Map<string, ProjectInterface>([
     'hb',
     {
       title: 'Happy birthday !',
-      context: 'On my free time',
-      date: '02.2023',
+      context: 'MAIN',
+      month: 2,
+      year: 2023,
       subtitle: 'React18',
       urls: [
         { url: 'https://skraydd-birthday-2022.netlify.app/', text: 'Website' },
@@ -449,7 +459,8 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Tlearning',
       context: 'BSC',
-      date: '09.2022',
+      month: 9,
+      year: 2022,
       subtitle: 'Flutter',
       urls: [
         // Private
@@ -473,7 +484,8 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'VAST app',
       context: 'BSC',
-      date: '06.2022',
+      month: 6,
+      year: 2022,
       subtitle: 'React18, PWA',
       urls: [
         { url: 'https://vast-hes.netlify.app/', text: 'Website' },
@@ -495,7 +507,8 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'SwissVia',
       context: 'BSC',
-      date: '02.2022',
+      month: 2,
+      year: 2022,
       subtitle: 'Java Android',
       urls: [
         // {
@@ -518,7 +531,8 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Droppy',
       context: 'BSC',
-      date: '06.2021',
+      month: 6,
+      year: 2021,
       subtitle: 'JavaScript',
       urls: [
         { url: 'https://letsdrop.gwengustin.ch/letsDrop.html', text: 'Website' },

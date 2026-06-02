@@ -1,19 +1,26 @@
-import { A11yModule } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ProjectsService, timeline, timelines } from '../project/projects.service';
+import {
+  ProjectInterface,
+  projects,
+  ProjectsService,
+  timeline,
+  timelines,
+} from '../project/projects.service';
 import { MiniProject } from './mini-project/mini-project';
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.html',
   styleUrl: './timeline.scss',
-  imports: [CommonModule, MiniProject, A11yModule],
+  imports: [CommonModule, MiniProject],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Timeline {
   readonly projectsService = inject(ProjectsService);
   timelines = timelines;
+  projects = projects;
+  projectsByDate = new Map<string, ProjectInterface[]>();
 
   currentYear = new Date().getFullYear();
   currentMonth = new Date().getMonth();
@@ -22,7 +29,10 @@ export class Timeline {
   dateMap = new Map<number, string>();
 
   constructor() {
-    this.fillDateMap();
+    this.setDateMap();
+    console.log(this.dateMap);
+    this.setProjectByDate();
+    console.log(this.projectsByDate);
   }
 
   getColor(key: string) {
@@ -30,7 +40,7 @@ export class Timeline {
   }
 
   // Create a map between position from the bottom to date like 01.2026
-  private fillDateMap() {
+  private setDateMap() {
     let index = 1;
     const add = (value: string) => this.dateMap.set(index++, value);
 
@@ -48,6 +58,26 @@ export class Timeline {
         add(`${month.toString().padStart(2, '0')}.${year}`);
       }
     }
+  }
+
+  private setProjectByDate() {
+    this.projects.forEach((project) => {
+      if (!project.month || !project.year) {
+        return;
+      }
+
+      const key = `${project.month.toString().padStart(2, '0')}.${project.year}`;
+      const existing = this.projectsByDate.get(key) ?? [];
+      existing.push(project);
+      this.projectsByDate.set(key, existing);
+    });
+  }
+
+  getProjectsForDate(dateKey: string): ProjectInterface[] {
+    if (!dateKey) {
+      return [];
+    }
+    return this.projectsByDate.get(dateKey) ?? [];
   }
 
   getColorForDate(dateKey: string, segments: timeline[]): string | null {

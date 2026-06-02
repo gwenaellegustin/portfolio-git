@@ -13,28 +13,38 @@ $racoon-face-size: $width-line * 4;
       justify-content: center;
       .column {
         flex: 1;
-        background-color: lightblue;
         display: flex;
-        justify-content: center;
-        gap: $width-line;
+        flex-direction: column-reverse;
+        background-color: lightblue;
+        .project-line {
+          height: $month;
+        }
       }
     }
 
-    .timeline {
+    // Center column
+    .timelines {
       flex: 1;
       display: flex;
-      flex-direction: column-reverse;
-    }
+      justify-content: center;
+      background-color: lightblue;
+      gap: $width-line;
+      .timeline {
+        flex: 1;
+        display: flex;
+        flex-direction: column-reverse;
+      }
 
-    .month {
-      width: $width-line;
-      height: $month;
-    }
-    .dot {
-      margin: calc($month/4) 0;
-      height: $month/2;
-      width: $month/2;
-      // border-radius: $month;
+      .month {
+        width: $width-line;
+        height: $month;
+      }
+      .dot {
+        margin: calc($month/4) 0;
+        height: $month/2;
+        width: $month/2;
+        // border-radius: $month;
+      }
     }
 
     .background {
