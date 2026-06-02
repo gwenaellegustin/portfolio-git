@@ -12,8 +12,8 @@ $year: calc($month * 12);
 $width-line: calc($month/2);
 $app-bar-height: min(10vw, $space-bigger);
 
-$black: #000000;
-$white: #ffffff;
+$background: #ffffff;
+$on-background: #000000;
 $blue: #354be2;
 $pink: #db66a7; // #ce5e5d;
 $cyan: #4fa8e6;

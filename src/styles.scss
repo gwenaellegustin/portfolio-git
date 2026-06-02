@@ -25,8 +25,8 @@ body {
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
-  background-color: $white; //var(--mat-sys-surface);
-  color: $black; //var(--mat-sys-on-surface);
+  background-color: $background; //var(--mat-sys-surface);
+  color: $on-background; //var(--mat-sys-on-surface);
   //font: var(--mat-sys-body-medium);
 
   // Reset the user agent margin.
@@ -137,17 +137,17 @@ ul {
 
 // ! COLORS -------------------------------
 .black {
-  color: $black;
+  color: $on-background;
 }
 .black-background {
-  background-color: $black;
+  background-color: $on-background;
 }
 .black-border {
-  color: $black;
+  color: $on-background;
 }
 .project-container.black-border:hover {
-  color: $white;
-  background-color: $black;
+  color: $background;
+  background-color: $on-background;
 }
 
 // DXD
@@ -163,7 +163,7 @@ ul {
   border-color: $blue;
 }
 .project-container.blue-border:hover {
-  color: $white;
+  color: $background;
   background-color: $blue;
 }
 // PM
@@ -185,7 +185,7 @@ ul {
   border-color: $cyan;
 }
 .project-container.cyan-border:hover {
-  color: $white;
+  color: $background;
   background-color: $cyan;
 }
 // UP4it
@@ -201,7 +201,7 @@ ul {
   border-color: $green;
 }
 .project-container.green-border:hover {
-  color: $white;
+  color: $background;
   background-color: $green;
 }
 // VDS
@@ -216,7 +216,7 @@ ul {
 //   border-color: $red;
 // }
 // .project-container.red-border:hover {
-//   color: $white;
+//   color: $background;
 //   background-color: $red;
 // }
 
