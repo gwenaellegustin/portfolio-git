@@ -24,8 +24,8 @@
     border-radius: $space-small;
   }
   .button:hover {
+    background-color: $on-background;
     color: $background;
-    background-color: $background;
   }
   .button:active {
     filter: brightness(90%);

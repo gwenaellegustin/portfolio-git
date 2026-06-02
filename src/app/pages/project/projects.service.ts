@@ -243,7 +243,7 @@ export const projects = new Map<string, ProjectInterface>([
       urls: [
         { url: 'https://citiwatts.eu/', text: 'Website' },
         {
-          url: 'https://vlhtuleap.hevs.ch/plugins/git/git-eranet/Visualization_tool',
+          url: 'https://vlbeltuleapce.hevs.ch/plugins/git/git-eranet/Visualization_tool',
           text: 'Repository',
         },
       ],
