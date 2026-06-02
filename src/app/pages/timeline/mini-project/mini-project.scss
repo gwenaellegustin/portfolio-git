@@ -10,7 +10,7 @@
   border-radius: 10px;
   max-height: 150px;
 
-  .text {
+  .left {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -19,7 +19,7 @@
     font-size: x-small;
   }
 
-  .img {
+  .right {
     display: none;
     flex: 1;
     overflow: hidden;
@@ -34,7 +34,7 @@
 .project-container:hover {
   z-index: 100;
   filter: grayscale(0);
-  .img {
+  .right {
     display: flex;
   }
 }
