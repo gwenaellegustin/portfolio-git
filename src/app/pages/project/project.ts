@@ -33,7 +33,7 @@ export class Project {
           const foundContext = this._projectsService.getContext(this.project.context);
           if (foundContext) {
             this.color = foundContext.color;
-            this.context = foundContext.context;
+            this.context = foundContext.title;
           }
         }
       }

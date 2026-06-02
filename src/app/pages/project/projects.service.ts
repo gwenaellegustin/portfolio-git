@@ -6,12 +6,12 @@ import { Injectable } from '@angular/core';
 export class ProjectsService {
   constructor() {}
 
-  getContext(key: string) {
-    const foundContext = contexts.get(key);
+  getContext(key: string): ContextInfo {
+    const foundContext = contextInfos.get(key);
     if (foundContext) {
       return foundContext;
     }
-    return { context: key, color: 'black' };
+    return { title: key, color: 'black' };
   }
 }
 
@@ -20,31 +20,71 @@ export class Url {
   text?: string = '';
 }
 
-export class ProjectInterface {
-  title: string = '';
-  context?: string = '';
-  date?: string = '';
-  subtitle?: string = '';
-  urls?: Url[] = [];
-  description: string = '';
-  images: Url[] = [];
+export interface ContextInfo {
+  title: string;
+  color: string;
+}
+export interface timeline {
+  contextKey: string;
+  yearStart: number;
+  monthStart: number;
+  yearEnd: number;
+  monthEnd: number;
+}
+export interface ProjectInterface {
+  title: string;
+  context?: string;
+  date?: string;
+  subtitle?: string;
+  urls?: Url[];
+  description: string;
+  images: Url[];
 }
 
-export class context {
-  context: string = '';
-  color: string = '';
-  yearStart: number = 0;
-  monthStart: number = 0;
-  yearEnd: number = 0;
-  monthEnd: number = 0;
-}
-
-export const contexts = new Map<string, context>([
+export const contextInfos = new Map<string, ContextInfo>([
   [
-    '1-Job',
+    'MAIN',
     {
-      context: 'Research assistant, HES-SO Valais Wallis',
+      title: 'Free time',
+      color: 'black',
+    },
+  ],
+  [
+    'HES-JOB',
+    {
+      title: 'Research assistant, HES-SO Valais Wallis',
       color: 'cyan',
+    },
+  ],
+  [
+    'PM',
+    {
+      title: 'Research assistant, HES-SO Valais Wallis',
+      color: 'pink',
+    },
+  ],
+  [
+    'UP4IT',
+    {
+      title: 'Team member, Up4it',
+      color: 'green',
+    },
+  ],
+  [
+    'DXD',
+    {
+      title: 'Master Digital Experience Design, ECAL',
+      color: 'blue',
+    },
+  ],
+]);
+
+export const timelines = new Map<string, timeline>([
+  [
+    '1-JOB',
+
+    {
+      contextKey: 'HES-JOB',
       yearStart: 2023,
       monthStart: 10,
       yearEnd: 2025,
@@ -52,10 +92,10 @@ export const contexts = new Map<string, context>([
     },
   ],
   [
-    '2-Job',
+    '2-JOB',
+
     {
-      context: 'IT and administration, Pentamedia Sàrl',
-      color: 'pink',
+      contextKey: 'PM',
       yearStart: 2020,
       monthStart: 11,
       yearEnd: 0,
@@ -63,10 +103,10 @@ export const contexts = new Map<string, context>([
     },
   ],
   [
-    '3-Main',
+    '3-MAIN',
+
     {
-      context: '',
-      color: 'black',
+      contextKey: 'MAIN',
       yearStart: 1996,
       monthStart: 6,
       yearEnd: 0,
@@ -75,10 +115,10 @@ export const contexts = new Map<string, context>([
   ],
 
   [
-    '4-Extra',
+    '4-EXTRA',
+
     {
-      context: 'Team member, Up4it',
-      color: 'green',
+      contextKey: 'UP4IT',
       yearStart: 2024,
       monthStart: 4,
       yearEnd: 0,
@@ -86,10 +126,10 @@ export const contexts = new Map<string, context>([
     },
   ],
   [
-    '5School',
+    '5-SCHOOL',
+
     {
-      context: 'Master Digital Experience Design, ECAL',
-      color: 'blue',
+      contextKey: 'DXD',
       yearStart: 2025,
       monthStart: 9,
       yearEnd: 0,
@@ -171,7 +211,7 @@ export const projects = new Map<string, ProjectInterface>([
     'gg',
     {
       title: 'This website',
-      context: 'On my free time',
+      context: 'MAIN',
       date: '02.2026',
       subtitle: 'Angular 21',
 

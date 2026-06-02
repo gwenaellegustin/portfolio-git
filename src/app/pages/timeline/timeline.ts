@@ -1,7 +1,7 @@
 import { A11yModule } from '@angular/cdk/a11y';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { context, contexts, ProjectsService } from '../project/projects.service';
+import { ProjectsService, timeline, timelines } from '../project/projects.service';
 import { MiniProject } from './mini-project/mini-project';
 
 @Component({
@@ -13,7 +13,7 @@ import { MiniProject } from './mini-project/mini-project';
 })
 export class Timeline {
   readonly projectsService = inject(ProjectsService);
-  contexts = contexts;
+  timelines = timelines;
 
   currentYear = new Date().getFullYear();
   currentMonth = new Date().getMonth();
@@ -23,6 +23,10 @@ export class Timeline {
 
   constructor() {
     this.fillDateMap();
+  }
+
+  getColor(key: string) {
+    return this.projectsService.getContext(key).color;
   }
 
   // Create a map between position from the bottom to date like 01.2026
@@ -46,7 +50,7 @@ export class Timeline {
     }
   }
 
-  isBetweenTimeline(dateKey: string, value: context): boolean {
+  isBetweenTimeline(dateKey: string, value: timeline): boolean {
     let yearEnd = value.yearEnd;
     let montEnd = value.monthEnd;
     if (value.yearEnd == 0 && value.monthEnd == 0) {

@@ -6,22 +6,22 @@
     <div class="column">Column2</div>
 
     <div class="column">
-      @for (timeline of contexts | keyvalue; track $index) {
+      @for (timeline of timelines | keyvalue; track $index) {
         <div class="timeline">
           @for (item of dateMap | keyvalue; track item.key) {
             @if (isBetweenTimeline(item.value, timeline.value)) {
               <div
                 [id]="timeline.key + item.key"
                 class="month"
-                [ngClass]="timeline.value.color + '-background'"
+                [ngClass]="getColor(timeline.value.contextKey) + '-background'"
               ></div>
             } @else if (item.key >= 13 && item.key <= 24) {
               <!-- year with no date "..." -->
-              @if (timeline.key == 'MAIN') {
+              @if (timeline.key == '3-MAIN') {
                 <div
                   class="dot"
                   [id]="timeline.key + item.key"
-                  [ngClass]="timeline.value.color + '-background'"
+                  [ngClass]="getColor(timeline.value.contextKey) + '-background'"
                 ></div>
               } @else {
                 <div [id]="timeline.key + item.key" class="month"></div>
@@ -32,9 +32,9 @@
             }
           }
           @if (timeline.value.yearEnd == 0 && timeline.value.monthEnd == 0) {
-            <div class="dot" [ngClass]="timeline.value.color + '-background'"></div>
-            <div class="dot" [ngClass]="timeline.value.color + '-background'"></div>
-            <div class="dot" [ngClass]="timeline.value.color + '-background'"></div>
+            <div class="dot" [ngClass]="getColor(timeline.value.contextKey) + '-background'"></div>
+            <div class="dot" [ngClass]="getColor(timeline.value.contextKey) + '-background'"></div>
+            <div class="dot" [ngClass]="getColor(timeline.value.contextKey) + '-background'"></div>
           }
         </div>
       }
