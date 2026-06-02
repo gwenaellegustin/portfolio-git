@@ -2,19 +2,11 @@
 
 :host {
   flex: 1;
-  .container {
-    display: flex;
-    flex-direction: column;
-    padding: $space;
-    view-transition-name: open-project;
-  }
 
   .project-container {
     display: flex;
     gap: $space-bigger;
     margin-bottom: $space;
-    max-width: 1200px;
-    margin: 0 auto;
   }
   @media only screen and (max-width: 600px) {
     .project-container {

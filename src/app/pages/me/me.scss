@@ -1,14 +1,6 @@
 @import '../../../variables';
 
 :host {
-  .page {
-    display: flex;
-    flex-direction: column;
-    padding: $space;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
   .paragraph {
     display: flex;
     gap: $space-bigger;
