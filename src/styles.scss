@@ -83,7 +83,7 @@ ul {
 .no-size {
   width: 0;
   height: 0;
-  z-index: 10;
+  z-index: 1; // hover background
 }
 .sticky {
   position: sticky;
@@ -124,11 +124,11 @@ ul {
   display: inline-block;
 }
 .tooltip-text {
-  visibility: hidden; /* Hidden by default */
+  visibility: hidden;
   text-align: center;
   padding: 0 10px;
   position: absolute;
-  z-index: 1; /* Ensure tooltip is displayed above content */
+  z-index: 100; /* Ensure tooltip is displayed above content */
 }
 .tooltip:hover .tooltip-text {
   visibility: visible;

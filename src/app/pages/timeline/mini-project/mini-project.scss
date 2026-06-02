@@ -2,6 +2,7 @@
 
 .project-container {
   display: flex;
+  position: relative;
   justify-content: space-evenly;
   width: 20vw;
   padding: 10px;
@@ -32,14 +33,10 @@
 }
 
 .project-container:hover {
-  z-index: 100;
-  filter: grayscale(0);
+  z-index: 100; // over other mini-project
   .right {
     display: flex;
   }
-}
-.project-container:active {
-  filter: brightness(90%);
 }
 
 .project-container.left {
