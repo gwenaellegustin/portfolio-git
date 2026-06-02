@@ -43,7 +43,7 @@ ng build --configuration github
 git push
 ```
 
-## Backlogs (todo)
+## Backlog (todo)
 
 ### Content
 
@@ -55,13 +55,11 @@ git push
 - Certificat SIR
 - Happy Birthday images
 - Photo VAST in context
-- 1 sentence summary by projects
 - College + Ortega Schule
 
 ### Feat
 
 - email: copy and not open mail software
-- Improve hierarchy of text
 - Breadcrum
 - Hover on job/school (click on mobile)
 - Title info on mobile
@@ -70,7 +68,8 @@ git push
 - robot.txt / indexation
 
 ### Refactor
-
+- Improve hierarchy of text / sentence summary by projects / tags
+- How to import css variables
 - Json for timeline info
 
 ### Bug
