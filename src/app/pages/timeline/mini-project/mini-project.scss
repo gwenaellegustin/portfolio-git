@@ -2,15 +2,16 @@
 
 .project-container {
   display: flex;
+  position: relative;
   justify-content: space-evenly;
   width: 20vw;
   padding: 10px;
-  background-color: white;
+  background-color: $background;
   border: 1px solid;
   border-radius: 10px;
   max-height: 150px;
 
-  .text {
+  .left {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -19,7 +20,7 @@
     font-size: x-small;
   }
 
-  .img {
+  .right {
     display: none;
     flex: 1;
     overflow: hidden;
@@ -32,14 +33,10 @@
 }
 
 .project-container:hover {
-  z-index: 100;
-  filter: grayscale(0);
-  .img {
+  z-index: 100; // over other mini-project
+  .right {
     display: flex;
   }
-}
-.project-container:active {
-  filter: brightness(90%);
 }
 
 .project-container.left {
@@ -59,7 +56,7 @@
 
   .text {
     font-size: small;
-    word-break: break-all;
+    word-break: break-word;
   }
 
   .project-container.left {

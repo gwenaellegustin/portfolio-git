@@ -1,16 +1,10 @@
-:host {
-  .page {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+@import '../../../variables';
 
+:host {
   .paragraph {
     display: flex;
-    gap: 40px;
-    margin-bottom: 20px;
+    gap: $space-bigger;
+    margin-bottom: $space;
     align-items: center;
     .text,
     .image {

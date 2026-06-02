@@ -2,15 +2,13 @@
 
 :host {
   .top-bar {
-    position: sticky;
     top: 0;
-    z-index: 1000;
-    background-color: white;
+    z-index: 100;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: $space-small $space;
     height: $app-bar-height;
     //border-bottom: 1px solid;
 
