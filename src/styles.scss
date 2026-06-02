@@ -242,3 +242,25 @@ ul {
 .orange-background {
   background-color: #e56758;
 }
+
+// Transition
+
+@keyframes rotate-out {
+  to {
+    transform: rotate(90deg);
+  }
+}
+@keyframes rotate-in {
+  from {
+    transform: rotate(-90deg);
+  }
+}
+/* Target view transition pseudo-elements */
+::view-transition-old(open-project),
+::view-transition-new(open-project) {
+  animation-duration: 200ms;
+  animation-name: -ua-view-transition-fade-in, rotate-in;
+}
+::view-transition-old(open-project) {
+  animation-name: -ua-view-transition-fade-out, rotate-out;
+}

@@ -7,6 +7,7 @@
     flex-direction: column;
     min-height: 80vh; //how fill page
     padding: $space;
+    view-transition-name: open-project;
   }
 
   .project-container {
