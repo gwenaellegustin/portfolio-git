@@ -8,33 +8,43 @@
     <div class="column">
       @for (timeline of timelines | keyvalue; track $index) {
         <div class="timeline">
-          @for (item of dateMap | keyvalue; track item.key) {
-            @if (isBetweenTimeline(item.value, timeline.value)) {
+          @for (monthYear of dateMap | keyvalue; track monthYear.key) {
+            @if (getColorForDate(monthYear.value, timeline.value)) {
               <div
-                [id]="timeline.key + item.key"
+                [id]="timeline.key + monthYear.key"
                 class="month"
-                [ngClass]="getColor(timeline.value.contextKey) + '-background'"
+                [ngClass]="getColorForDate(monthYear.value, timeline.value) + '-background'"
               ></div>
-            } @else if (item.key >= 13 && item.key <= 24) {
+            } @else if (monthYear.key >= 13 && monthYear.key <= 24) {
               <!-- year with no date "..." -->
               @if (timeline.key == '3-MAIN') {
                 <div
                   class="dot"
-                  [id]="timeline.key + item.key"
-                  [ngClass]="getColor(timeline.value.contextKey) + '-background'"
+                  [id]="timeline.key + monthYear.key"
+                  [ngClass]="getColor(timeline.value[0].contextKey) + '-background'"
                 ></div>
               } @else {
-                <div [id]="timeline.key + item.key" class="month"></div>
+                <div [id]="timeline.key + monthYear.key" class="month"></div>
               }
             } @else {
               <!-- invisible -->
-              <div [id]="timeline.key + item.key" class="month"></div>
+              <div [id]="timeline.key + monthYear.key" class="month"></div>
             }
           }
-          @if (timeline.value.yearEnd == 0 && timeline.value.monthEnd == 0) {
-            <div class="dot" [ngClass]="getColor(timeline.value.contextKey) + '-background'"></div>
-            <div class="dot" [ngClass]="getColor(timeline.value.contextKey) + '-background'"></div>
-            <div class="dot" [ngClass]="getColor(timeline.value.contextKey) + '-background'"></div>
+          <!-- 3 dots if still on going -->
+          @if (timeline.value[0].yearEnd == 0 && timeline.value[0].monthEnd == 0) {
+            <div
+              class="dot"
+              [ngClass]="getColor(timeline.value[0].contextKey) + '-background'"
+            ></div>
+            <div
+              class="dot"
+              [ngClass]="getColor(timeline.value[0].contextKey) + '-background'"
+            ></div>
+            <div
+              class="dot"
+              [ngClass]="getColor(timeline.value[0].contextKey) + '-background'"
+            ></div>
           }
         </div>
       }

@@ -50,6 +50,15 @@ export class Timeline {
     }
   }
 
+  getColorForDate(dateKey: string, segments: timeline[]): string | null {
+    if (!dateKey || !segments || segments.length === 0) {
+      return null;
+    }
+
+    const segment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
+    return segment ? this.getColor(segment.contextKey) : null;
+  }
+
   isBetweenTimeline(dateKey: string, value: timeline): boolean {
     let yearEnd = value.yearEnd;
     let montEnd = value.monthEnd;

@@ -77,77 +77,86 @@ export const contextInfos = new Map<string, ContextInfo>([
       color: 'blue',
     },
   ],
+  [
+    'BSC',
+    {
+      title: 'Bachelor Business IT, HES-SO',
+      color: 'cyan',
+    },
+  ],
 ]);
 
-export const timelines = new Map<string, timeline>([
+export const timelines = new Map<string, timeline[]>([
   [
     '1-JOB',
-
-    {
-      contextKey: 'HES-JOB',
-      yearStart: 2023,
-      monthStart: 10,
-      yearEnd: 2025,
-      monthEnd: 9,
-    },
+    [
+      {
+        contextKey: 'HES-JOB',
+        yearStart: 2023,
+        monthStart: 10,
+        yearEnd: 2025,
+        monthEnd: 9,
+      },
+    ],
   ],
   [
     '2-JOB',
 
-    {
-      contextKey: 'PM',
-      yearStart: 2020,
-      monthStart: 11,
-      yearEnd: 0,
-      monthEnd: 0,
-    },
+    [
+      {
+        contextKey: 'PM',
+        yearStart: 2020,
+        monthStart: 11,
+        yearEnd: 0,
+        monthEnd: 0,
+      },
+    ],
   ],
   [
     '3-MAIN',
-
-    {
-      contextKey: 'MAIN',
-      yearStart: 1996,
-      monthStart: 6,
-      yearEnd: 0,
-      monthEnd: 0,
-    },
+    [
+      {
+        contextKey: 'MAIN',
+        yearStart: 1996,
+        monthStart: 6,
+        yearEnd: 0,
+        monthEnd: 0,
+      },
+    ],
   ],
 
   [
     '4-EXTRA',
-
-    {
-      contextKey: 'UP4IT',
-      yearStart: 2024,
-      monthStart: 4,
-      yearEnd: 0,
-      monthEnd: 0,
-    },
+    [
+      {
+        contextKey: 'UP4IT',
+        yearStart: 2024,
+        monthStart: 4,
+        yearEnd: 0,
+        monthEnd: 0,
+      },
+    ],
   ],
   [
     '5-SCHOOL',
-
-    {
-      contextKey: 'DXD',
-      yearStart: 2025,
-      monthStart: 9,
-      yearEnd: 0,
-      monthEnd: 0,
-    },
+    [
+      {
+        contextKey: 'DXD',
+        yearStart: 2025,
+        monthStart: 9,
+        yearEnd: 0,
+        monthEnd: 0,
+      },
+      {
+        contextKey: 'BSC',
+        yearStart: 2019,
+        monthStart: 9,
+        yearEnd: 2023,
+        monthEnd: 8,
+      },
+    ],
   ],
 
-  // [
-  //   'BSC',
-  //   {
-  //     context: 'Bachelor Business IT, HES-SO',
-  //     color: 'cyan',
-  //     yearStart: 0,
-  //     monthStart: 0,
-  //     yearEnd: 0,
-  //     monthEnd: 0,
-  //   },
-  // ],
   // @TODO: SDC (text of porfolioV4 - ECAL)
   // [
   //   'VDS',
