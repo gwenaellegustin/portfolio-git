@@ -18,25 +18,33 @@ export class MiniProject {
     images: [{ url: './logo/GG_Racoon_Face.png' }],
   };
   @Input() color = '';
+  @Input() idElement = '';
 
-  constructor() {}
+  constructor() {
+    console.log(this.idElement);
+  }
 
   ngOnInit() {}
 
-  openProject(project: string) {
-    const emptyLines = document.getElementsByClassName('project-line');
-    console.log(emptyLines);
-    for (let element of emptyLines) {
-      element.classList.replace('line', 'hidden');
-    }
-    const miniProjects = document.getElementsByClassName('project-container');
-    console.log(miniProjects);
-    for (let element of miniProjects) {
-      if (element.id == project) {
-        element.classList.replace('line', 'expand');
-      } else {
-        element.classList.replace('line', 'hidden');
-        console.log('removing', element);
+  openProject() {
+    // const miniProjects = document.getElementsByClassName('project-container');
+    // console.log(miniProjects);
+    // for (let element of miniProjects) {
+    //   if (element.id == project) {
+    //     element.classList.replace('line', 'expand');
+    //   } else {
+    //     element.classList.replace('line', 'hidden');
+    //   }
+    // }
+
+    const cells = document.getElementsByClassName('cell');
+    console.log(this.idElement);
+    for (let element of cells) {
+      if (element.id == this.idElement) {
+        element.classList.add('opened');
+      }
+      if (element.id != this.idElement && !element.classList.contains('col3')) {
+        element.classList.add('hidden');
       }
     }
   }

@@ -1,77 +1,152 @@
 @import '../../../variables';
-$racoon-face-size: $width-line * 4;
 
 :host {
-  // ! TIMELINES and dots -------------------------------
   .container {
     display: flex;
-    .columns {
+    flex-direction: column;
+    margin: 0 $page-margin;
+    transition: 1000ms ease-in-out; //TODO transition
+    .month {
       display: flex;
+      flex-direction: row;
       gap: $page-gap;
-      width: 100svw;
-      margin: 0 $page-margin;
-      // justify-content: center;
-      .column {
-        width: auto;
-        display: flex;
-        flex-direction: column-reverse;
-        background-color: lightgoldenrodyellow;
-      }
-      .column.hidden {
-        width: 0;
-        overflow: hidden;
-      }
-    }
 
-    // Center column
-    .timelines {
-      flex: 1;
-      max-width: $column-width;
-      display: flex;
-      justify-content: center;
-      background-color: lightcyan;
-      gap: $width-line;
-      .timeline {
+      .cell {
+        transition: 500ms ease-in-out;
         flex: 1;
         display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-      }
-
-      .month {
-        width: $width-line;
-        height: $month;
+        justify-content: space-around;
+        // background-color: rgba(173, 216, 230, 0.192);
+        max-width: $column-width;
       }
       .point {
         height: ($month);
         width: calc($month);
         border-radius: calc($month);
       }
-      .dot {
-        margin: calc($month/4) 0;
-        height: calc($month/2);
-        width: $width-line;
-        border-radius: $month;
-      }
-    }
 
-    .background {
-      display: flex;
-      flex-direction: column;
-      z-index: -1; // Background
-      height: calc($year * 12);
-      .year {
-        height: calc($year);
-        width: 100vw;
-        border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
-        opacity: 50%;
-        text-align: end; // Right align
-        align-self: flex-end;
-        position: relative;
+      // Column center with timelines
+      .col3 {
+        max-width: $column-width;
+      }
+      .timeline {
+        width: $width-line;
+        height: 100%;
+        min-height: $month;
+      }
+
+      .project-container {
+        height: auto;
+        flex: 1;
+        padding: $space-small;
+        background-color: $background;
+        border: 1px solid;
+        border-radius: 10px;
+
         .text {
-          position: absolute;
-          bottom: 0;
-          right: $space;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          align-content: stretch;
+        }
+        .title {
+          flex: 1;
+        }
+        .subtitle {
+          font-size: x-small;
+        }
+
+        .main-image {
+          transition: 100ms ease-in-out;
+          visibility: hidden;
+          opacity: 0;
+          height: 0;
+          img {
+            height: auto;
+            width: 100%;
+          }
+        }
+        .content {
+          visibility: hidden;
+          width: 0;
+          height: 0;
+        }
+      }
+      .cell.hidden {
+        flex: 0.0001;
+        // display: none;
+        opacity: 0;
+        .project-container {
+          width: 0;
+          padding: 0;
+          border: none;
+        }
+      }
+      .cell.opened {
+        max-width: none;
+        .project-container {
+          // height: calc(90svh - $app-bar-height); //@TODO fix math
+          .title {
+            font-size: x-large;
+          }
+          .subtitle {
+            font-size: small;
+          }
+          .main-image {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            align-items: center;
+          }
+          .content {
+            visibility: visible;
+            height: auto;
+            width: 100%;
+            .image {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              img,
+              video {
+                max-height: 80vh;
+                max-width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      .cell:not(.open) {
+        .project-container:hover {
+          .main-image {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            align-items: center;
+          }
+        }
+        .project-container.black-border:hover {
+          color: $background;
+          background-color: $on-background;
+        }
+        .project-container.blue-border:hover {
+          color: $background;
+          background-color: $blue;
+        }
+        .project-container.cyan-border:hover {
+          color: $background;
+          background-color: $cyan;
+        }
+        .project-container.green-border:hover {
+          color: $background;
+          background-color: $green;
         }
       }
     }

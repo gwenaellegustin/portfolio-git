@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   ProjectInterface,
   ProjectsService,
@@ -15,17 +15,26 @@ import { MiniProject } from './mini-project/mini-project';
   imports: [CommonModule, MiniProject],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Timeline implements AfterViewInit {
+export class Timeline {
   readonly projectsService = inject(ProjectsService);
   timelines = timelines;
   dateMap = this.projectsService.dateMap;
   projectsByDate = this.projectsService.projectsByDate;
-  years = this.projectsService.years;
 
   constructor() {}
 
-  ngAfterViewInit(): void {
-    this.setPointProject();
+  openProject(idElement: string) {
+    const cells = document.getElementsByClassName('cell');
+    console.log(idElement);
+    for (let element of cells) {
+      if (element.id == idElement) {
+        element.classList.add('opened');
+      }
+      if (element.id != idElement && !element.classList.contains('col3')) {
+        element.classList.add('hidden');
+      }
+    }
+    document.getElementById(idElement)!.scrollIntoView({ behavior: 'smooth' });
   }
 
   getColorForDate(dateKey: string, segments: timeline[]): string | null {
@@ -42,55 +51,23 @@ export class Timeline implements AfterViewInit {
     return this.projectsService.getContext(key).color;
   }
 
-  private setPointProject() {
-    this.projectsByDate.forEach((projects, dateKey) => {
-      projects.forEach((project, index) => {
-        const elementId = project.contextKey + '-' + dateKey;
-
-        const element = document.getElementById(elementId);
-        if (!element) {
-          return;
-        }
-
-        if (element.classList.contains('month')) {
-          element.classList.replace('month', 'point');
-        } else {
-          element.classList.add('point');
-        }
-        const color = this.getColor(project.contextKey);
-        if (color) {
-          element.classList.add(`${color}-background`);
-        }
-      });
-    });
-  }
-
-  // @TODO: should be done 1 in projects.service
-  getProjectsByColumnWithDate(dateKey: string, position: string): ProjectInterface[] {
-    const projects = this.projectsByDate.get(dateKey) ?? [];
-    const timelinesLength = Array.from(this.timelines.keys()).length;
+  // @TODO: improve this by storing value
+  getPosition(project: ProjectInterface): 'left' | 'right' {
+    const timelinesLength = this.timelines.size;
     const threshold = Math.ceil(timelinesLength / 2);
 
-    return projects.filter((project) => {
-      // Find which timeline contains this project's contextKey
-      let timelineNum = 0;
-      let index = 0;
-      for (const [key, segments] of this.timelines.entries()) {
-        index++;
-        const hasContext = segments.some((seg) => seg.contextKey === project.contextKey);
-        if (hasContext) {
-          timelineNum = index;
-          break;
-        }
-      }
+    let timelineNum = 0;
+    let index = 0;
 
-      if (position === 'left') {
-        return timelineNum <= threshold;
-      } else if (position === 'right') {
-        return timelineNum > threshold;
+    for (const [, segments] of this.timelines.entries()) {
+      index++;
+      if (segments.some((segment) => segment.contextKey === project.contextKey)) {
+        timelineNum = index;
+        break;
       }
-      return false;
-    });
+    }
+
+    return timelineNum <= threshold ? 'left' : 'right';
   }
 
   isBetweenTimeline(dateKey: string, value: timeline): boolean {

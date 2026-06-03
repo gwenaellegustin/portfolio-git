@@ -2,13 +2,7 @@
 
 :host {
   display: flex;
-  .hidden {
-    display: none;
-  }
-  .expand {
-    flex: 1;
-    max-width: none;
-  }
+  flex: 1;
 
   .project-container:not(.expand):hover,
   .project-container.expand {
@@ -32,7 +26,7 @@
     background-color: $background;
     border: 1px solid;
     border-radius: 10px;
-    transition: 1000ms ease-in-out;
+    transition: 200ms ease-in-out;
 
     .text {
       display: flex;
@@ -57,22 +51,5 @@
         width: 100%;
       }
     }
-  }
-
-  .project-container.black-border:hover {
-    color: $background;
-    background-color: $on-background;
-  }
-  .project-container.blue-border:hover {
-    color: $background;
-    background-color: $blue;
-  }
-  .project-container.cyan-border:hover {
-    color: $background;
-    background-color: $cyan;
-  }
-  .project-container.green-border:hover {
-    color: $background;
-    background-color: $green;
   }
 }

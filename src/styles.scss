@@ -43,7 +43,7 @@ body {
   width: 100svw;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; // To not do math
+  // box-sizing: border-box; // To not do math
   // font-family: 'tosh-a';
   font-family: numans, sans-serif;
   // font-size: $space;
@@ -88,10 +88,6 @@ ul {
 .sticky {
   position: sticky;
   top: 0;
-}
-.line {
-  height: $month;
-  max-width: $column-width;
 }
 
 // ! button (link)
@@ -242,25 +238,4 @@ ul {
   padding: $space;
   max-width: 1200px;
   margin: 0 auto;
-  // view-transition-name: open-project;
 }
-
-// @keyframes rotate-out {
-//   to {
-//     transform: rotate(90deg);
-//   }
-// }
-// @keyframes rotate-in {
-//   from {
-//     transform: rotate(-90deg);
-//   }
-// }
-// /* Target view transition pseudo-elements */
-// ::view-transition-old(open-project),
-// ::view-transition-new(open-project) {
-//   animation-duration: 200ms;
-//   animation-name: -ua-view-transition-fade-in, rotate-in;
-// }
-// ::view-transition-old(open-project) {
-//   animation-name: -ua-view-transition-fade-out, rotate-out;
-// }

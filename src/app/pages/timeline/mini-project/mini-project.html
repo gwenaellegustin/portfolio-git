@@ -1,9 +1,9 @@
 <div
-  class="project-container line"
-  [id]="project.title"
+  class="project-container"
+  [id]="'project' + idElement"
   [ngClass]="color + '-border'"
   (mouseover)="changeSizeTimeline()"
-  (click)="openProject(project.title)"
+  (click)="openProject()"
 >
   <div class="text">
     <div class="title">

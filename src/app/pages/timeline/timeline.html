@@ -1,104 +1,116 @@
 <div class="container">
-  <div class="columns">
-    <div class="column one">
-      <app-mini-project></app-mini-project>
-    </div>
-    <div class="column two">
-      @for (monthYear of dateMap | keyvalue; track monthYear.key) {
-        <!-- @TODO this left right columns with set of data define at init -->
-        @if (getProjectsByColumnWithDate(monthYear.value, 'left').length > 0) {
-          @for (
-            project of getProjectsByColumnWithDate(monthYear.value, 'left');
-            track project.title
-          ) {
-            <app-mini-project
-              [project]="project"
-              [color]="getColor(project.contextKey)"
-            ></app-mini-project>
-          }
-        } @else {
-          <div class="project-line line"></div>
-        }
-      }
-    </div>
+  @for (monthYear of dateMap | keyvalue; track monthYear.key) {
+    <div class="month" [id]="monthYear.value">
+      <div class="cell" [id]="'col1-' + monthYear.value" [ngClass]="monthYear.value"></div>
+      <div class="cell" [id]="'col2-' + monthYear.value" [ngClass]="monthYear.value">
+        @for (project of projectsByDate | keyvalue; track project) {
+          @if (project.key == monthYear.value && getPosition(project.value) == 'left') {
+            <div
+              class="project-container"
+              [ngClass]="getColor(project.value.contextKey) + '-border'"
+              (click)="openProject('col2-' + monthYear.value)"
+            >
+              <div class="text">
+                <div class="title">
+                  {{ project.value.title }}
+                </div>
+                <div class="subtitle">{{ project.value.subtitle }}</div>
+              </div>
 
-    <div class="timelines">
-      @for (timeline of timelines | keyvalue; track $index) {
+              <div class="main-image">
+                <img
+                  [src]="project.value.images[0].url"
+                  onerror="this.style.visibility = 'hidden'"
+                />
+              </div>
+              <div class="content">
+                <p class="intro-text" [innerHTML]="project.value.description"></p>
+
+                @for (image of project.value.images; track $index) {
+                  @if (image.url !== '' && $index != 0) {
+                    <div class="image">
+                      @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
+                        <span>{{ image.text }}</span>
+                        <video autoplay loop controls>
+                          <source [src]="image.url" type="video/mp4" />
+                        </video>
+                      } @else {
+                        <span>{{ image.text }}</span>
+                        <img [src]="image.url" onerror="this.style.visibility = 'hidden'" />
+                      }
+                    </div>
+                  }
+                }
+              </div>
+            </div>
+          }
+        }
+      </div>
+      <div class="cell col3" [id]="'col3-' + monthYear.value" [ngClass]="monthYear.value">
+        <div class="timeline blue-background"></div>
+        <div class="timeline black-background"></div>
+        <div class="timeline cyan-background"></div>
         <div class="timeline">
-          @for (monthYear of dateMap | keyvalue; track monthYear.key) {
-            @if (getColorForDate(monthYear.value, timeline.value)) {
+          @for (project of projectsByDate | keyvalue; track $index) {
+            @if (project.key == monthYear.value) {
               <div
-                [id]="getIdSegment(timeline.value, monthYear.value)"
-                class="month"
-                [ngClass]="getColorForDate(monthYear.value, timeline.value) + '-background'"
+                class="point"
+                [ngClass]="this.getColor(project.value.contextKey) + '-background'"
               ></div>
-            } @else if (monthYear.key >= 13 && monthYear.key <= 24) {
-              <!-- year with no date "..." -->
-              @if (timeline.key == '3-MAIN') {
-                <div
-                  class="dot"
-                  [id]="getIdSegment(timeline.value, monthYear.value)"
-                  [ngClass]="getColor(timeline.value[0].contextKey) + '-background'"
-                ></div>
-              } @else {
-                <div class="month"></div>
-              }
-            } @else {
-              <!-- invisible -->
-              <div class="month"></div>
             }
           }
-          <!-- 3 dots if still on going -->
-          @if (timeline.value[0].yearEnd == 0 && timeline.value[0].monthEnd == 0) {
-            <div
-              class="dot"
-              [ngClass]="getColor(timeline.value[0].contextKey) + '-background'"
-            ></div>
-            <div
-              class="dot"
-              [ngClass]="getColor(timeline.value[0].contextKey) + '-background'"
-            ></div>
-            <div
-              class="dot"
-              [ngClass]="getColor(timeline.value[0].contextKey) + '-background'"
-            ></div>
-          }
         </div>
-      }
-    </div>
-    <div class="column four">
-      @for (monthYear of dateMap | keyvalue; track monthYear.key) {
-        <!-- @TODO this left right columns with set of data define at init -->
-        @if (getProjectsByColumnWithDate(monthYear.value, 'right').length > 0) {
-          @for (
-            project of getProjectsByColumnWithDate(monthYear.value, 'right');
-            track project.title
-          ) {
-            <app-mini-project
-              [project]="project"
-              [color]="getColor(project.contextKey)"
-            ></app-mini-project>
-          }
-        } @else {
-          <div class="project-line line"></div>
-        }
-      }
-    </div>
-    <div class="column five">
-      <app-mini-project></app-mini-project>
-    </div>
-  </div>
-
-  <div class="background no-size">
-    @for (year of years | keyvalue; track year) {
-      <div class="year">
-        <div class="text">{{ year.value }}</div>
       </div>
-    }
+      <div class="cell" [id]="'col4-' + monthYear.value" [ngClass]="monthYear.value">
+        @for (project of projectsByDate | keyvalue; track project) {
+          @if (project.key == monthYear.value && getPosition(project.value) == 'right') {
+            <div
+              class="project-container"
+              [ngClass]="getColor(project.value.contextKey) + '-border'"
+              (click)="openProject('col4-' + monthYear.value)"
+            >
+              <div class="text">
+                <div class="title">
+                  {{ project.value.title }}
+                </div>
+                <div class="subtitle">{{ project.value.subtitle }}</div>
+              </div>
 
-    <div class="year">
-      <div class="text">...</div>
+              <div class="main-image">
+                <img
+                  [src]="project.value.images[0].url"
+                  onerror="this.style.visibility = 'hidden'"
+                />
+              </div>
+              <div class="content">
+                <p class="intro-text" [innerHTML]="project.value.description"></p>
+
+                @for (image of project.value.images; track $index) {
+                  @if (image.url !== '' && $index != 0) {
+                    <div class="image">
+                      @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
+                        <span>{{ image.text }}</span>
+                        <video autoplay loop controls>
+                          <source [src]="image.url" type="video/mp4" />
+                        </video>
+                      } @else {
+                        <span>{{ image.text }}</span>
+                        <img [src]="image.url" onerror="this.style.visibility = 'hidden'" />
+                      }
+                    </div>
+                  }
+                }
+              </div>
+            </div>
+            <!-- <app-mini-project
+            [project]="project"
+            [color]="getColor(project.contextKey)"
+            [idElement]="'col2-' + monthYear.value"
+          ></app-mini-project> -->
+          }
+        }
+      </div>
+      <div class="cell" [id]="'col5-' + monthYear.value" [ngClass]="monthYear.value"></div>
     </div>
-    <div class="year"><div class="text">1996</div></div>
-  </div>
+  }
 </div>

@@ -5,14 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class ProjectsService {
   currentYear = new Date().getFullYear();
-  currentMonth = new Date().getMonth();
-  years = Array.from({ length: this.currentYear - 2017 + 1 }, (_, i) => this.currentYear - i);
-  yearsAndStart = [...this.years].reverse();
+  currentMonth = new Date().getMonth() + 1;
   dateMap = new Map<number, string>();
 
   timelines = timelines;
   projects = projects;
-  projectsByDate = new Map<string, ProjectInterface[]>();
+  projectsByDate = new Map<string, ProjectInterface>();
   projectsLeft: ProjectInterface[] = [];
   projectsRight: ProjectInterface[] = [];
 
@@ -36,19 +34,17 @@ export class ProjectsService {
     let index = 1;
     const add = (value: string) => this.dateMap.set(index++, value);
 
-    for (let month = 1; month <= 12; month++) {
-      add(`${month.toString().padStart(2, '0')}.1996`);
+    for (let year = 2026; year >= 2017; year--) {
+      const startMonth = year === this.currentYear ? this.currentMonth : 12;
+      for (let month = startMonth; month >= 1; month--) {
+        add(`${month.toString().padStart(2, '0')}.${year}`);
+      }
     }
-
     for (let emptyIndex = 13; emptyIndex <= 24; emptyIndex++) {
       add('');
     }
-
-    for (const year of this.yearsAndStart) {
-      const lastMonth = year === this.currentYear ? this.currentMonth : 12;
-      for (let month = 1; month <= lastMonth; month++) {
-        add(`${month.toString().padStart(2, '0')}.${year}`);
-      }
+    for (let month = 12; month >= 1; month--) {
+      add(`${month.toString().padStart(2, '0')}.1996`);
     }
   }
 
@@ -59,9 +55,8 @@ export class ProjectsService {
       }
 
       const key = `${project.month.toString().padStart(2, '0')}.${project.year}`;
-      const existing = this.projectsByDate.get(key) ?? [];
-      existing.push(project);
-      this.projectsByDate.set(key, existing);
+
+      this.projectsByDate.set(key, project);
     });
   }
 }
