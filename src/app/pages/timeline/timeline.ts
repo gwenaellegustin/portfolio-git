@@ -1,18 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import {
-  ProjectInterface,
-  ProjectsService,
-  timeline,
-  timelines,
-} from '../project/projects.service';
-import { MiniProject } from './mini-project/mini-project';
+import { ProjectInterface, ProjectsService, timeline, timelines } from './projects.service';
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.html',
   styleUrl: './timeline.scss',
-  imports: [CommonModule, MiniProject],
+  imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Timeline {
