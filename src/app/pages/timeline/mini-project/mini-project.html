@@ -1,14 +1,18 @@
-<div class="size-container">
-  <div class="project-container" [ngClass]="color + '-border'" (mouseover)="changeSizeTimeline()">
-    <div class="text">
-      <div class="title">
-        {{ project.title }}
-      </div>
-      <div class="subtitle">{{ project.subtitle }}</div>
+<div
+  class="project-container line"
+  [id]="project.title"
+  [ngClass]="color + '-border'"
+  (mouseover)="changeSizeTimeline()"
+  (click)="openProject(project.title)"
+>
+  <div class="text">
+    <div class="title">
+      {{ project.title }}
     </div>
+    <div class="subtitle">{{ project.subtitle }}</div>
+  </div>
 
-    <div class="main-image">
-      <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
-    </div>
+  <div class="main-image">
+    <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
   </div>
 </div>

@@ -1,9 +1,30 @@
 @import '../../../../variables';
 
 :host {
-  .size-container {
-    height: $month;
+  display: flex;
+  .hidden {
+    display: none;
   }
+  .expand {
+    flex: 1;
+    max-width: none;
+  }
+
+  .project-container:not(.expand):hover,
+  .project-container.expand {
+    // position: relative;
+    // z-index: 100;
+    .main-image {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      align-items: center;
+    }
+  }
+
   .project-container {
     height: auto;
     flex: 1;
@@ -11,7 +32,7 @@
     background-color: $background;
     border: 1px solid;
     border-radius: 10px;
-    transition: transform 2000ms ease-in-out;
+    transition: 1000ms ease-in-out;
 
     .text {
       display: flex;
@@ -27,10 +48,10 @@
     }
 
     .main-image {
-      display: none;
-      flex: 1;
-      overflow: hidden;
-      align-items: center;
+      transition: 100ms ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
       img {
         height: auto;
         width: 100%;
@@ -38,13 +59,6 @@
     }
   }
 
-  .project-container:hover {
-    position: relative;
-    z-index: 100;
-    .main-image {
-      display: flex;
-    }
-  }
   .project-container.black-border:hover {
     color: $background;
     background-color: $on-background;

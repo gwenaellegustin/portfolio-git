@@ -7,27 +7,29 @@ $racoon-face-size: $width-line * 4;
     display: flex;
     .columns {
       display: flex;
-      gap: $space-big;
+      gap: $page-gap;
       width: 100svw;
-      margin: 0 $space-biggest;
-      justify-content: center;
+      margin: 0 $page-margin;
+      // justify-content: center;
       .column {
-        flex: 1;
+        width: auto;
         display: flex;
         flex-direction: column-reverse;
-        background-color: lightblue;
-        .project-line {
-          height: $month;
-        }
+        background-color: lightgoldenrodyellow;
+      }
+      .column.hidden {
+        width: 0;
+        overflow: hidden;
       }
     }
 
     // Center column
     .timelines {
       flex: 1;
+      max-width: $column-width;
       display: flex;
       justify-content: center;
-      background-color: lightblue;
+      background-color: lightcyan;
       gap: $width-line;
       .timeline {
         flex: 1;
@@ -49,7 +51,7 @@ $racoon-face-size: $width-line * 4;
         margin: calc($month/4) 0;
         height: calc($month/2);
         width: $width-line;
-        // border-radius: $month;
+        border-radius: $month;
       }
     }
 

@@ -89,6 +89,10 @@ ul {
   position: sticky;
   top: 0;
 }
+.line {
+  height: $month;
+  max-width: $column-width;
+}
 
 // ! button (link)
 .button {

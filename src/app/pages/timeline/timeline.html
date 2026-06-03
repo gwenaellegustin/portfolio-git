@@ -1,8 +1,11 @@
 <div class="container">
   <div class="columns">
-    <div class="column"></div>
-    <div class="column">
+    <div class="column one">
+      <app-mini-project></app-mini-project>
+    </div>
+    <div class="column two">
       @for (monthYear of dateMap | keyvalue; track monthYear.key) {
+        <!-- @TODO this left right columns with set of data define at init -->
         @if (getProjectsByColumnWithDate(monthYear.value, 'left').length > 0) {
           @for (
             project of getProjectsByColumnWithDate(monthYear.value, 'left');
@@ -14,7 +17,7 @@
             ></app-mini-project>
           }
         } @else {
-          <div class="project-line"></div>
+          <div class="project-line line"></div>
         }
       }
     </div>
@@ -63,7 +66,7 @@
         </div>
       }
     </div>
-    <div class="column">
+    <div class="column four">
       @for (monthYear of dateMap | keyvalue; track monthYear.key) {
         <!-- @TODO this left right columns with set of data define at init -->
         @if (getProjectsByColumnWithDate(monthYear.value, 'right').length > 0) {
@@ -77,11 +80,13 @@
             ></app-mini-project>
           }
         } @else {
-          <div class="project-line"></div>
+          <div class="project-line line"></div>
         }
       }
     </div>
-    <div class="column"></div>
+    <div class="column five">
+      <app-mini-project></app-mini-project>
+    </div>
   </div>
 
   <div class="background no-size">
