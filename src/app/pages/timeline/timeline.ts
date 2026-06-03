@@ -45,6 +45,22 @@ export class Timeline {
     return this.projectsService.getContext(key).color;
   }
 
+  getProjectByDate(dateKey: string): ProjectInterface | undefined {
+    return this.projectsByDate.get(dateKey);
+  }
+
+  isProjectInTimelineSegment(
+    project: ProjectInterface | undefined,
+    segments: timeline[],
+    dateKey: string,
+  ): boolean {
+    if (!project) {
+      return false;
+    }
+    const activeSegment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
+    return activeSegment?.contextKey === project.contextKey;
+  }
+
   // @TODO: improve this by storing value
   getPosition(project: ProjectInterface): 'left' | 'right' {
     const timelinesLength = this.timelines.size;
