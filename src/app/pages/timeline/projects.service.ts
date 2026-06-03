@@ -49,14 +49,14 @@ export class ProjectsService {
   }
 
   private setProjectByDate() {
-    this.projects.forEach((project) => {
+    this.projects.forEach((project, value) => {
       if (!project.month || !project.year) {
         return;
       }
 
       const key = `${project.month.toString().padStart(2, '0')}.${project.year}`;
 
-      this.projectsByDate.set(key, project);
+      this.projectsByDate.set(key, { ...project, key: value });
     });
   }
 }
@@ -79,6 +79,7 @@ export interface timeline {
   monthEnd: number;
 }
 export interface ProjectInterface {
+  key?: string;
   title: string;
   contextKey: string;
   month?: number;

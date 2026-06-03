@@ -8,8 +8,9 @@
           @if (project.key == monthYear.value && getPosition(project.value) == 'left') {
             <div
               class="project-container"
-              [ngClass]="getColor(project.value.contextKey) + '-border'"
-              (click)="openProject('col2-' + monthYear.value)"
+              [id]="project.value.key"
+              [ngClass]="getColorProject(project.value.contextKey) + '-border'"
+              (click)="openProject(project.value.key || '')"
             >
               <div class="text">
                 <div class="title">
@@ -51,25 +52,22 @@
       <div class="cell col3" [id]="'col3-' + monthYear.value" [ngClass]="monthYear.value">
         @for (timeline of timelines | keyvalue; track $index) {
           <div class="color-element">
-            @if (
-              isProjectInTimelineSegment(
-                getProjectByDate(monthYear.value),
-                timeline.value,
-                monthYear.value
-              )
-            ) {
-              <div class="commit">
+            @if (isProjectInTimelineSegment(timeline.value, monthYear.value)) {
+              <div
+                class="commit"
+                (click)="openProject(getProjectByDate(monthYear.value)?.key || '')"
+              >
                 <div
                   class="point"
                   [ngClass]="
-                    this.getColor(getProjectByDate(monthYear.value)?.contextKey || '') +
+                    this.getColorProject(getProjectByDate(monthYear.value)?.contextKey || '') +
                     '-background'
                   "
                 ></div>
                 <div
                   class="bottom-line"
                   [ngClass]="
-                    this.getColor(getProjectByDate(monthYear.value)?.contextKey || '') +
+                    this.getColorProject(getProjectByDate(monthYear.value)?.contextKey || '') +
                     '-background'
                   "
                 ></div>
@@ -88,7 +86,7 @@
             @if (project.key == monthYear.value) {
               <div
                 class="point"
-                [ngClass]="this.getColor(project.value.contextKey) + '-background'"
+                [ngClass]="this.getColorProject(project.value.contextKey) + '-background'"
               ></div>
             }
           }
@@ -100,8 +98,9 @@
           @if (project.key == monthYear.value && getPosition(project.value) == 'right') {
             <div
               class="project-container"
-              [ngClass]="getColor(project.value.contextKey) + '-border'"
-              (click)="openProject('col4-' + monthYear.value)"
+              [id]="project.value.key"
+              [ngClass]="getColorProject(project.value.contextKey) + '-border'"
+              (click)="openProject(project.value.key || '')"
             >
               <div class="text">
                 <div class="title">
@@ -138,7 +137,7 @@
             </div>
             <!-- <app-mini-project
             [project]="project"
-            [color]="getColor(project.contextKey)"
+            [color]="getColorProject(project.contextKey)"
             [idElement]="'col2-' + monthYear.value"
           ></app-mini-project> -->
           }

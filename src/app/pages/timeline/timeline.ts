@@ -17,23 +17,32 @@ export class Timeline {
 
   constructor() {}
 
-  openProject(idElement: string) {
+  openProject(projectKey: string) {
+    console.log(projectKey);
     const cells = document.getElementsByClassName('cell');
-    console.log(idElement);
     for (let element of cells) {
-      if (element.id == idElement) {
+      element.classList.add('hidden');
+    }
+
+    const projects = document.getElementsByClassName('project-container');
+    console.log(projectKey);
+    for (let element of projects) {
+      if (element.id == projectKey) {
         element.classList.add('opened');
+        element.parentElement!.style.flex = '1';
+        element.parentElement!.style.maxWidth = 'none';
       }
-      if (element.id != idElement && !element.classList.contains('col3')) {
+      if (element.id != projectKey) {
         element.classList.add('hidden');
       }
     }
-    document.getElementById(idElement)!.scrollIntoView({ behavior: 'smooth' });
+
+    document.getElementById(projectKey)!.scrollIntoView({ behavior: 'smooth' });
   }
 
   getColorForDate(dateKey: string, segments: timeline[]): string | null {
     const segment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
-    return segment ? this.getColor(segment.contextKey) : null;
+    return segment ? this.getColorProject(segment.contextKey) : null;
   }
 
   getIdSegment(segments: timeline[], date: string): string {
@@ -41,7 +50,7 @@ export class Timeline {
     return segment?.contextKey + '-' + date;
   }
 
-  getColor(key: string) {
+  getColorProject(key: string) {
     return this.projectsService.getContext(key).color;
   }
 
@@ -49,11 +58,8 @@ export class Timeline {
     return this.projectsByDate.get(dateKey);
   }
 
-  isProjectInTimelineSegment(
-    project: ProjectInterface | undefined,
-    segments: timeline[],
-    dateKey: string,
-  ): boolean {
+  isProjectInTimelineSegment(segments: timeline[], dateKey: string): boolean {
+    let project = this.getProjectByDate(dateKey);
     if (!project) {
       return false;
     }
