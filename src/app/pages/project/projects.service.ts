@@ -463,7 +463,7 @@ export const projects = new Map<string, ProjectInterface>([
   [
     'pan',
     {
-      title: 'Pantagruel - Bachelor Thesis',
+      title: 'Pantagruel',
       contextKey: 'BSC',
       month: 8,
       year: 2023,

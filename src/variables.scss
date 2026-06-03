@@ -5,11 +5,11 @@ $space-big: 24px;
 $space-bigger: 32px;
 $space-biggest: 64px;
 $space-giant: 72px;
-$space-gargantuan: 128px;
+$space-gargantua: 128px;
 
-$month: 18px; // line height
+$month: $space-bigger;
 $year: calc($month * 12);
-$width-line: calc($month/2);
+$width-line: $space-small;
 $app-bar-height: min(10vw, $space-bigger);
 
 $background: #ffffff;

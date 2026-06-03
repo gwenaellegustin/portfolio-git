@@ -1,8 +1,6 @@
 <div class="container">
   <div class="columns">
-    <div class="column">
-      Column1<br />2<br />3<br />4<br />5<br />6<br />8<br />9<br />10<br />11<br />12
-    </div>
+    <div class="column"></div>
     <div class="column">
       @for (monthYear of dateMap | keyvalue; track monthYear.key) {
         @if (getProjectsByColumnWithDate(monthYear.value, 'left').length > 0) {
@@ -10,7 +8,10 @@
             project of getProjectsByColumnWithDate(monthYear.value, 'left');
             track project.title
           ) {
-            <div class="project-line">{{ project.title }}</div>
+            <app-mini-project
+              [project]="project"
+              [color]="getColor(project.contextKey)"
+            ></app-mini-project>
           }
         } @else {
           <div class="project-line"></div>
@@ -64,19 +65,23 @@
     </div>
     <div class="column">
       @for (monthYear of dateMap | keyvalue; track monthYear.key) {
+        <!-- @TODO this left right columns with set of data define at init -->
         @if (getProjectsByColumnWithDate(monthYear.value, 'right').length > 0) {
           @for (
             project of getProjectsByColumnWithDate(monthYear.value, 'right');
             track project.title
           ) {
-            <div class="project-line">{{ project.title }}</div>
+            <app-mini-project
+              [project]="project"
+              [color]="getColor(project.contextKey)"
+            ></app-mini-project>
           }
         } @else {
           <div class="project-line"></div>
         }
       }
     </div>
-    <div class="column">Column5</div>
+    <div class="column"></div>
   </div>
 
   <div class="background no-size">

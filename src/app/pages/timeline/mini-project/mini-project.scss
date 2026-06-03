@@ -1,75 +1,64 @@
 @import '../../../../variables';
 
-.project-container {
-  display: flex;
-  position: relative;
-  justify-content: space-evenly;
-  width: 20vw;
-  padding: 10px;
-  background-color: $background;
-  border: 1px solid;
-  border-radius: 10px;
-  max-height: 150px;
-
-  .left {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+:host {
+  .size-container {
+    height: $month;
   }
-  .subtitle {
-    font-size: x-small;
-  }
-
-  .right {
-    display: none;
+  .project-container {
+    height: auto;
     flex: 1;
-    overflow: hidden;
-    align-items: center;
-    img {
-      height: auto;
-      width: 100%;
+    padding: $space-small;
+    background-color: $background;
+    border: 1px solid;
+    border-radius: 10px;
+    transition: transform 2000ms ease-in-out;
+
+    .text {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      align-content: stretch;
+    }
+    .title {
+      flex: 1;
+    }
+    .subtitle {
+      font-size: x-small;
+    }
+
+    .main-image {
+      display: none;
+      flex: 1;
+      overflow: hidden;
+      align-items: center;
+      img {
+        height: auto;
+        width: 100%;
+      }
     }
   }
-}
 
-.project-container:hover {
-  z-index: 100; // over other mini-project
-  .right {
-    display: flex;
+  .project-container:hover {
+    position: relative;
+    z-index: 100;
+    .main-image {
+      display: flex;
+    }
   }
-}
-
-.project-container.left {
-  margin: -$month calc(-20vw - 2.5 * $month);
-}
-
-.project-container.right {
-  margin: -$month $month;
-}
-
-@media only screen and (max-width: 1000px) {
-  .project-container {
-    padding: 5px;
-    flex-direction: column;
-    width: 15vw;
+  .project-container.black-border:hover {
+    color: $background;
+    background-color: $on-background;
   }
-
-  .text {
-    font-size: small;
-    word-break: break-word;
+  .project-container.blue-border:hover {
+    color: $background;
+    background-color: $blue;
   }
-
-  .project-container.left {
-    margin: -$month calc(-15vw - $month - 10px);
+  .project-container.cyan-border:hover {
+    color: $background;
+    background-color: $cyan;
   }
-}
-
-@media only screen and (max-width: 600px) {
-  .project-container {
-    width: 30vw;
-  }
-
-  .project-container.left {
-    margin: -$month calc(-30vw - 2 * $month);
+  .project-container.green-border:hover {
+    color: $background;
+    background-color: $green;
   }
 }

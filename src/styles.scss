@@ -147,10 +147,6 @@ ul {
 .black-border {
   color: $on-background;
 }
-.project-container.black-border:hover {
-  color: $background;
-  background-color: $on-background;
-}
 
 // DXD
 .blue {
@@ -163,10 +159,6 @@ ul {
 .blue-border {
   color: $blue;
   border-color: $blue;
-}
-.project-container.blue-border:hover {
-  color: $background;
-  background-color: $blue;
 }
 // PM
 .pink {
@@ -186,10 +178,6 @@ ul {
   color: $cyan;
   border-color: $cyan;
 }
-.project-container.cyan-border:hover {
-  color: $background;
-  background-color: $cyan;
-}
 // UP4it
 .green {
   color: $green;
@@ -202,10 +190,7 @@ ul {
   color: $green;
   border-color: $green;
 }
-.project-container.green-border:hover {
-  color: $background;
-  background-color: $green;
-}
+
 // VDS
 .red {
   color: $red;
