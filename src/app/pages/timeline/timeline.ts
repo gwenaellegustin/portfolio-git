@@ -99,11 +99,12 @@ export class Timeline implements AfterViewInit {
     });
   }
 
-  getProjectsForDate(dateKey: string): ProjectInterface[] {
-    if (!dateKey) {
-      return [];
-    }
-    return this.projectsByDate.get(dateKey) ?? [];
+  getProjectsForDate(dateKey: string, position: string): ProjectInterface[] {
+    const projects = this.projectsByDate.get(dateKey) ?? [];
+    return projects.filter((project) => {
+      const context = this.projectsService.getContext(project.contextKey);
+      return context.position === position;
+    });
   }
 
   getColorForDate(dateKey: string, segments: timeline[]): string | null {

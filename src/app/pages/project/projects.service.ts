@@ -11,7 +11,7 @@ export class ProjectsService {
     if (foundContext) {
       return foundContext;
     }
-    return { title: key, color: 'black' };
+    return { title: key, position: 'left', color: 'black' };
   }
 }
 
@@ -24,6 +24,7 @@ export class Url {
 export interface ContextInfo {
   title: string;
   color: string;
+  position: string;
 }
 export interface timeline {
   contextKey: string;
@@ -50,13 +51,15 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Free time',
       color: 'black',
+      position: 'left',
     },
   ],
   [
-    'HES-JOB',
+    'HES',
     {
       title: 'Research assistant, HES-SO Valais Wallis',
       color: 'cyan',
+      position: 'left',
     },
   ],
   [
@@ -64,6 +67,7 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Research assistant, HES-SO Valais Wallis',
       color: 'pink',
+      position: 'left',
     },
   ],
   [
@@ -71,6 +75,7 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Team member, Up4it',
       color: 'green',
+      position: 'right',
     },
   ],
   [
@@ -78,6 +83,7 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Master Digital Experience Design, ECAL',
       color: 'blue',
+      position: 'right',
     },
   ],
   [
@@ -85,6 +91,7 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Bachelor Business IT, HES-SO',
       color: 'cyan',
+      position: 'right',
     },
   ],
 ]);
@@ -94,7 +101,7 @@ export const timelines = new Map<string, timeline[]>([
     '1-JOB',
     [
       {
-        contextKey: 'HES-JOB',
+        contextKey: 'HES',
         yearStart: 2023,
         monthStart: 10,
         yearEnd: 2025,
@@ -227,7 +234,6 @@ export const projects = new Map<string, ProjectInterface>([
       month: 2,
       year: 2026,
       subtitle: 'Angular 21',
-
       description:
         'I wanted to create a website that would allow visitors to view projects in their context (school, work) and in chronological order. The principle of git, used in development, was perfect for this. So I used it as inspiration for this portfolio. The page with the timelines was created from scratch using HTML and CSS.',
       images: [{ url: '/gg.png' }],
