@@ -4,14 +4,65 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ProjectsService {
-  constructor() {}
+  currentYear = new Date().getFullYear();
+  currentMonth = new Date().getMonth();
+  years = Array.from({ length: this.currentYear - 2017 + 1 }, (_, i) => this.currentYear - i);
+  yearsAndStart = [...this.years].reverse();
+  dateMap = new Map<number, string>();
+
+  timelines = timelines;
+  projects = projects;
+  projectsByDate = new Map<string, ProjectInterface[]>();
+  projectsLeft: ProjectInterface[] = [];
+  projectsRight: ProjectInterface[] = [];
+
+  constructor() {
+    this.setDateMap();
+    console.log('dateMap', this.dateMap);
+    this.setProjectByDate();
+    console.log('projectsByDate', this.projectsByDate);
+  }
 
   getContext(key: string): ContextInfo {
     const foundContext = contextInfos.get(key);
     if (foundContext) {
       return foundContext;
     }
-    return { title: key, position: 'left', color: 'black' };
+    return { title: key, color: 'black' };
+  }
+
+  // Create a map between position from the bottom to date like 01.2026
+  private setDateMap() {
+    let index = 1;
+    const add = (value: string) => this.dateMap.set(index++, value);
+
+    for (let month = 1; month <= 12; month++) {
+      add(`${month.toString().padStart(2, '0')}.1996`);
+    }
+
+    for (let emptyIndex = 13; emptyIndex <= 24; emptyIndex++) {
+      add('');
+    }
+
+    for (const year of this.yearsAndStart) {
+      const lastMonth = year === this.currentYear ? this.currentMonth : 12;
+      for (let month = 1; month <= lastMonth; month++) {
+        add(`${month.toString().padStart(2, '0')}.${year}`);
+      }
+    }
+  }
+
+  private setProjectByDate() {
+    this.projects.forEach((project) => {
+      if (!project.month || !project.year) {
+        return;
+      }
+
+      const key = `${project.month.toString().padStart(2, '0')}.${project.year}`;
+      const existing = this.projectsByDate.get(key) ?? [];
+      existing.push(project);
+      this.projectsByDate.set(key, existing);
+    });
   }
 }
 
@@ -24,7 +75,6 @@ export class Url {
 export interface ContextInfo {
   title: string;
   color: string;
-  position: string;
 }
 export interface timeline {
   contextKey: string;
@@ -51,7 +101,6 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Free time',
       color: 'black',
-      position: 'left',
     },
   ],
   [
@@ -59,7 +108,6 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Research assistant, HES-SO Valais Wallis',
       color: 'cyan',
-      position: 'left',
     },
   ],
   [
@@ -67,7 +115,6 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Research assistant, HES-SO Valais Wallis',
       color: 'pink',
-      position: 'left',
     },
   ],
   [
@@ -75,7 +122,6 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Team member, Up4it',
       color: 'green',
-      position: 'right',
     },
   ],
   [
@@ -83,7 +129,6 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Master Digital Experience Design, ECAL',
       color: 'blue',
-      position: 'right',
     },
   ],
   [
@@ -91,7 +136,6 @@ export const contextInfos = new Map<string, ContextInfo>([
     {
       title: 'Bachelor Business IT, HES-SO',
       color: 'cyan',
-      position: 'right',
     },
   ],
 ]);

@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   ProjectInterface,
-  projects,
   ProjectsService,
   timeline,
   timelines,
@@ -18,62 +17,28 @@ import {
 export class Timeline implements AfterViewInit {
   readonly projectsService = inject(ProjectsService);
   timelines = timelines;
-  projects = projects;
-  projectsByDate = new Map<string, ProjectInterface[]>();
+  dateMap = this.projectsService.dateMap;
+  projectsByDate = this.projectsService.projectsByDate;
+  years = this.projectsService.years;
 
-  currentYear = new Date().getFullYear();
-  currentMonth = new Date().getMonth();
-  years = Array.from({ length: this.currentYear - 2017 + 1 }, (_, i) => this.currentYear - i);
-  yearsAndStart = [...this.years].reverse();
-  dateMap = new Map<number, string>();
-
-  constructor() {
-    this.setDateMap();
-    console.log(this.dateMap);
-    this.setProjectByDate();
-    console.log(this.projectsByDate);
-  }
+  constructor() {}
 
   ngAfterViewInit(): void {
     this.setPointProject();
   }
 
+  getColorForDate(dateKey: string, segments: timeline[]): string | null {
+    const segment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
+    return segment ? this.getColor(segment.contextKey) : null;
+  }
+
+  getIdSegment(segments: timeline[], date: string): string {
+    const segment = segments.find((segment) => this.isBetweenTimeline(date, segment));
+    return segment?.contextKey + '-' + date;
+  }
+
   getColor(key: string) {
     return this.projectsService.getContext(key).color;
-  }
-
-  // Create a map between position from the bottom to date like 01.2026
-  private setDateMap() {
-    let index = 1;
-    const add = (value: string) => this.dateMap.set(index++, value);
-
-    for (let month = 1; month <= 12; month++) {
-      add(`${month.toString().padStart(2, '0')}.1996`);
-    }
-
-    for (let emptyIndex = 13; emptyIndex <= 24; emptyIndex++) {
-      add('');
-    }
-
-    for (const year of this.yearsAndStart) {
-      const lastMonth = year === this.currentYear ? this.currentMonth : 12;
-      for (let month = 1; month <= lastMonth; month++) {
-        add(`${month.toString().padStart(2, '0')}.${year}`);
-      }
-    }
-  }
-
-  private setProjectByDate() {
-    this.projects.forEach((project) => {
-      if (!project.month || !project.year) {
-        return;
-      }
-
-      const key = `${project.month.toString().padStart(2, '0')}.${project.year}`;
-      const existing = this.projectsByDate.get(key) ?? [];
-      existing.push(project);
-      this.projectsByDate.set(key, existing);
-    });
   }
 
   private setPointProject() {
@@ -99,30 +64,32 @@ export class Timeline implements AfterViewInit {
     });
   }
 
-  getProjectsForDate(dateKey: string, position: string): ProjectInterface[] {
+  // @TODO: should be done 1 in projects.service
+  getProjectsByColumnWithDate(dateKey: string, position: string): ProjectInterface[] {
     const projects = this.projectsByDate.get(dateKey) ?? [];
+    const timelinesLength = Array.from(this.timelines.keys()).length;
+    const threshold = Math.ceil(timelinesLength / 2);
+
     return projects.filter((project) => {
-      const context = this.projectsService.getContext(project.contextKey);
-      return context.position === position;
+      // Find which timeline contains this project's contextKey
+      let timelineNum = 0;
+      let index = 0;
+      for (const [key, segments] of this.timelines.entries()) {
+        index++;
+        const hasContext = segments.some((seg) => seg.contextKey === project.contextKey);
+        if (hasContext) {
+          timelineNum = index;
+          break;
+        }
+      }
+
+      if (position === 'left') {
+        return timelineNum <= threshold;
+      } else if (position === 'right') {
+        return timelineNum > threshold;
+      }
+      return false;
     });
-  }
-
-  getColorForDate(dateKey: string, segments: timeline[]): string | null {
-    if (!dateKey || !segments || segments.length === 0) {
-      return null;
-    }
-
-    const segment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
-    return segment ? this.getColor(segment.contextKey) : null;
-  }
-
-  getIdSegment(dateKey: string, segments: timeline[]): string | null {
-    if (!dateKey || !segments || segments.length === 0) {
-      return null;
-    }
-
-    const segment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
-    return segment ? segment.contextKey : null;
   }
 
   isBetweenTimeline(dateKey: string, value: timeline): boolean {

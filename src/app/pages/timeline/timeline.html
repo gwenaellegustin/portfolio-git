@@ -5,8 +5,11 @@
     </div>
     <div class="column">
       @for (monthYear of dateMap | keyvalue; track monthYear.key) {
-        @if (getProjectsForDate(monthYear.value, 'left').length > 0) {
-          @for (project of getProjectsForDate(monthYear.value, 'left'); track project.title) {
+        @if (getProjectsByColumnWithDate(monthYear.value, 'left').length > 0) {
+          @for (
+            project of getProjectsByColumnWithDate(monthYear.value, 'left');
+            track project.title
+          ) {
             <div class="project-line">{{ project.title }}</div>
           }
         } @else {
@@ -21,11 +24,7 @@
           @for (monthYear of dateMap | keyvalue; track monthYear.key) {
             @if (getColorForDate(monthYear.value, timeline.value)) {
               <div
-                [id]="
-                  (getIdSegment(monthYear.value, timeline.value) || timeline.key) +
-                  '-' +
-                  monthYear.value
-                "
+                [id]="getIdSegment(timeline.value, monthYear.value)"
                 class="month"
                 [ngClass]="getColorForDate(monthYear.value, timeline.value) + '-background'"
               ></div>
@@ -34,7 +33,7 @@
               @if (timeline.key == '3-MAIN') {
                 <div
                   class="dot"
-                  [id]="timeline.value[0].contextKey + monthYear.key"
+                  [id]="getIdSegment(timeline.value, monthYear.value)"
                   [ngClass]="getColor(timeline.value[0].contextKey) + '-background'"
                 ></div>
               } @else {
@@ -65,8 +64,11 @@
     </div>
     <div class="column">
       @for (monthYear of dateMap | keyvalue; track monthYear.key) {
-        @if (getProjectsForDate(monthYear.value, 'right').length > 0) {
-          @for (project of getProjectsForDate(monthYear.value, 'right'); track project.title) {
+        @if (getProjectsByColumnWithDate(monthYear.value, 'right').length > 0) {
+          @for (
+            project of getProjectsByColumnWithDate(monthYear.value, 'right');
+            track project.title
+          ) {
             <div class="project-line">{{ project.title }}</div>
           }
         } @else {
