@@ -14,6 +14,7 @@ export class Project {
   private readonly _projectsService = inject(ProjectsService);
   project: ProjectInterface = {
     title: 'Project now found',
+    contextKey: 'MAIN',
     description: 'Please check the url.',
     images: [{ url: './logo/GG_Racoon_Face.png' }],
   };
@@ -29,8 +30,8 @@ export class Project {
         this.project = foundProject;
 
         // Define color
-        if (this.project.context) {
-          const foundContext = this._projectsService.getContext(this.project.context);
+        if (this.project.contextKey) {
+          const foundContext = this._projectsService.getContext(this.project.contextKey);
           if (foundContext) {
             this.color = foundContext.color;
             this.context = foundContext.title;

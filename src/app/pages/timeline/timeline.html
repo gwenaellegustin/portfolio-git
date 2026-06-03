@@ -11,7 +11,11 @@
           @for (monthYear of dateMap | keyvalue; track monthYear.key) {
             @if (getColorForDate(monthYear.value, timeline.value)) {
               <div
-                [id]="timeline.key + monthYear.key"
+                [id]="
+                  (getIdSegment(monthYear.value, timeline.value) || timeline.key) +
+                  '-' +
+                  monthYear.value
+                "
                 class="month"
                 [ngClass]="getColorForDate(monthYear.value, timeline.value) + '-background'"
               ></div>
@@ -20,15 +24,15 @@
               @if (timeline.key == '3-MAIN') {
                 <div
                   class="dot"
-                  [id]="timeline.key + monthYear.key"
+                  [id]="timeline.value[0].contextKey + monthYear.key"
                   [ngClass]="getColor(timeline.value[0].contextKey) + '-background'"
                 ></div>
               } @else {
-                <div [id]="timeline.key + monthYear.key" class="month"></div>
+                <div class="month"></div>
               }
             } @else {
               <!-- invisible -->
-              <div [id]="timeline.key + monthYear.key" class="month"></div>
+              <div class="month"></div>
             }
           }
           <!-- 3 dots if still on going -->

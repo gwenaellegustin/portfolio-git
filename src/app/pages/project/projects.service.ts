@@ -15,6 +15,7 @@ export class ProjectsService {
   }
 }
 
+//  interface and class
 export class Url {
   url: string = '';
   text?: string = '';
@@ -33,7 +34,7 @@ export interface timeline {
 }
 export interface ProjectInterface {
   title: string;
-  context?: string;
+  contextKey: string;
   month?: number;
   year?: number;
   subtitle?: string;
@@ -42,6 +43,7 @@ export interface ProjectInterface {
   images: Url[];
 }
 
+// Data
 export const contextInfos = new Map<string, ContextInfo>([
   [
     'MAIN',
@@ -221,7 +223,7 @@ export const projects = new Map<string, ProjectInterface>([
     'gg',
     {
       title: 'This website',
-      context: 'MAIN',
+      contextKey: 'MAIN',
       month: 2,
       year: 2026,
       subtitle: 'Angular 21',
@@ -235,7 +237,7 @@ export const projects = new Map<string, ProjectInterface>([
     'dxd-rc',
     {
       title: 'Reality Check',
-      context: 'DXD',
+      contextKey: 'DXD',
       month: 1,
       year: 2026,
       subtitle: 'UX research',
@@ -276,7 +278,7 @@ export const projects = new Map<string, ProjectInterface>([
     'dxd-pp',
     {
       title: 'Pixel Perfect',
-      context: 'DXD',
+      contextKey: 'DXD',
       month: 12,
       year: 2025,
       subtitle: 'UI Figma',
@@ -316,7 +318,7 @@ export const projects = new Map<string, ProjectInterface>([
     'dxd-mm',
     {
       title: 'Modular Mindset',
-      context: 'DXD',
+      contextKey: 'DXD',
       // date: '17-21.11.2025',
       month: 11,
       year: 2025,
@@ -355,7 +357,7 @@ export const projects = new Map<string, ProjectInterface>([
     'vst',
     {
       title: 'Visualization tool',
-      context: 'HES',
+      contextKey: 'HES',
       month: 7,
       year: 2025,
       subtitle: 'Angular 20, UX',
@@ -383,7 +385,7 @@ export const projects = new Map<string, ProjectInterface>([
     'scg',
     {
       title: 'Swiss Cyber Grid',
-      context: 'HES',
+      contextKey: 'HES',
       month: 12,
       year: 2024,
       subtitle: 'Angular 18',
@@ -412,7 +414,7 @@ export const projects = new Map<string, ProjectInterface>([
     'pan',
     {
       title: 'Pantagruel - Bachelor Thesis',
-      context: 'BSC',
+      contextKey: 'BSC',
       month: 8,
       year: 2023,
       subtitle: 'Angular 15',
@@ -436,7 +438,7 @@ export const projects = new Map<string, ProjectInterface>([
     'hb',
     {
       title: 'Happy birthday !',
-      context: 'MAIN',
+      contextKey: 'MAIN',
       month: 2,
       year: 2023,
       subtitle: 'React18',
@@ -458,7 +460,7 @@ export const projects = new Map<string, ProjectInterface>([
     'bsc-tl',
     {
       title: 'Tlearning',
-      context: 'BSC',
+      contextKey: 'BSC',
       month: 9,
       year: 2022,
       subtitle: 'Flutter',
@@ -483,7 +485,7 @@ export const projects = new Map<string, ProjectInterface>([
     'bsc-vast',
     {
       title: 'VAST app',
-      context: 'BSC',
+      contextKey: 'BSC',
       month: 6,
       year: 2022,
       subtitle: 'React18, PWA',
@@ -506,7 +508,7 @@ export const projects = new Map<string, ProjectInterface>([
     'bsc-sv',
     {
       title: 'SwissVia',
-      context: 'BSC',
+      contextKey: 'BSC',
       month: 2,
       year: 2022,
       subtitle: 'Java Android',
@@ -530,7 +532,7 @@ export const projects = new Map<string, ProjectInterface>([
     'droppy',
     {
       title: 'Droppy',
-      context: 'BSC',
+      contextKey: 'BSC',
       month: 6,
       year: 2021,
       subtitle: 'JavaScript',

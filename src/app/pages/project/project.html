@@ -11,19 +11,20 @@
 
       <h3>
         <div class="subtitle-group">
-          @if (project.subtitle){
-          <span>{{ project.subtitle }}</span>
-          } @if (project.date){
-          <span>{{ project.date }}</span>
+          @if (project.subtitle) {
+            <span>{{ project.subtitle }}</span>
           }
+          <!-- @if (project.date){
+          <span>{{ project.date }}</span>
+          } -->
         </div>
-        @if (project.context){
-        <span [ngClass]="color">{{ context }}</span>
+        @if (project.contextKey) {
+          <span [ngClass]="color">{{ context }}</span>
         }
       </h3>
       <div class="buttons">
-        @for(url of project.urls; track $index){
-        <a href="{{ url.url }}" target="_blank" class="button">{{ url.text }}</a>
+        @for (url of project.urls; track $index) {
+          <a href="{{ url.url }}" target="_blank" class="button">{{ url.text }}</a>
         }
       </div>
 
@@ -31,19 +32,21 @@
     </div>
 
     <div class="right">
-      @for (image of project.images; track $index) { @if(image.url !== ""){
-      <div class="image">
-        @if(image.url.endsWith(".mp4") || image.url.endsWith(".mov") ){
-        <span>{{ image.text }}</span>
-        <video autoplay loop controls>
-          <source [src]="image.url" type="video/mp4" />
-        </video>
-        } @else{
-        <span>{{ image.text }}</span>
-        <img [src]="image.url" onerror="this.style.visibility = 'hidden'" />
+      @for (image of project.images; track $index) {
+        @if (image.url !== '') {
+          <div class="image">
+            @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
+              <span>{{ image.text }}</span>
+              <video autoplay loop controls>
+                <source [src]="image.url" type="video/mp4" />
+              </video>
+            } @else {
+              <span>{{ image.text }}</span>
+              <img [src]="image.url" onerror="this.style.visibility = 'hidden'" />
+            }
+          </div>
         }
-      </div>
-      } }
+      }
     </div>
   </div>
 </div>

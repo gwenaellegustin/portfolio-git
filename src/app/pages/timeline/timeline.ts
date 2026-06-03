@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   ProjectInterface,
   projects,
@@ -7,16 +7,15 @@ import {
   timeline,
   timelines,
 } from '../project/projects.service';
-import { MiniProject } from './mini-project/mini-project';
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.html',
   styleUrl: './timeline.scss',
-  imports: [CommonModule, MiniProject],
+  imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Timeline {
+export class Timeline implements AfterViewInit {
   readonly projectsService = inject(ProjectsService);
   timelines = timelines;
   projects = projects;
@@ -33,6 +32,10 @@ export class Timeline {
     console.log(this.dateMap);
     this.setProjectByDate();
     console.log(this.projectsByDate);
+  }
+
+  ngAfterViewInit(): void {
+    this.setPointProject();
   }
 
   getColor(key: string) {
@@ -73,6 +76,29 @@ export class Timeline {
     });
   }
 
+  private setPointProject() {
+    this.projectsByDate.forEach((projects, dateKey) => {
+      projects.forEach((project, index) => {
+        const elementId = project.contextKey + '-' + dateKey;
+
+        const element = document.getElementById(elementId);
+        if (!element) {
+          return;
+        }
+
+        if (element.classList.contains('month')) {
+          element.classList.replace('month', 'point');
+        } else {
+          element.classList.add('point');
+        }
+        const color = this.getColor(project.contextKey);
+        if (color) {
+          element.classList.add(`${color}-background`);
+        }
+      });
+    });
+  }
+
   getProjectsForDate(dateKey: string): ProjectInterface[] {
     if (!dateKey) {
       return [];
@@ -87,6 +113,15 @@ export class Timeline {
 
     const segment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
     return segment ? this.getColor(segment.contextKey) : null;
+  }
+
+  getIdSegment(dateKey: string, segments: timeline[]): string | null {
+    if (!dateKey || !segments || segments.length === 0) {
+      return null;
+    }
+
+    const segment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
+    return segment ? segment.contextKey : null;
   }
 
   isBetweenTimeline(dateKey: string, value: timeline): boolean {

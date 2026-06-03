@@ -13,6 +13,7 @@ import { ProjectInterface, projects } from '../../project/projects.service';
 export class MiniProject {
   project: ProjectInterface = {
     title: 'Project now found',
+    contextKey: 'MAIN',
     description: 'Please check the url.',
     images: [{ url: './logo/GG_Racoon_Face.png' }],
   };
