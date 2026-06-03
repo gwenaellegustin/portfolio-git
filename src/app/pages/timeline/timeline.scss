@@ -11,16 +11,22 @@
       flex-direction: row;
       gap: $page-gap;
 
-      .cell {
+      .cell.default {
         transition: 500ms ease-in-out;
-        flex: 1;
-        max-width: $column-width;
         display: flex;
         justify-content: space-around;
         // border: 1px solid rgb(196, 193, 193);
       }
+      .cell.default {
+        flex: 1;
+        max-width: $column-width;
+      }
       .cell.hidden {
         flex: 0;
+      }
+      .cell.opened {
+        flex: 1;
+        max-width: none;
       }
 
       // Column center with timelines
@@ -36,6 +42,8 @@
             width: $width-line;
             height: 100%;
             min-height: $month;
+            border-radius: $month;
+            // margin: -2px 0;
           }
           .commit {
             flex: 1;
@@ -44,13 +52,23 @@
             justify-content: start;
             align-items: center;
             .point {
-              height: ($month);
-              width: calc($month);
-              border-radius: calc($month);
+              height: $space + 1px;
+              width: $space + 1px;
+              border-radius: $month;
+              margin: -1px 0;
+              transition: 100ms ease-in-out;
             }
             .bottom-line {
               flex: 1;
               width: $width-line;
+              // margin: -2px 0;
+            }
+          }
+          .commit.hover,
+          .commit.opened {
+            .point {
+              height: $month;
+              width: $month;
             }
           }
         }
@@ -61,7 +79,7 @@
         height: auto;
         padding: $space-small;
         background-color: $background;
-        border: 1px solid;
+        border: 2px solid;
         border-radius: 10px;
         overflow: hidden;
 
@@ -95,19 +113,13 @@
         }
       }
       .project-container.hidden {
-        // display: none;
         width: 0;
         padding: 0;
         border: none;
-        // .project-container {
-        //   width: 0;
-        //   padding: 0;
-        //   border: none;
-        // }
       }
 
       .project-container.opened {
-        height: calc(90svh - $app-bar-height); //@TODO fix math
+        height: calc(80svh - $app-bar-height); //@TODO fix math
         overflow-y: scroll;
         .title {
           font-size: x-large;
@@ -142,7 +154,7 @@
         }
       }
 
-      .project-container:hover {
+      .project-container.hover {
         .main-image {
           visibility: visible;
           opacity: 1;
@@ -153,19 +165,19 @@
           align-items: center;
         }
       }
-      .project-container.black-border:hover {
+      .project-container:not(.opened).black-border:hover {
         color: $background;
         background-color: $on-background;
       }
-      .project-container.blue-border:hover {
+      .project-container:not(.opened).blue-border:hover {
         color: $background;
         background-color: $blue;
       }
-      .project-container.cyan-border:hover {
+      .project-container:not(.opened).cyan-border:hover {
         color: $background;
         background-color: $cyan;
       }
-      .project-container.green-border:hover {
+      .project-container:not(.opened).green-border:hover {
         color: $background;
         background-color: $green;
       }

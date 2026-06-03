@@ -1,16 +1,19 @@
 <div class="container">
   @for (monthYear of dateMap | keyvalue; track monthYear.key) {
     <div class="month" [id]="monthYear.value">
-      <div class="cell" [id]="'col1-' + monthYear.value" [ngClass]="monthYear.value"></div>
+      <div class="cell default" [id]="'col1-' + monthYear.value" [ngClass]="monthYear.value"></div>
 
-      <div class="cell" [id]="'col2-' + monthYear.value" [ngClass]="monthYear.value">
+      <div class="cell default" [id]="'col2-' + monthYear.value" [ngClass]="monthYear.value">
         @for (project of projectsByDate | keyvalue; track project) {
           @if (project.key == monthYear.value && getPosition(project.value) == 'left') {
+            <!-- @TODO: fix not hover effect on scroll -->
             <div
               class="project-container"
               [id]="project.value.key"
               [ngClass]="getColorProject(project.value.contextKey) + '-border'"
               (click)="openProject(project.value.key || '')"
+              (mouseenter)="hoverProject(getProjectByDate(monthYear.value)?.key || '')"
+              (mouseleave)="leaveProject(getProjectByDate(monthYear.value)?.key || '')"
             >
               <div class="text">
                 <div class="title">
@@ -49,13 +52,16 @@
         }
       </div>
 
-      <div class="cell col3" [id]="'col3-' + monthYear.value" [ngClass]="monthYear.value">
+      <div class="cell default col3" [id]="'col3-' + monthYear.value" [ngClass]="monthYear.value">
         @for (timeline of timelines | keyvalue; track $index) {
           <div class="color-element">
             @if (isProjectInTimelineSegment(timeline.value, monthYear.value)) {
               <div
                 class="commit"
+                [id]="'commit-' + getProjectByDate(monthYear.value)?.key"
                 (click)="openProject(getProjectByDate(monthYear.value)?.key || '')"
+                (mouseenter)="hoverProject(getProjectByDate(monthYear.value)?.key || '')"
+                (mouseleave)="leaveProject(getProjectByDate(monthYear.value)?.key || '')"
               >
                 <div
                   class="point"
@@ -80,20 +86,9 @@
             }
           </div>
         }
-
-        <!-- <div class="timeline">
-          @for (project of projectsByDate | keyvalue; track $index) {
-            @if (project.key == monthYear.value) {
-              <div
-                class="point"
-                [ngClass]="this.getColorProject(project.value.contextKey) + '-background'"
-              ></div>
-            }
-          }
-        </div> -->
       </div>
 
-      <div class="cell" [id]="'col4-' + monthYear.value" [ngClass]="monthYear.value">
+      <div class="cell default" [id]="'col4-' + monthYear.value" [ngClass]="monthYear.value">
         @for (project of projectsByDate | keyvalue; track project) {
           @if (project.key == monthYear.value && getPosition(project.value) == 'right') {
             <div
@@ -101,6 +96,8 @@
               [id]="project.value.key"
               [ngClass]="getColorProject(project.value.contextKey) + '-border'"
               (click)="openProject(project.value.key || '')"
+              (mouseenter)="hoverProject(getProjectByDate(monthYear.value)?.key || '')"
+              (mouseleave)="leaveProject(getProjectByDate(monthYear.value)?.key || '')"
             >
               <div class="text">
                 <div class="title">
@@ -144,7 +141,7 @@
         }
       </div>
 
-      <div class="cell" [id]="'col5-' + monthYear.value" [ngClass]="monthYear.value"></div>
+      <div class="cell default" [id]="'col5-' + monthYear.value" [ngClass]="monthYear.value"></div>
     </div>
   }
 </div>

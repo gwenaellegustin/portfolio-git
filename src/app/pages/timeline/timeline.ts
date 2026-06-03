@@ -17,23 +17,63 @@ export class Timeline {
 
   constructor() {}
 
+  hoverProject(projectKey: string) {
+    const projects = document.getElementsByClassName('project-container');
+    for (let element of projects) {
+      if (element.id == projectKey) {
+        element.classList.add('hover');
+      }
+    }
+
+    const commit = document.getElementById('commit-' + projectKey);
+    console.log(commit);
+    commit?.classList.add('hover');
+  }
+
+  leaveProject(projectKey: string) {
+    const projects = document.getElementsByClassName('project-container');
+    for (let element of projects) {
+      if (element.id == projectKey) {
+        element.classList.remove('hover');
+      }
+    }
+
+    const commit = document.getElementById('commit-' + projectKey);
+    if (!commit?.classList.contains('opened')) {
+      commit?.classList.remove('hover');
+    }
+  }
+
   openProject(projectKey: string) {
-    console.log(projectKey);
     const cells = document.getElementsByClassName('cell');
     for (let element of cells) {
       element.classList.add('hidden');
     }
 
+    const commits = document.getElementsByClassName('commit');
+    for (let element of commits) {
+      element.classList.remove('hover');
+      element.classList.remove('opened');
+    }
+
     const projects = document.getElementsByClassName('project-container');
-    console.log(projectKey);
     for (let element of projects) {
       if (element.id == projectKey) {
         element.classList.add('opened');
-        element.parentElement!.style.flex = '1';
-        element.parentElement!.style.maxWidth = 'none';
-      }
-      if (element.id != projectKey) {
+
+        // cell
+        element.parentElement?.classList.add('opened');
+
+        // commit
+        const commit = document.getElementById('commit-' + element.id);
+        console.log(commit);
+        commit?.classList.add('opened');
+      } else {
+        element.classList.remove('opened');
         element.classList.add('hidden');
+
+        // cell
+        element.parentElement?.classList.remove('opened');
       }
     }
 
