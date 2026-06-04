@@ -79,7 +79,7 @@ export class DataService {
     }
     for (let emptyIndex = 13; emptyIndex <= 24; emptyIndex++) {
       if (index % 2 == 0) {
-        add('dot');
+        add('dot-end');
       } else {
         add('empty');
       }

@@ -91,9 +91,26 @@
                 ></div>
               </div>
             } @else if (monthYear.value == 'dot') {
-              <!-- TODO get color -->
+              <!-- @TODO get color -->
+              @if ($index == 0) {
+                <div class="dot pink-background"></div>
+              }
               @if ($index == 2) {
                 <div class="dot black-background"></div>
+              }
+              @if ($index == 3) {
+                <div class="dot green-background"></div>
+              }
+              @if ($index == 4) {
+                <div class="dot blue-background"></div>
+              }
+            } @else if (monthYear.value == 'dot-end') {
+              <!-- @TODO get color -->
+              @if ($index == 2) {
+                <div class="dot black-background"></div>
+              }
+              @if ($index == 4 && monthYear.key >= 122 && monthYear.key <= 126) {
+                <div class="dot orange-background"></div>
               }
             } @else if (monthYear.value == 'empty' && $index == 2) {
               <div class="dot"></div>
