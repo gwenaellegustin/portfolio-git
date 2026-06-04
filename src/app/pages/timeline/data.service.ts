@@ -17,7 +17,6 @@ export class DataService {
 
   constructor() {
     this.setDateMap();
-    console.log('dateMap', this.dateMap);
 
     // Add position property to each project
     this.projects.forEach((project) => {
@@ -25,6 +24,9 @@ export class DataService {
     });
     this.setProjectByDate();
     this.setProjectByKey();
+    console.log(projects);
+    console.log(this.projectsByDate);
+    console.log(this.projectsByKey);
   }
 
   setProjectPosition(project: ProjectInterface) {
@@ -52,7 +54,7 @@ export class DataService {
   }
   private setProjectByKey() {
     this.projects.forEach((project) => {
-      this.projectsByDate.set(project.key, { ...project });
+      this.projectsByKey.set(project.key, { ...project });
     });
   }
 

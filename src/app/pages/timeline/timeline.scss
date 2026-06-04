@@ -28,19 +28,26 @@
       }
       .cell.default {
         flex: 1;
+        opacity: 100;
         // max-width: $column-width;
       }
       .cell.hidden {
         flex: 0;
+        opacity: 0;
+      }
+      .cell.empty {
+        flex: 1;
+        opacity: 0;
       }
       .cell.opened {
         flex: 1;
         max-width: none;
+        opacity: 100;
       }
 
       // Column center with timelines
       .col3 {
-        min-width: $column-width; // when removing other column
+        max-width: $column-width; // when removing other column
         .color-element {
           flex: 1;
           display: flex;
@@ -105,7 +112,7 @@
         }
 
         .main-image {
-          transition: 100ms ease-in-out;
+          transition: 500ms ease-in-out;
           visibility: hidden;
           opacity: 0;
           height: 0;
@@ -115,19 +122,26 @@
           }
         }
         .content {
+          border: solid $background 1px; // this fix to auto height
+          transition: 500ms ease-in-out;
           visibility: hidden;
           width: 0;
           height: 0;
+          p {
+            height: 0;
+          }
         }
       }
       .project-container.hidden {
         width: 0;
         padding: 0;
-        border: none;
+        border-style: none;
       }
       .project-container.opened {
-        height: calc(80svh - $app-bar-height); //@TODO fix math
+        // height: calc(80svh - $app-bar-height); //@TODO fix math
         overflow-y: scroll;
+        padding: $space-small;
+        border-style: solid;
         .title {
           font-size: x-large;
         }
@@ -160,7 +174,7 @@
           }
         }
       }
-      .project-container.hover {
+      .project-container.hover:not(.hidden) {
         .main-image {
           visibility: visible;
           opacity: 1;
@@ -171,26 +185,26 @@
           align-items: center;
         }
       }
-      .project-container:not(.opened).black-border:hover {
-        color: $background;
-        background-color: $on-background;
-      }
-      .project-container:not(.opened).blue-border:hover {
-        color: $background;
-        background-color: $blue;
-      }
-      .project-container:not(.opened).cyan-border:hover {
-        color: $background;
-        background-color: $cyan;
-      }
-      .project-container:not(.opened).green-border:hover {
-        color: $background;
-        background-color: $green;
-      }
-      .project-container:not(.opened).red-border:hover {
-        color: $background;
-        background-color: $red;
-      }
+      // .project-container:not(.opened).black-border:hover {
+      //   color: $background;
+      //   background-color: $on-background;
+      // }
+      // .project-container:not(.opened).blue-border:hover {
+      //   color: $background;
+      //   background-color: $blue;
+      // }
+      // .project-container:not(.opened).cyan-border:hover {
+      //   color: $background;
+      //   background-color: $cyan;
+      // }
+      // .project-container:not(.opened).green-border:hover {
+      //   color: $background;
+      //   background-color: $green;
+      // }
+      // .project-container:not(.opened).red-border:hover {
+      //   color: $background;
+      //   background-color: $red;
+      // }
     }
   }
 }

@@ -28,7 +28,6 @@ export class Timeline {
     }
 
     const commit = document.getElementById('commit-' + projectKey);
-    console.log(commit);
     commit?.classList.add('hover');
   }
 
@@ -47,9 +46,39 @@ export class Timeline {
   }
 
   openProject(projectKey: string) {
+    const project = this.projectsByKey.get(projectKey);
     const cells = document.getElementsByClassName('cell');
     for (let element of cells) {
-      element.classList.add('hidden');
+      if (element.classList.contains('col1') || element.classList.contains('col5')) {
+        element.classList.add('hidden');
+      }
+
+      if (project?.position == 'left') {
+        if (element.classList.contains('col2')) {
+          element.classList.remove('default');
+          element.classList.remove('hidden');
+          element.classList.remove('opened');
+          element.classList.add('empty');
+        } else if (element.classList.contains('col4')) {
+          element.classList.remove('default');
+          element.classList.remove('empty');
+          element.classList.remove('opened');
+          element.classList.add('hidden');
+        }
+      }
+      if (project?.position == 'right') {
+        if (element.classList.contains('col4')) {
+          element.classList.remove('default');
+          element.classList.remove('hidden');
+          element.classList.remove('opened');
+          element.classList.add('empty');
+        } else if (element.classList.contains('col2')) {
+          element.classList.remove('default');
+          element.classList.remove('empty');
+          element.classList.remove('opened');
+          element.classList.add('hidden');
+        }
+      }
     }
 
     const commits = document.getElementsByClassName('commit');
@@ -68,7 +97,6 @@ export class Timeline {
 
         // commit
         const commit = document.getElementById('commit-' + element.id);
-        console.log(commit);
         commit?.classList.add('opened');
       } else {
         element.classList.remove('opened');

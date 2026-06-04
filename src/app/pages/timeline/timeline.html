@@ -30,7 +30,7 @@
                 <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
               </div>
               <div class="content">
-                <p class="intro-text" [innerHTML]="project.description"></p>
+                <span class="intro-text" [innerHTML]="project.description"></span>
 
                 @for (image of project.images; track $index) {
                   @if (image.url !== '' && $index != 0) {
@@ -111,7 +111,7 @@
                 <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
               </div>
               <div class="content">
-                <p class="intro-text" [innerHTML]="project.description"></p>
+                <span class="intro-text" [innerHTML]="project.description"></span>
 
                 @for (image of project.images; track $index) {
                   @if (image.url !== '' && $index != 0) {
