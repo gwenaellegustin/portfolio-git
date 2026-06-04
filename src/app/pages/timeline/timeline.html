@@ -14,18 +14,16 @@
             <div
               class="project-container"
               [id]="project.key"
-              [ngClass]="getColorProject(project.contextKey) + '-border'"
               (click)="openProject(project.key)"
               (mouseenter)="hoverProject(project.key)"
               (mouseleave)="leaveProject(project.key)"
             >
-              <div class="text">
+              <div class="first-line" [ngClass]="getColorContext(project.contextKey) + '-border'">
                 <div class="title">
                   {{ project.title }}
                 </div>
                 <div class="subtitle">{{ project.subtitle }}</div>
               </div>
-
               <div class="main-image">
                 <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
               </div>
@@ -67,25 +65,32 @@
                 <div
                   class="top-line"
                   [ngClass]="
-                    this.getColorProject(getProjectByDate(monthYear.value)?.contextKey || '') +
+                    this.getColorContext(getProjectByDate(monthYear.value)?.contextKey || '') +
                     '-background'
                   "
                 ></div>
                 <div
                   class="point"
                   [ngClass]="
-                    this.getColorProject(getProjectByDate(monthYear.value)?.contextKey || '') +
+                    this.getColorContext(getProjectByDate(monthYear.value)?.contextKey || '') +
                     '-background'
                   "
                 ></div>
                 <div
                   class="bottom-line"
                   [ngClass]="
-                    this.getColorProject(getProjectByDate(monthYear.value)?.contextKey || '') +
+                    this.getColorContext(getProjectByDate(monthYear.value)?.contextKey || '') +
                     '-background'
                   "
                 ></div>
               </div>
+            } @else if (monthYear.value == 'dot') {
+              <!-- TODO get color -->
+              @if ($index == 2) {
+                <div class="dot black-background"></div>
+              }
+            } @else if (monthYear.value == 'empty') {
+              <div class="dot"></div>
             } @else {
               <div
                 class="timeline"
@@ -102,22 +107,23 @@
             <div
               class="project-container"
               [id]="project.key"
-              [ngClass]="getColorProject(project.contextKey) + '-border'"
               (click)="openProject(project.key)"
               (mouseenter)="hoverProject(project.key)"
               (mouseleave)="leaveProject(project.key)"
             >
-              <div class="text">
+              <div class="first-line" [ngClass]="getColorContext(project.contextKey) + '-border'">
                 <div class="title">
                   {{ project.title }}
                 </div>
                 <div class="subtitle">{{ project.subtitle }}</div>
+                <!-- <div class="subtitle">close</div> -->
               </div>
 
-              <div class="main-image">
-                <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
-              </div>
               <div class="content">
+                <div class="main-image">
+                  <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
+                </div>
+
                 <span class="intro-text" [innerHTML]="project.description"></span>
 
                 @for (image of project.images; track $index) {
@@ -139,7 +145,7 @@
             </div>
             <!-- <app-mini-project
             [project]="project"
-            [color]="getColorProject(project.contextKey)"
+            [color]="getColorContext(project.contextKey)"
             [idElement]="'col2-' + monthYear.value"
           ></app-mini-project> -->
           }

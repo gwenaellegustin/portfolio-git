@@ -20,9 +20,11 @@ export class Timeline {
   constructor() {}
 
   hoverProject(projectKey: string) {
-    const projects = document.getElementsByClassName('project-container');
+    const projects = document.getElementsByClassName('first-line');
+    console.log(projects);
     for (let element of projects) {
-      if (element.id == projectKey) {
+      if (element.parentElement!.id == projectKey) {
+        console.log(element.parentElement!.id);
         element.classList.add('hover');
       }
     }
@@ -32,9 +34,9 @@ export class Timeline {
   }
 
   leaveProject(projectKey: string) {
-    const projects = document.getElementsByClassName('project-container');
+    const projects = document.getElementsByClassName('first-line');
     for (let element of projects) {
-      if (element.id == projectKey) {
+      if (element.parentElement!.id == projectKey) {
         element.classList.remove('hover');
       }
     }
@@ -68,10 +70,10 @@ export class Timeline {
       }
       if (project?.position == 'right') {
         if (element.classList.contains('col4')) {
-          element.classList.remove('default');
+          // element.classList.remove('default');
           element.classList.remove('hidden');
           element.classList.remove('opened');
-          element.classList.add('empty');
+          // element.classList.add('empty');
         } else if (element.classList.contains('col2')) {
           element.classList.remove('default');
           element.classList.remove('empty');
@@ -100,7 +102,7 @@ export class Timeline {
         commit?.classList.add('opened');
       } else {
         element.classList.remove('opened');
-        element.classList.add('hidden');
+        element.classList.add('default');
 
         // cell
         element.parentElement?.classList.remove('opened');
@@ -112,7 +114,7 @@ export class Timeline {
 
   getColorForDate(dateKey: string, segments: timeline[]): string | null {
     const segment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
-    return segment ? this.getColorProject(segment.contextKey) : null;
+    return segment ? this.getColorContext(segment.contextKey) : null;
   }
 
   getIdSegment(segments: timeline[], date: string): string {
@@ -120,7 +122,7 @@ export class Timeline {
     return segment?.contextKey + '-' + date;
   }
 
-  getColorProject(key: string) {
+  getColorContext(key: string) {
     return this.projectsService.getContext(key).color;
   }
 

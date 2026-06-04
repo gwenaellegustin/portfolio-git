@@ -12,8 +12,9 @@ $year: calc($month * 12);
 $width-line: $space-small;
 $app-bar-height: min(10vw, $space-bigger);
 $page-margin: $space-biggest;
-$page-gap: $space-big;
-$column-width: calc((100svw - 15px - calc(2 * $page-margin) - (4 * $page-gap)) / 5);
+$page-gap: 0;
+$column-width: calc(100svw / 5);
+//calc((100svw - calc(2 * $page-margin) - calc(4 * $page-gap)) / 5);
 
 $background: #ffffff;
 $on-background: #000000;

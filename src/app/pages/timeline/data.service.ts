@@ -70,7 +70,10 @@ export class DataService {
   private setDateMap() {
     let index = 1;
     const add = (value: string) => this.dateMap.set(index++, value);
-
+    for (let emptyIndex = 0; emptyIndex < 3; emptyIndex++) {
+      add('dot');
+      add('empty');
+    }
     for (let year = 2026; year >= 2017; year--) {
       const startMonth = year === this.currentYear ? this.currentMonth : 12;
       for (let month = startMonth; month >= 1; month--) {
@@ -78,7 +81,11 @@ export class DataService {
       }
     }
     for (let emptyIndex = 13; emptyIndex <= 24; emptyIndex++) {
-      add('');
+      if (index % 2 == 0) {
+        add('dot');
+      } else {
+        add('empty');
+      }
     }
     for (let month = 12; month >= 1; month--) {
       add(`${month.toString().padStart(2, '0')}.1996`);

@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 $page-margin;
-    transition: 1000ms ease-in-out; //TODO transition
+    // transition: 1000ms ease-in-out; //TODO transition
     .month {
       display: flex;
       flex-direction: row;
@@ -21,10 +21,13 @@
       // }
 
       .cell {
+        flex: 1;
         transition: 500ms ease-in-out;
+        transition-delay: 100ms;
         display: flex;
         justify-content: space-around;
         // border: 1px solid rgb(196, 193, 193);
+        margin-bottom: -$space-small;
       }
       .cell.default {
         flex: 1;
@@ -49,18 +52,19 @@
       // Column center with timelines
       .col3 {
         max-width: $column-width; // when removing other column
+        min-height: $space-small;
         .color-element {
           flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          margin: -2px 0;
           .timeline {
             width: $width-line;
             height: 100%;
             min-height: $month;
             border-radius: $month;
+            // margin-top: -4px;
           }
           .commit {
             flex: 1;
@@ -68,20 +72,23 @@
             flex-direction: column;
             justify-content: start;
             align-items: center;
+            // margin-top: -8px;
             .top-line {
-              height: $space-smallest;
+              height: $space-bigger - $space/2 - 2px;
               width: $width-line;
+              margin: -2px 0;
             }
             .point {
               height: $space;
               width: $space;
               border-radius: $month;
-              margin: -1px 0;
               transition: 100ms ease-in-out;
+              // margin-top: $space-smallest;
             }
             .bottom-line {
               flex: 1;
               width: $width-line;
+              margin: -2px 0;
             }
           }
           .commit.hover,
@@ -89,19 +96,32 @@
             .point {
               height: $month;
               width: $month;
+              margin-top: calc($month / 4 * -1);
             }
           }
         }
+        .dot {
+          height: $space-small;
+          width: $space-small;
+          border-radius: $month;
+          margin: 2px 0;
+        }
+      }
+
+      .first-line {
+        border: 2px solid;
+        border-radius: 10px;
+        padding: $space-small;
+        height: $space-bigger;
+        display: flex;
+        gap: $space;
       }
 
       .project-container {
         flex: 1;
         height: auto;
-        padding: $space-small;
-        margin: 2px;
+        padding-bottom: $space-small;
         background-color: $background;
-        border: 2px solid;
-        border-radius: 10px;
         overflow: hidden;
 
         .text {
@@ -118,7 +138,7 @@
         }
 
         .main-image {
-          transition: 500ms ease-in-out;
+          // transition: 500ms ease-in-out;
           visibility: hidden;
           opacity: 0;
           height: 0;
@@ -129,8 +149,9 @@
         }
         .content {
           border: solid $background 1px; // this fix to auto height
-          transition: 500ms ease-in-out;
-          visibility: hidden;
+          transition: 300ms ease-in-out;
+          transition-delay: 500ms;
+          opacity: 0;
           width: 0;
           height: 0;
           p {
@@ -141,13 +162,11 @@
       .project-container.hidden {
         width: 0;
         padding: 0;
-        border-style: none;
       }
       .project-container.opened {
         // height: calc(80svh - $app-bar-height); //@TODO fix math
-        overflow-y: scroll;
-        padding: $space-small;
-        border-style: solid;
+        // overflow-y: scroll;
+        // padding: $space-small;
         .title {
           font-size: x-large;
         }
@@ -164,9 +183,14 @@
           align-items: center;
         }
         .content {
-          visibility: visible;
+          // visibility: visible;
+          // transition: 500ms ease-in-out;
+          // transition-delay: 3000ms;
+          opacity: 100;
           height: auto;
-          width: 100%;
+          width: auto;
+
+          // display: block;
           .image {
             flex: 1;
             display: flex;
@@ -180,37 +204,41 @@
           }
         }
       }
-      .project-container.hover:not(.hidden) {
-        .main-image {
-          visibility: visible;
-          opacity: 1;
-          height: auto;
-          display: flex;
-          flex: 1;
-          overflow: hidden;
-          align-items: center;
-        }
+      // .first-line.hover:not(.hidden) {
+      //   .main-image {
+      //     visibility: visible;
+      //     opacity: 1;
+      //     height: auto;
+      //     display: flex;
+      //     flex: 1;
+      //     overflow: hidden;
+      //     align-items: center;
+      //   }
+      // }
+      .first-line.black-border.hover,
+      .first-line.black-border.opened {
+        color: $background;
+        background-color: $on-background;
       }
-      // .project-container:not(.opened).black-border:hover {
-      //   color: $background;
-      //   background-color: $on-background;
-      // }
-      // .project-container:not(.opened).blue-border:hover {
-      //   color: $background;
-      //   background-color: $blue;
-      // }
-      // .project-container:not(.opened).cyan-border:hover {
-      //   color: $background;
-      //   background-color: $cyan;
-      // }
-      // .project-container:not(.opened).green-border:hover {
-      //   color: $background;
-      //   background-color: $green;
-      // }
-      // .project-container:not(.opened).red-border:hover {
-      //   color: $background;
-      //   background-color: $red;
-      // }
+      .first-line.blue-border.hover,
+      .first-line.blue-border.opened {
+        color: $background;
+        background-color: $blue;
+      }
+      .first-line.cyan-border.hover,
+      .first-line.cyan-border.opened {
+        color: $background;
+        background-color: $cyan;
+      }
+      .first-line.green-border.hover,
+      .first-line.green-border.opened {
+        color: $background;
+        background-color: $green;
+      }
+      .first-line.red-border.hover .first-line.red-border.opened {
+        color: $background;
+        background-color: $red;
+      }
     }
   }
 }
