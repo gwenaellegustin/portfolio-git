@@ -17,15 +17,25 @@ $column-width: calc(100svw / 5);
 //calc((100svw - calc(2 * $page-margin) - calc(4 * $page-gap)) / 5);
 
 $background: #ffffff;
-$on-background: #000000;
-$blue: #354be2;
-$pink: #db66a7; // #ce5e5d;
-$cyan: #4fa8e6;
-$green: #41d8ae;
-$red: #ba162c;
-$purple: #ba78e8;
-$beige: #c6c1b7;
-$orange: #e56758;
+$on-background: #666666;
+$red: #ca4151;
+$purple: #8f2be7;
+$pink: #eb2ec5;
+$beige: #ffdb28;
+$cyan: #17d4ce;
+$blue: #0f87e4;
+$green: #13cc0c;
+$orange: #f28200;
+
+// Pastel
+// $red: #f77d8c;
+// $purple: #c6a0f6;
+// $pink: #df8fc1;
+// $beige: #f6d897;
+// $cyan: #90c6c4;
+// $blue: #80a7fe;
+// $green: #9fe58a;
+// $orange: #ffa875;
 
 // Common breakpoints
 // 1280, 1024, 768
