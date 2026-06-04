@@ -67,9 +67,13 @@
             flex-direction: column;
             justify-content: start;
             align-items: center;
+            .top-line {
+              height: $space-smallest;
+              width: $width-line;
+            }
             .point {
-              height: $space + 1px;
-              width: $space + 1px;
+              height: $space;
+              width: $space;
               border-radius: $month;
               margin: -1px 0;
               transition: 100ms ease-in-out;
@@ -93,6 +97,7 @@
         flex: 1;
         height: auto;
         padding: $space-small;
+        margin: 2px;
         background-color: $background;
         border: 2px solid;
         border-radius: 10px;

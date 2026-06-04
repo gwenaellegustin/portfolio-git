@@ -65,6 +65,13 @@
                 (mouseleave)="leaveProject(getProjectByDate(monthYear.value)?.key || '')"
               >
                 <div
+                  class="top-line"
+                  [ngClass]="
+                    this.getColorProject(getProjectByDate(monthYear.value)?.contextKey || '') +
+                    '-background'
+                  "
+                ></div>
+                <div
                   class="point"
                   [ngClass]="
                     this.getColorProject(getProjectByDate(monthYear.value)?.contextKey || '') +
