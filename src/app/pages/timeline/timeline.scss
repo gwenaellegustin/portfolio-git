@@ -194,7 +194,7 @@
             flex-basis: 30%;
             img,
             video {
-              max-height: 80vh;
+              // max-height: 80vh;
               max-width: 100%;
             }
           }
@@ -243,9 +243,38 @@
   }
 
   @media only screen and (max-width: 1000px) {
+    .month {
+      gap: $space-smallest;
+    }
     .col1.cell,
     .col5.cell {
       flex: 0 !important;
+    }
+    .col3 {
+      min-width: calc(100svw / 3);
+    }
+    .commit.opened {
+      .point {
+        height: $space !important;
+        width: $space !important;
+      }
+    }
+    .project-container {
+      padding: $space-smallest !important;
+    }
+    .first-line {
+      height: auto !important;
+      word-break: break-all;
+    }
+    .content {
+      gap: $space-smallest !important;
+    }
+    .image {
+      flex-basis: 80% !important;
+      width: 100% !important;
+      img {
+        padding: $space-small $space !important;
+      }
     }
   }
 }

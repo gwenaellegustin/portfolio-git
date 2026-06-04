@@ -14,8 +14,9 @@ $app-bar-height: min(10vw, $space-bigger);
 $page-margin: 0;
 $page-gap: $space-smallest;
 // $column-width: calc(100svw / 3 - (2 * $page-margin) - (4 * $page-gap));
+// $column-width: calc(100svw / 5 - (4 * $page-gap));
 $column-width: calc(100svw / 5 - (4 * $page-gap));
-$head-width: min($column-width, 200px);
+$head-width: clamp(200px, $column-width, 40vw);
 
 $background: #ffffff;
 $on-background: #383838;

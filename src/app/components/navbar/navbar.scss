@@ -29,4 +29,10 @@
     text-align: end;
     transition: 300ms ease-in-out;
   }
+
+  @media only screen and (max-width: 1000px) {
+    #legend {
+      display: none;
+    }
+  }
 }
