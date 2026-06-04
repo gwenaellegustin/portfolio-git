@@ -14,12 +14,15 @@
             <div
               class="project-container"
               [id]="project.key"
-              (mouseenter)="hoverProject(project.key)"
-              (mouseleave)="leaveProject(project.key)"
               (mouseover)="defineLegendByProject(project.contextKey)"
               (mouseout)="resetLegend()"
             >
-              <div class="first-line" [ngClass]="getColorContext(project.contextKey) + '-border'">
+              <div
+                class="first-line"
+                [ngClass]="getColorContext(project.contextKey) + '-border'"
+                (mouseenter)="hoverProject(project.key)"
+                (mouseleave)="leaveProject(project.key)"
+              >
                 <div class="text" (click)="openProject(project.key)">
                   <div class="title">
                     {{ project.title }}
@@ -30,24 +33,34 @@
               </div>
 
               <div class="content">
-                <div class="main-image">
-                  <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
-                </div>
+                <!-- <div class="main-image image-radius">
+                  <img
+                    class="image"
+                    [src]="project.images[0].url"
+                    onerror="this.style.visibility = 'hidden'"
+                  />
+                </div> -->
 
-                <span class="intro-text" [innerHTML]="project.description"></span>
+                <!-- <span class="intro-text" [innerHTML]="project.description"></span> -->
 
                 @for (image of project.images; track $index) {
-                  @if (image.url !== '' && $index != 0) {
+                  @if (
+                    image.url !== '' && !(image.url.endsWith('.mp4') || image.url.endsWith('.mov'))
+                  ) {
                     <div class="image">
-                      @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
-                        <span>{{ image.text }}</span>
-                        <video autoplay loop controls>
+                      <!-- @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
+                        <video class="image-radius" autoplay loop controls>
                           <source [src]="image.url" type="video/mp4" />
                         </video>
-                      } @else {
                         <span>{{ image.text }}</span>
-                        <img [src]="image.url" onerror="this.style.visibility = 'hidden'" />
-                      }
+                      } @else { -->
+                      <img
+                        class="image-radius"
+                        [src]="image.url"
+                        onerror="this.style.visibility = 'hidden'"
+                      />
+                      <!-- <span>{{ image.text }}</span> -->
+                      <!-- } -->
                     </div>
                   }
                 }
@@ -117,7 +130,7 @@
                 <div class="dot orange-background"></div>
               }
             } @else if (monthYear.value == 'empty' && $index == 2) {
-              <div class="dot"></div>
+              <!-- <div class="dot"></div> -->
             } @else {
               <div
                 class="timeline"
@@ -134,12 +147,15 @@
             <div
               class="project-container"
               [id]="project.key"
-              (mouseenter)="hoverProject(project.key)"
-              (mouseleave)="leaveProject(project.key)"
               (mouseover)="defineLegendByProject(project.contextKey)"
               (mouseout)="resetLegend()"
             >
-              <div class="first-line" [ngClass]="getColorContext(project.contextKey) + '-border'">
+              <div
+                class="first-line"
+                [ngClass]="getColorContext(project.contextKey) + '-border'"
+                (mouseenter)="hoverProject(project.key)"
+                (mouseleave)="leaveProject(project.key)"
+              >
                 <div class="text" (click)="openProject(project.key)">
                   <div class="title">
                     {{ project.title }}
@@ -150,24 +166,34 @@
               </div>
 
               <div class="content">
-                <div class="main-image">
-                  <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
-                </div>
+                <!-- <div class="main-image image-radius">
+                  <img
+                    class="image"
+                    [src]="project.images[0].url"
+                    onerror="this.style.visibility = 'hidden'"
+                  />
+                </div> -->
 
-                <span class="intro-text" [innerHTML]="project.description"></span>
+                <!-- <span class="intro-text" [innerHTML]="project.description"></span> -->
 
                 @for (image of project.images; track $index) {
-                  @if (image.url !== '' && $index != 0) {
+                  @if (
+                    image.url !== '' && !(image.url.endsWith('.mp4') || image.url.endsWith('.mov'))
+                  ) {
                     <div class="image">
-                      @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
-                        <span>{{ image.text }}</span>
-                        <video autoplay loop controls>
+                      <!-- @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
+                        <video class="image-radius" autoplay loop controls>
                           <source [src]="image.url" type="video/mp4" />
                         </video>
-                      } @else {
                         <span>{{ image.text }}</span>
-                        <img [src]="image.url" onerror="this.style.visibility = 'hidden'" />
-                      }
+                      } @else { -->
+                      <img
+                        class="image-radius"
+                        [src]="image.url"
+                        onerror="this.style.visibility = 'hidden'"
+                      />
+                      <!-- <span>{{ image.text }}</span> -->
+                      <!-- } -->
                     </div>
                   }
                 }

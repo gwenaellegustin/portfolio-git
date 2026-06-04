@@ -1,45 +1,59 @@
 @import '../../../variables';
 
 :host {
-  .top-bar {
-    top: 0;
-    z-index: 0;
-
+  .logo {
+    // border: 1px solid $on-background;
+    position: fixed;
+    top: $space-smallest;
+    left: $space-smallest;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: $space-small $space;
-    height: $app-bar-height;
-    //border-bottom: 1px solid;
+    width: $head-width;
+    height: auto;
 
-    .flex {
-      flex: 1;
-    }
-    .legend {
-      display: flex;
-      gap: $space;
-      justify-content: center;
-    }
-
-    .links {
-      display: flex;
-      align-items: center;
-      justify-content: end;
-      gap: 15px;
-      height: 75%;
-    }
-
-    a {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      .logo,
-      img {
-        height: auto;
-        max-height: 100%;
-        max-width: 40vw;
-        color: $on-background;
-      }
-    }
+    background-color: $background;
+    border-radius: $month;
+    padding: $space-smallest;
+    // height: 100px;
   }
+  #legend {
+    // border: 1px solid $on-background;
+    position: fixed;
+    top: $space-smallest;
+    right: $space;
+    display: flex;
+    align-items: center;
+    // gap: $space;
+    // justify-content: center;
+    width: $head-width;
+    background-color: $background;
+    border-radius: $month;
+    // border: 1px solid $on-background;
+    padding: $space-small;
+
+    // border: 1px solid red;
+
+    text-align: end;
+  }
+
+  // .links {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: end;
+  //   gap: 15px;
+  //   height: 75%;
+  // }
+
+  // a {
+  //   height: 100%;
+  //   display: flex;
+  //   align-items: center;
+  //   .logo,
+  //   img {
+  //     height: auto;
+  //     max-height: 100%;
+  //     max-width: 40vw;
+  //     color: $on-background;
+  //   }
+  // }
 }

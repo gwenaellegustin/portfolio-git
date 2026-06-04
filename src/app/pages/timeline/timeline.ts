@@ -107,6 +107,13 @@ export class Timeline {
 
   openProject(projectKey: string) {
     const project = this.projectsByKey.get(projectKey);
+    const projects = document.getElementsByClassName('project-container');
+    for (let element of projects) {
+      if (element.id == projectKey && element.classList.contains('opened')) {
+        this.closeProject();
+        return;
+      }
+    }
     const cells = document.getElementsByClassName('cell');
     for (let element of cells) {
       if (element.classList.contains('col1') || element.classList.contains('col5')) {
@@ -147,7 +154,6 @@ export class Timeline {
       element.classList.remove('opened');
     }
 
-    const projects = document.getElementsByClassName('project-container');
     for (let element of projects) {
       if (element.id == projectKey) {
         element.classList.add('opened');

@@ -379,14 +379,14 @@ export const projects: ProjectInterface[] = [
     images: [
       { url: '/2025-2027-master/s1-papiliorama/PAGE Home.png' },
       { url: '/2025-2027-master/s1-papiliorama/demo.mp4', text: 'Video demo' },
-      {
-        url: '/2025-2027-master/s1-papiliorama/previous.png',
-        text: 'Analyzed website',
-      },
-      {
-        url: '/2025-2027-master/s1-papiliorama/reproduction-2pages.png',
-        text: 'Reproduction (left mockup, right screenshot)',
-      },
+      // {
+      //   url: '/2025-2027-master/s1-papiliorama/previous.png',
+      //   text: 'Analyzed website',
+      // },
+      // {
+      //   url: '/2025-2027-master/s1-papiliorama/reproduction-2pages.png',
+      //   text: 'Reproduction (left mockup, right screenshot)',
+      // },
       { url: '/2025-2027-master/s1-papiliorama/DSArtboard-1.png', text: 'Design system' },
       { url: '/2025-2027-master/s1-papiliorama/DSArtboard-2.png' },
       { url: '/2025-2027-master/s1-papiliorama/PAGE Visit.png', text: 'Pages' },
