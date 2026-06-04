@@ -14,22 +14,26 @@
             <div
               class="project-container"
               [id]="project.key"
-              (click)="openProject(project.key)"
               (mouseenter)="hoverProject(project.key)"
               (mouseleave)="leaveProject(project.key)"
               (mouseover)="defineLegendByProject(project.contextKey)"
               (mouseout)="resetLegend()"
             >
               <div class="first-line" [ngClass]="getColorContext(project.contextKey) + '-border'">
-                <div class="title">
-                  {{ project.title }}
+                <div class="text" (click)="openProject(project.key)">
+                  <div class="title">
+                    {{ project.title }}
+                  </div>
+                  <div class="subtitle">{{ project.subtitle }}</div>
                 </div>
-                <div class="subtitle">{{ project.subtitle }}</div>
+                <div class="close" (click)="closeProject()">✖</div>
               </div>
-              <div class="main-image">
-                <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
-              </div>
+
               <div class="content">
+                <div class="main-image">
+                  <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
+                </div>
+
                 <span class="intro-text" [innerHTML]="project.description"></span>
 
                 @for (image of project.images; track $index) {
@@ -130,18 +134,19 @@
             <div
               class="project-container"
               [id]="project.key"
-              (click)="openProject(project.key)"
               (mouseenter)="hoverProject(project.key)"
               (mouseleave)="leaveProject(project.key)"
               (mouseover)="defineLegendByProject(project.contextKey)"
               (mouseout)="resetLegend()"
             >
               <div class="first-line" [ngClass]="getColorContext(project.contextKey) + '-border'">
-                <div class="title">
-                  {{ project.title }}
+                <div class="text" (click)="openProject(project.key)">
+                  <div class="title">
+                    {{ project.title }}
+                  </div>
+                  <div class="subtitle">{{ project.subtitle }}</div>
                 </div>
-                <div class="subtitle">{{ project.subtitle }}</div>
-                <!-- <div class="subtitle">close</div> -->
+                <div class="close" (click)="closeProject()">✖</div>
               </div>
 
               <div class="content">

@@ -34,7 +34,6 @@ export class Timeline {
     }
   }
   defineLegend(timelines: TimelineInterface[], monthYear: string) {
-    console.log('enter');
     const segment = this.getSegmentOfTimelines(timelines, monthYear);
     if (segment) {
       const context = this.dataService.getContext(segment.contextKey);
@@ -47,7 +46,6 @@ export class Timeline {
     }
   }
   resetLegend() {
-    console.log('leave');
     const legendElement = document.getElementById('legend');
     if (legendElement) {
       legendElement.className = '';
@@ -78,6 +76,32 @@ export class Timeline {
     const commit = document.getElementById('commit-' + projectKey);
     if (!commit?.classList.contains('opened')) {
       commit?.classList.remove('hover');
+    }
+  }
+
+  closeProject() {
+    console.log('close project');
+    const cells = document.getElementsByClassName('cell');
+    for (let element of cells) {
+      element.classList.remove('empty');
+      element.classList.remove('hidden');
+      element.classList.remove('opened');
+      element.classList.add('default');
+    }
+
+    const commits = document.getElementsByClassName('commit');
+    for (let element of commits) {
+      element.classList.remove('hover');
+      element.classList.remove('opened');
+    }
+
+    const projects = document.getElementsByClassName('project-container');
+    for (let element of projects) {
+      element.classList.remove('opened');
+      element.classList.add('default');
+
+      // cell
+      element.parentElement?.classList.remove('opened');
     }
   }
 

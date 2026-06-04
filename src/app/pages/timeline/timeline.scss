@@ -114,9 +114,10 @@
         border: 2px solid;
         border-radius: 10px;
         padding: $space-small;
-        height: $space-bigger;
-        display: flex;
-        gap: $space;
+        min-height: $space-bigger;
+        cursor: pointer;
+        // display: flex;
+        // gap: $space;
       }
 
       .project-container {
@@ -125,16 +126,22 @@
         padding-bottom: $space-small;
         background-color: $background;
         overflow: hidden;
+        // display: flex;
+        .first-line {
+          display: flex;
+        }
 
         .text {
-          display: flex;
-          align-items: center;
-          flex-wrap: wrap;
-          align-content: stretch;
-        }
-        .title {
           flex: 1;
+          display: flex;
+          flex-direction: column;
         }
+        .close {
+          display: none;
+        }
+        // .title {
+        //   flex: 1;
+        // }
         .subtitle {
           font-size: x-small;
         }
@@ -169,11 +176,15 @@
         // height: calc(80svh - $app-bar-height); //@TODO fix math
         // overflow-y: scroll;
         // padding: $space-small;
-        .title {
-          font-size: x-large;
-        }
-        .subtitle {
-          font-size: small;
+        // .title {
+        //   font-size: x-large;
+        // }
+        // .subtitle {
+        //   font-size: small;
+        // }
+        .close {
+          display: block;
+          cursor: pointer;
         }
         .main-image {
           visibility: visible;
