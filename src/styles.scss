@@ -159,7 +159,7 @@ ul {
   z-index: -1;
 }
 
-// DXD
+// Blue
 .blue {
   color: $blue;
   stroke: $blue;
@@ -171,14 +171,18 @@ ul {
   color: $blue;
   border-color: $blue;
 }
-// PM
+// Pink
 .pink {
   color: $pink;
 }
 .pink-background {
   background-color: $pink;
 }
-// HES
+.pink-border {
+  color: $pink;
+  border-color: $pink;
+}
+// Cyan
 .cyan {
   color: $cyan;
 }
@@ -189,7 +193,7 @@ ul {
   color: $cyan;
   border-color: $cyan;
 }
-// UP4it
+// Green
 .green {
   color: $green;
 }
@@ -200,8 +204,7 @@ ul {
   color: $green;
   border-color: $green;
 }
-
-// VDS
+// Red
 .red {
   color: $red;
 }
@@ -212,21 +215,28 @@ ul {
   color: $red;
   border-color: $red;
 }
-
-//SIR
+// Purple
 .purple {
   color: $purple;
 }
 .purple-background {
   background-color: $purple;
 }
+.purple-border {
+  color: $purple;
+  border-color: $purple;
+}
 
-// beige
+// Beige
 .beige {
   color: $beige;
 }
 .beige-background {
   background-color: $beige;
+}
+.beige-border {
+  color: $beige;
+  border-color: $beige;
 }
 
 // Orange
@@ -235,4 +245,8 @@ ul {
 }
 .orange-background {
   background-color: $orange;
+}
+.orange-border {
+  color: $orange;
+  border-color: $orange;
 }

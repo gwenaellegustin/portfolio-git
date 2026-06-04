@@ -1,27 +1,49 @@
 @import '../../../variables';
 
 :host {
+  .date-text {
+    opacity: 0;
+    display: flex;
+    position: relative;
+    transition: 500ms ease-in;
+    transition-delay: 100ms;
+    span {
+      align-self: flex-end;
+      padding-bottom: $space-small;
+    }
+  }
+  .month:hover .date-text {
+    opacity: 100%;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 $page-margin;
     // transition: 1000ms ease-in-out; //TODO transition
+    .month:hover {
+      border-bottom: 1px solid $on-background;
+    }
     .month {
       display: flex;
       flex-direction: row;
       gap: $page-gap;
+      margin: -$space-smallest 0;
+      border-bottom: 1px solid $background;
+      transition: 500ms ease-in;
 
+      .col1.cell,
+      .col5.cell {
+        overflow: hidden;
+      }
       .cell {
-        // border: 1px solid red;
+        // border: 1px solid rgb(196, 193, 193);
         flex: 1;
         display: flex;
         justify-content: space-around;
-        // border: 1px solid rgb(196, 193, 193);
-        margin-bottom: -$space-small;
         transition: 500ms ease-in-out;
         transition-delay: 100ms;
-        overflow: hidden;
       }
       .cell.default {
         // flex: 1;
@@ -68,9 +90,10 @@
             align-items: center;
             // margin-top: -8px;
             .top-line {
-              height: $space-bigger - $space/2 - 2px;
+              height: calc($space-bigger - $space/2 - 2px);
               width: $width-line;
               margin: -2px 0;
+              border-radius: $month;
             }
             .point {
               height: $space;
@@ -83,6 +106,7 @@
               flex: 1;
               width: $width-line;
               margin: -2px 0;
+              border-radius: $month;
             }
           }
           .commit.hover,
@@ -105,7 +129,8 @@
       .project-container {
         flex: 1;
         height: auto;
-
+        margin-top: $space-small;
+        padding-top: $space-small;
         overflow: hidden;
         // display: flex;
         scroll-margin: calc($app-bar-height * 5);
@@ -147,7 +172,6 @@
           opacity: 0;
           width: 0;
           height: 0;
-          margin: $space;
           p {
             height: 0;
           }
@@ -176,7 +200,7 @@
         // }
         .close {
           cursor: pointer;
-          display: flex;
+          display: block;
           align-items: center;
         }
         // .main-image {
@@ -189,19 +213,20 @@
         //   align-items: center;
         // }
         .content {
+          margin: $space;
           opacity: 100;
           width: auto;
           height: auto;
           display: flex;
-          // flex-wrap: wrap;
+          flex-wrap: wrap;
           // gap: $space;
           // justify-content: flex-start;
           .image {
-            flex: 1;
+            // flex: 1;
             flex-basis: 30%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            // display: flex;
+            // flex-direction: column;
+            // align-items: center;
             img,
             video {
               max-height: 80vh;
@@ -241,16 +266,31 @@
         color: $background;
         background-color: $green;
       }
-      .first-line.red-border.hover .first-line.red-border.opened {
+      .first-line.red-border.hover,
+      .first-line.red-border.opened {
         color: $background;
         background-color: $red;
       }
+      .first-line.orange-border.hover,
+      .first-line.orange-border.opened {
+        color: $background;
+        background-color: $orange;
+      }
     }
   }
-}
-@media only screen and (max-width: 1000px) {
-  .col1.cell,
-  .col5.cell {
-    flex: 0 !important;
+
+  .racoon {
+    height: $month;
+    padding-bottom: $space;
+    img {
+      height: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .col1.cell,
+    .col5.cell {
+      flex: 0 !important;
+    }
   }
 }

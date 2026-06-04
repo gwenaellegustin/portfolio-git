@@ -1,11 +1,11 @@
 <div class="container">
   @for (monthYear of dateMap | keyvalue; track monthYear.key) {
     <div class="month" [id]="monthYear.value">
-      <div
-        class="col1 cell default"
-        [id]="'col1-' + monthYear.value"
-        [ngClass]="monthYear.value"
-      ></div>
+      <div class="col1 cell default" [id]="'col1-' + monthYear.value" [ngClass]="monthYear.value">
+        <div class="date-text">
+          <span>{{ monthYear.value }}</span>
+        </div>
+      </div>
 
       <div class="col2 cell default" [id]="'col2-' + monthYear.value" [ngClass]="monthYear.value">
         @for (project of projects; track project) {
@@ -107,7 +107,7 @@
                   "
                 ></div>
               </div>
-            } @else if (monthYear.value == 'dot') {
+            } @else if (monthYear.value == '' && monthYear.key < 10) {
               <!-- @TODO get color -->
               @if ($index == 0) {
                 <div class="dot pink-background"></div>
@@ -116,26 +116,30 @@
                 <div class="dot black-background"></div>
               }
               @if ($index == 3) {
-                <div class="dot green-background"></div>
+                <div class="dot cyan-background"></div>
               }
               @if ($index == 4) {
-                <div class="dot blue-background"></div>
+                <div class="dot orange-background"></div>
               }
-            } @else if (monthYear.value == 'dot-end') {
+            } @else if (monthYear.value == '' && monthYear.key > 24) {
               <!-- @TODO get color -->
               @if ($index == 2) {
                 <div class="dot black-background"></div>
               }
               @if ($index == 4 && monthYear.key >= 122 && monthYear.key <= 126) {
-                <div class="dot orange-background"></div>
+                <div class="dot green-background"></div>
               }
-            } @else if (monthYear.value == 'empty' && $index == 2) {
-              <!-- <div class="dot"></div> -->
             } @else {
               <div
                 class="timeline"
                 [ngClass]="getColorForDate(monthYear.value, timeline.value) + '-background'"
               ></div>
+            }
+            @if ($index == 2 && monthYear.key == 139) {
+              <a href="/me">
+                <div class="racoon">
+                  <img class="racoon-face" src="./logo/GG_Racoon_Face.png" /></div
+              ></a>
             }
           </div>
         }
@@ -199,20 +203,15 @@
                 }
               </div>
             </div>
-            <!-- <app-mini-project
-            [project]="project"
-            [color]="getColorContext(project.contextKey)"
-            [idElement]="'col2-' + monthYear.value"
-          ></app-mini-project> -->
           }
         }
       </div>
 
-      <div
-        class="col5 cell default"
-        [id]="'col5-' + monthYear.value"
-        [ngClass]="monthYear.value"
-      ></div>
+      <div class="col5 cell default" [id]="'col5-' + monthYear.value" [ngClass]="monthYear.value">
+        <div class="date-text">
+          <span>{{ monthYear.value }}</span>
+        </div>
+      </div>
     </div>
   }
 </div>

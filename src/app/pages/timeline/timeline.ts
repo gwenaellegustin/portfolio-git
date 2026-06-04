@@ -20,7 +20,7 @@ export class Timeline {
   projects = this.dataService.projects;
   projectsByKey = this.dataService.projectsByKey;
   projectsByDate = this.dataService.projectsByDate;
-  legend = this.navbarService.legend;
+  legend$ = this.navbarService.legend$;
 
   constructor() {}
 

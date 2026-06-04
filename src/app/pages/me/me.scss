@@ -1,6 +1,7 @@
 @import '../../../variables';
 
 :host {
+  padding: $space-bigger $space-small;
   .paragraph {
     display: flex;
     gap: $space-bigger;

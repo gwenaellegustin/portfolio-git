@@ -1,6 +1,7 @@
 @import '../../../variables';
 
 :host {
+  z-index: 100; /*above date*/
   .logo {
     // border: 1px solid $on-background;
     position: fixed;
@@ -13,7 +14,7 @@
 
     background-color: $background;
     border-radius: $month;
-    padding: $space-smallest;
+    padding: $space;
     // height: 100px;
   }
   #legend {
@@ -25,7 +26,7 @@
     align-items: center;
     // gap: $space;
     // justify-content: center;
-    width: $head-width;
+    max-width: $head-width;
     background-color: $background;
     border-radius: $month;
     // border: 1px solid $on-background;

@@ -68,7 +68,7 @@ export class DataService {
     let index = 1;
     const add = (value: string) => this.dateMap.set(index++, value);
     for (let emptyIndex = 0; emptyIndex < 3; emptyIndex++) {
-      add('dot');
+      add('');
       add('empty');
     }
     for (let year = 2026; year >= 2017; year--) {
@@ -79,14 +79,15 @@ export class DataService {
     }
     for (let emptyIndex = 13; emptyIndex <= 24; emptyIndex++) {
       if (index % 2 == 0) {
-        add('dot-end');
+        add('');
       } else {
         add('empty');
       }
     }
-    for (let month = 12; month >= 1; month--) {
+    for (let month = 12; month >= 7; month--) {
       add(`${month.toString().padStart(2, '0')}.1996`);
     }
+    add(`09.06.1996`);
   }
 }
 //  interface and class
@@ -131,7 +132,7 @@ export const contextInfos = new Map<string, ContextInfo>([
     'HES',
     {
       title: 'Research assistant, HES-SO Valais Wallis',
-      color: 'cyan',
+      color: 'blue',
     },
   ],
   [
@@ -145,21 +146,21 @@ export const contextInfos = new Map<string, ContextInfo>([
     'UP4IT',
     {
       title: 'Team member, Up4it',
-      color: 'green',
+      color: 'cyan',
     },
   ],
   [
     'DXD',
     {
       title: 'Master Digital Experience Design, ECAL',
-      color: 'blue',
+      color: 'orange',
     },
   ],
   [
     'BSC',
     {
       title: 'Bachelor Business IT, HES-SO',
-      color: 'cyan',
+      color: 'blue',
     },
   ],
   [
@@ -194,7 +195,7 @@ export const contextInfos = new Map<string, ContextInfo>([
     'MAT',
     {
       title: 'Secondary diploma (Maturité gymnasiale)',
-      color: 'orange',
+      color: 'green',
     },
   ],
 ]);
