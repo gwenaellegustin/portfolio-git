@@ -33,6 +33,7 @@
     margin: $space $page-margin;
     .month:hover {
       border-bottom: 1px solid $on-background;
+      // background-color: #3838380e;
     }
     .month {
       display: flex;
@@ -134,9 +135,10 @@
           right: $space;
         }
         overflow: hidden;
-        scroll-margin: calc($app-bar-height + 2 * $space);
+        scroll-margin: calc($space-bigger * 3);
         .first-line {
           transition: 100ms ease-in-out;
+          background-color: $background;
           border: 2px solid;
           border-radius: $month;
           padding: $space-small $space;
@@ -160,14 +162,15 @@
         .content {
           border: solid $background 1px; // this fix to auto height
           transition: 100ms ease-in-out;
-          transition-delay: 500ms;
+          transition-delay: 0ms; // when changing or closing
           flex-wrap: wrap;
+          display: flex;
           gap: $space;
           opacity: 0;
           width: 0;
           height: 0;
-          p {
-            height: 0;
+          img {
+            padding: $space;
           }
         }
       }
@@ -184,7 +187,7 @@
           opacity: 100;
           width: auto;
           height: auto;
-          padding: $space;
+          transition-delay: 500ms; // when opening first
           // transition: 100ms ease-in-out;
           // transition-delay: 0;
           .image {
