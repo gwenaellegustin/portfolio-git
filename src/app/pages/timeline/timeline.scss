@@ -4,6 +4,7 @@
   .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 0 $page-margin;
     transition: 1000ms ease-in-out; //TODO transition
     .month {
@@ -11,7 +12,15 @@
       flex-direction: row;
       gap: $page-gap;
 
-      .cell.default {
+      // @media only screen and (max-width: 1000px) {
+      //   .col1,
+      //   .col5 {
+      //     flex: 0;
+      //     background-color: blue;
+      //   }
+      // }
+
+      .cell {
         transition: 500ms ease-in-out;
         display: flex;
         justify-content: space-around;
@@ -19,7 +28,7 @@
       }
       .cell.default {
         flex: 1;
-        max-width: $column-width;
+        // max-width: $column-width;
       }
       .cell.hidden {
         flex: 0;
@@ -116,7 +125,6 @@
         padding: 0;
         border: none;
       }
-
       .project-container.opened {
         height: calc(80svh - $app-bar-height); //@TODO fix math
         overflow-y: scroll;
@@ -152,7 +160,6 @@
           }
         }
       }
-
       .project-container.hover {
         .main-image {
           visibility: visible;

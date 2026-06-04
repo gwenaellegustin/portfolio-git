@@ -80,6 +80,14 @@ ul {
   list-style-type: square;
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+  padding: $space;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .no-size {
   width: 0;
   height: 0;
@@ -185,7 +193,6 @@ ul {
 .green-background {
   background-color: $green;
 }
-
 .green-border {
   color: $green;
   border-color: $green;
@@ -198,14 +205,10 @@ ul {
 .red-background {
   background-color: $red;
 }
-// .red-border {
-//   color: $red;
-//   border-color: $red;
-// }
-// .project-container.red-border:hover {
-//   color: $background;
-//   background-color: $red;
-// }
+.red-border {
+  color: $red;
+  border-color: $red;
+}
 
 //SIR
 .purple {
@@ -229,13 +232,4 @@ ul {
 }
 .orange-background {
   background-color: $orange;
-}
-
-// Transition
-.page {
-  display: flex;
-  flex-direction: column;
-  padding: $space;
-  max-width: 1200px;
-  margin: 0 auto;
 }
