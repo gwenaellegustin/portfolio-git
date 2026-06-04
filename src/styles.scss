@@ -150,13 +150,10 @@ ul {
 }
 .black-background {
   background-color: $on-background;
+  color: $background;
 }
 .black-border {
   color: $on-background;
-}
-.grey-background {
-  // background-color: rgb(247, 245, 245);
-  z-index: -1;
 }
 
 // Blue
@@ -166,6 +163,7 @@ ul {
 }
 .blue-background {
   background-color: $blue;
+  color: $background;
 }
 .blue-border {
   color: $blue;
@@ -177,6 +175,7 @@ ul {
 }
 .pink-background {
   background-color: $pink;
+  color: $background;
 }
 .pink-border {
   color: $pink;
@@ -188,6 +187,7 @@ ul {
 }
 .cyan-background {
   background-color: $cyan;
+  color: $background;
 }
 .cyan-border {
   color: $cyan;
@@ -199,6 +199,7 @@ ul {
 }
 .green-background {
   background-color: $green;
+  color: $background;
 }
 .green-border {
   color: $green;
@@ -210,6 +211,7 @@ ul {
 }
 .red-background {
   background-color: $red;
+  color: $background;
 }
 .red-border {
   color: $red;
@@ -221,6 +223,7 @@ ul {
 }
 .purple-background {
   background-color: $purple;
+  color: $background;
 }
 .purple-border {
   color: $purple;
@@ -233,6 +236,7 @@ ul {
 }
 .beige-background {
   background-color: $beige;
+  color: $background;
 }
 .beige-border {
   color: $beige;
@@ -245,6 +249,7 @@ ul {
 }
 .orange-background {
   background-color: $orange;
+  color: $background;
 }
 .orange-border {
   color: $orange;

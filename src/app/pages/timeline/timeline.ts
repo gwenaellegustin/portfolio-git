@@ -30,7 +30,7 @@ export class Timeline {
     const legendElement = document.getElementById('legend');
     if (legendElement) {
       legendElement.className = '';
-      legendElement?.classList.add(context.color);
+      legendElement?.classList.add(context.color + '-background');
     }
   }
   defineLegend(timelines: TimelineInterface[], monthYear: string) {
@@ -41,7 +41,7 @@ export class Timeline {
       const legendElement = document.getElementById('legend');
       if (legendElement) {
         legendElement.className = '';
-        legendElement?.classList.add(context.color);
+        legendElement?.classList.add(context.color + '-background');
       }
     }
   }
