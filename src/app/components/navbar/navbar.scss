@@ -2,8 +2,8 @@
 
 :host {
   z-index: 100; /*above date*/
+
   .logo {
-    // border: 1px solid $on-background;
     position: fixed;
     top: $space-smallest;
     left: $space-smallest;
@@ -15,46 +15,20 @@
     background-color: $background;
     border-radius: $month;
     padding: $space;
-    // height: 100px;
   }
   #legend {
-    // border: 1px solid $on-background;
     position: fixed;
     top: $space-smallest;
     right: $space;
     display: flex;
     align-items: center;
-    // gap: $space;
-    // justify-content: center;
     max-width: $head-width;
     background-color: $background;
     border-radius: $month;
-    // border: 1px solid $on-background;
     padding: $space-small;
-
-    // border: 1px solid red;
-
     text-align: end;
+    border-bottom: 1px solid $background;
+
+    transition: 300ms ease-in-out;
   }
-
-  // .links {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: end;
-  //   gap: 15px;
-  //   height: 75%;
-  // }
-
-  // a {
-  //   height: 100%;
-  //   display: flex;
-  //   align-items: center;
-  //   .logo,
-  //   img {
-  //     height: auto;
-  //     max-height: 100%;
-  //     max-width: 40vw;
-  //     color: $on-background;
-  //   }
-  // }
 }

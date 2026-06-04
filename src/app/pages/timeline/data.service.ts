@@ -131,7 +131,7 @@ export const contextInfos = new Map<string, ContextInfo>([
   [
     'HES',
     {
-      title: 'Research assistant, HES-SO Valais Wallis',
+      title: 'Research assistant, HES-SO',
       color: 'blue',
     },
   ],

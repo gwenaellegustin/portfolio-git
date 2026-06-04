@@ -1,7 +1,17 @@
 @import '../../../variables';
 
 :host {
+  @keyframes myAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   .footer-container {
+    animation-name: myAnimation;
+    animation-duration: 1s;
     // border-top: 1px solid;
     padding: $space-small $space;
     display: flex;
