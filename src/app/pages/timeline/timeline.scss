@@ -22,8 +22,6 @@
 
       .cell {
         flex: 1;
-        transition: 500ms ease-in-out;
-        transition-delay: 100ms;
         display: flex;
         justify-content: space-around;
         // border: 1px solid rgb(196, 193, 193);
@@ -32,12 +30,16 @@
       .cell.default {
         flex: 1;
         opacity: 100;
+        transition: 500ms ease-in-out;
+        transition-delay: 100ms;
         // max-width: $column-width;
       }
       .cell.hidden {
         flex: 0;
         opacity: 0;
         width: 0;
+        transition: 500ms ease-in-out;
+        transition-delay: 100ms;
       }
       .cell.empty {
         flex: 1;
@@ -104,7 +106,7 @@
           height: $space-small;
           width: $space-small;
           border-radius: $month;
-          margin: 2px 0;
+          margin: $space-smallest 0;
         }
       }
 

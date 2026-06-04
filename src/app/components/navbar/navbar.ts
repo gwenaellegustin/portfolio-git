@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { NavbarService } from './navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,4 +8,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-export class Navbar {}
+export class Navbar {
+  readonly navbarService = inject(NavbarService);
+  legend$ = this.navbarService.legend$;
+}

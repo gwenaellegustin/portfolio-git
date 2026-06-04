@@ -11,7 +11,7 @@ $month: $space-bigger;
 $year: calc($month * 12);
 $width-line: $space-small;
 $app-bar-height: min(10vw, $space-bigger);
-$page-margin: $space-biggest;
+$page-margin: $space;
 $page-gap: 0;
 $column-width: calc(100svw / 5);
 //calc((100svw - calc(2 * $page-margin) - calc(4 * $page-gap)) / 5);
@@ -26,3 +26,8 @@ $red: #ba162c;
 $purple: #ba78e8;
 $beige: #c6c1b7;
 $orange: #e56758;
+
+// Common breakpoints
+// 1280, 1024, 768
+// media with tactile --> pointer: coarse
+// font size: clamp(min, preferred, max)

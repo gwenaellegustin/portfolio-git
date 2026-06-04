@@ -24,9 +24,6 @@ export class DataService {
     });
     this.setProjectByDate();
     this.setProjectByKey();
-    console.log(projects);
-    console.log(this.projectsByDate);
-    console.log(this.projectsByKey);
   }
 
   setProjectPosition(project: ProjectInterface) {
@@ -102,7 +99,7 @@ export interface ContextInfo {
   title: string;
   color: string;
 }
-export interface timeline {
+export interface TimelineInterface {
   contextKey: string;
   yearStart: number;
   monthStart: number;
@@ -140,7 +137,7 @@ export const contextInfos = new Map<string, ContextInfo>([
   [
     'PM',
     {
-      title: 'Research assistant, HES-SO Valais Wallis',
+      title: 'IT and administration, Pentamedia Sàrl',
       color: 'pink',
     },
   ],
@@ -165,23 +162,46 @@ export const contextInfos = new Map<string, ContextInfo>([
       color: 'cyan',
     },
   ],
-]);
-
-export const timelines = new Map<string, timeline[]>([
   [
-    '1-JOB',
-    [
-      {
-        contextKey: 'HES',
-        yearStart: 2023,
-        monthStart: 10,
-        yearEnd: 2025,
-        monthEnd: 9,
-      },
-    ],
+    'VDS2',
+    {
+      title: 'IT assistant, Ville de Sion',
+      color: 'red',
+    },
   ],
   [
-    '2-JOB',
+    'SIR',
+    {
+      title: 'Certification SIR, HES-SO',
+      color: 'purple',
+    },
+  ],
+  [
+    'FTI',
+    {
+      title: 'Fitness trainer, FITSPRO',
+      color: 'beige',
+    },
+  ],
+  [
+    'EPFL',
+    {
+      title: 'Bsc Computer Science (disenrolled), EPFL',
+      color: 'beige',
+    },
+  ],
+  [
+    'MAT',
+    {
+      title: 'Secondary diploma (Maturité gymnasiale)',
+      color: 'orange',
+    },
+  ],
+]);
+
+export const timelines = new Map<string, TimelineInterface[]>([
+  [
+    '1-JOB',
 
     [
       {
@@ -190,6 +210,25 @@ export const timelines = new Map<string, timeline[]>([
         monthStart: 11,
         yearEnd: 0,
         monthEnd: 0,
+      },
+    ],
+  ],
+  [
+    '2-JOB',
+    [
+      {
+        contextKey: 'HES',
+        yearStart: 2023,
+        monthStart: 10,
+        yearEnd: 2025,
+        monthEnd: 9,
+      },
+      {
+        contextKey: 'VDS2',
+        yearStart: 2022,
+        monthStart: 2,
+        yearEnd: 2023,
+        monthEnd: 9,
       },
     ],
   ],
@@ -216,6 +255,8 @@ export const timelines = new Map<string, timeline[]>([
         yearEnd: 0,
         monthEnd: 0,
       },
+
+      // @TODO: SDC (text of porfolioV4 - ECAL)
     ],
   ],
   [
@@ -235,65 +276,36 @@ export const timelines = new Map<string, timeline[]>([
         yearEnd: 2023,
         monthEnd: 8,
       },
+      {
+        contextKey: 'SIR',
+        yearStart: 2018,
+        monthStart: 9,
+        yearEnd: 2019,
+        monthEnd: 6,
+      },
+      {
+        contextKey: 'FTI',
+        yearStart: 2018,
+        monthStart: 5,
+        yearEnd: 2018,
+        monthEnd: 7,
+      },
+      {
+        contextKey: 'EPFL',
+        yearStart: 2017,
+        monthStart: 9,
+        yearEnd: 2018,
+        monthEnd: 2,
+      },
+      {
+        contextKey: 'MAT',
+        yearStart: 2017,
+        monthStart: 1,
+        yearEnd: 2017,
+        monthEnd: 6,
+      },
     ],
   ],
-
-  // @TODO: SDC (text of porfolioV4 - ECAL)
-  // [
-  //   'VDS',
-  //   {
-  //     context: 'IT assistant, Ville de Sion',
-  //     color: 'red',
-  //     yearStart: 0,
-  //     monthStart: 0,
-  //     yearEnd: 0,
-  //     monthEnd: 0,
-  //   },
-  // ],
-  // [
-  //   'SIR',
-  //   {
-  //     context: 'Certification SIR, HES-SO',
-  //     color: 'purple',
-  //     yearStart: 0,
-  //     monthStart: 0,
-  //     yearEnd: 0,
-  //     monthEnd: 0,
-  //   },
-  // ],
-  // [
-  //   'FTI',
-  //   {
-  //     context: 'Fitness trainer, FITSPRO',
-  //     color: 'beige',
-  //     yearStart: 0,
-  //     monthStart: 0,
-  //     yearEnd: 0,
-  //     monthEnd: 0,
-  //   },
-  // ],
-  // [
-  //   'EPFL',
-  //   {
-  //     context: 'Bsc Computer Science (disenrolled), EPFL',
-  //     color: 'beige',
-  //     yearStart: 0,
-  //     monthStart: 0,
-  //     yearEnd: 0,
-  //     monthEnd: 0,
-  //   },
-  // ],
-  // [
-  //   'MAT',
-  //   {
-  //     context: 'Maturité gymnasiale',
-  //     color: 'orange',
-  //     yearStart: 0,
-  //     monthStart: 0,
-  //     yearEnd: 0,
-  //     monthEnd: 0,
-  //   },
-  // ],
 ]);
 
 export const projects: ProjectInterface[] = [
@@ -425,7 +437,7 @@ export const projects: ProjectInterface[] = [
     key: 'vst',
     title: 'Visualization tool',
     contextKey: 'HES',
-    dateKey: '7.2025',
+    dateKey: '07.2025',
     subtitle: 'Angular 20, UX',
     urls: [
       { url: 'https://citiwatts.eu/', text: 'Website' },
@@ -476,7 +488,7 @@ export const projects: ProjectInterface[] = [
     key: 'pan',
     title: 'Pantagruel',
     contextKey: 'BSC',
-    dateKey: '8.2023',
+    dateKey: '08.2023',
     subtitle: 'Angular 15',
     urls: [
       { url: 'https://etranselec.ch/pantafrontend/', text: 'Website' },
@@ -497,7 +509,7 @@ export const projects: ProjectInterface[] = [
     key: 'hb',
     title: 'Happy birthday !',
     contextKey: 'MAIN',
-    dateKey: '2.2023',
+    dateKey: '02.2023',
     subtitle: 'React18',
     urls: [
       { url: 'https://skraydd-birthday-2022.netlify.app/', text: 'Website' },
@@ -516,7 +528,7 @@ export const projects: ProjectInterface[] = [
     key: 'bsc-tl',
     title: 'Tlearning',
     contextKey: 'BSC',
-    dateKey: '9.2022',
+    dateKey: '09.2022',
     subtitle: 'Flutter',
     urls: [
       // Private
@@ -538,7 +550,7 @@ export const projects: ProjectInterface[] = [
     key: 'bsc-vast',
     title: 'VAST app',
     contextKey: 'BSC',
-    dateKey: '6.2022',
+    dateKey: '06.2022',
     subtitle: 'React18, PWA',
     urls: [
       { url: 'https://vast-hes.netlify.app/', text: 'Website' },
@@ -558,7 +570,7 @@ export const projects: ProjectInterface[] = [
     key: 'bsc-sv',
     title: 'SwissVia',
     contextKey: 'BSC',
-    dateKey: '2.2022',
+    dateKey: '02.2022',
     subtitle: 'Java Android',
     urls: [
       // {
@@ -579,7 +591,7 @@ export const projects: ProjectInterface[] = [
     key: 'droppy',
     title: 'Droppy',
     contextKey: 'BSC',
-    dateKey: '6.2021',
+    dateKey: '06.2021',
     subtitle: 'JavaScript',
     urls: [
       { url: 'https://letsdrop.gwengustin.ch/letsDrop.html', text: 'Website' },

@@ -17,6 +17,8 @@
               (click)="openProject(project.key)"
               (mouseenter)="hoverProject(project.key)"
               (mouseleave)="leaveProject(project.key)"
+              (mouseover)="defineLegendByProject(project.contextKey)"
+              (mouseout)="resetLegend()"
             >
               <div class="first-line" [ngClass]="getColorContext(project.contextKey) + '-border'">
                 <div class="title">
@@ -53,7 +55,11 @@
 
       <div class="col3 cell default" [id]="'col3-' + monthYear.value" [ngClass]="monthYear.value">
         @for (timeline of timelines | keyvalue; track $index) {
-          <div class="color-element">
+          <div
+            class="color-element"
+            (mouseover)="defineLegend(timeline.value, monthYear.value)"
+            (mouseout)="resetLegend()"
+          >
             @if (isProjectInTimelineSegment(timeline.value, monthYear.value)) {
               <div
                 class="commit"
@@ -89,7 +95,7 @@
               @if ($index == 2) {
                 <div class="dot black-background"></div>
               }
-            } @else if (monthYear.value == 'empty') {
+            } @else if (monthYear.value == 'empty' && $index == 2) {
               <div class="dot"></div>
             } @else {
               <div
@@ -110,6 +116,8 @@
               (click)="openProject(project.key)"
               (mouseenter)="hoverProject(project.key)"
               (mouseleave)="leaveProject(project.key)"
+              (mouseover)="defineLegendByProject(project.contextKey)"
+              (mouseout)="resetLegend()"
             >
               <div class="first-line" [ngClass]="getColorContext(project.contextKey) + '-border'">
                 <div class="title">

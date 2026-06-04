@@ -154,6 +154,10 @@ ul {
 .black-border {
   color: $on-background;
 }
+.grey-background {
+  // background-color: rgb(247, 245, 245);
+  z-index: -1;
+}
 
 // DXD
 .blue {

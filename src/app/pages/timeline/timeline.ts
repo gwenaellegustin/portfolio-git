@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { DataService, ProjectInterface, timeline, timelines } from './data.service';
+import { NavbarService } from '../../components/navbar/navbar.service';
+import { DataService, ProjectInterface, TimelineInterface, timelines } from './data.service';
 
 @Component({
   selector: 'app-timeline',
@@ -10,21 +11,54 @@ import { DataService, ProjectInterface, timeline, timelines } from './data.servi
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Timeline {
-  readonly projectsService = inject(DataService);
+  readonly dataService = inject(DataService);
+  readonly navbarService = inject(NavbarService);
   timelines = timelines;
-  dateMap = this.projectsService.dateMap;
-  projects = this.projectsService.projects;
-  projectsByKey = this.projectsService.projectsByKey;
-  projectsByDate = this.projectsService.projectsByDate;
+  currentYear = this.dataService.currentYear;
+  currentMonth = this.dataService.currentMonth;
+  dateMap = this.dataService.dateMap;
+  projects = this.dataService.projects;
+  projectsByKey = this.dataService.projectsByKey;
+  projectsByDate = this.dataService.projectsByDate;
+  legend = this.navbarService.legend;
 
   constructor() {}
 
+  defineLegendByProject(contextKey: string) {
+    const context = this.dataService.getContext(contextKey);
+    this.navbarService.legend$.set(context.title);
+    const legendElement = document.getElementById('legend');
+    if (legendElement) {
+      legendElement.className = '';
+      legendElement?.classList.add(context.color);
+    }
+  }
+  defineLegend(timelines: TimelineInterface[], monthYear: string) {
+    console.log('enter');
+    const segment = this.getSegmentOfTimelines(timelines, monthYear);
+    if (segment) {
+      const context = this.dataService.getContext(segment.contextKey);
+      this.navbarService.legend$.set(context.title);
+      const legendElement = document.getElementById('legend');
+      if (legendElement) {
+        legendElement.className = '';
+        legendElement?.classList.add(context.color);
+      }
+    }
+  }
+  resetLegend() {
+    console.log('leave');
+    const legendElement = document.getElementById('legend');
+    if (legendElement) {
+      legendElement.className = '';
+      this.navbarService.legend$.set('');
+    }
+  }
+
   hoverProject(projectKey: string) {
     const projects = document.getElementsByClassName('first-line');
-    console.log(projects);
     for (let element of projects) {
       if (element.parentElement!.id == projectKey) {
-        console.log(element.parentElement!.id);
         element.classList.add('hover');
       }
     }
@@ -112,34 +146,39 @@ export class Timeline {
     document.getElementById(projectKey)!.scrollIntoView({ behavior: 'smooth' });
   }
 
-  getColorForDate(dateKey: string, segments: timeline[]): string | null {
+  getColorForDate(dateKey: string, segments: TimelineInterface[]): string | null {
     const segment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
-    return segment ? this.getColorContext(segment.contextKey) : null;
+    return segment ? this.getColorContext(segment.contextKey) : 'grey';
   }
 
-  getIdSegment(segments: timeline[], date: string): string {
+  getIdSegment(segments: TimelineInterface[], date: string): string {
     const segment = segments.find((segment) => this.isBetweenTimeline(date, segment));
     return segment?.contextKey + '-' + date;
   }
 
   getColorContext(key: string) {
-    return this.projectsService.getContext(key).color;
+    return this.dataService.getContext(key).color;
   }
 
   getProjectByDate(dateKey: string): ProjectInterface | undefined {
     return this.projectsByDate.get(dateKey);
   }
 
-  isProjectInTimelineSegment(segments: timeline[], dateKey: string): boolean {
-    let project = this.getProjectByDate(dateKey);
+  getSegmentOfTimelines(timelines: TimelineInterface[], monthYear: string) {
+    const activeSegment = timelines.find((segment) => this.isBetweenTimeline(monthYear, segment));
+    return activeSegment;
+  }
+
+  isProjectInTimelineSegment(segments: TimelineInterface[], monthYear: string): boolean {
+    let project = this.getProjectByDate(monthYear);
     if (!project) {
       return false;
     }
-    const activeSegment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
-    return activeSegment?.contextKey === project.contextKey;
+    const activeSegment = this.getSegmentOfTimelines(segments, monthYear);
+    return activeSegment?.contextKey === project!.contextKey;
   }
 
-  isBetweenTimeline(dateKey: string, value: timeline): boolean {
+  isBetweenTimeline(dateKey: string, value: TimelineInterface): boolean {
     let yearEnd = value.yearEnd;
     let montEnd = value.monthEnd;
     if (value.yearEnd == 0 && value.monthEnd == 0) {
