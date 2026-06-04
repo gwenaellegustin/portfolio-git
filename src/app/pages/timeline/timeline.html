@@ -8,16 +8,16 @@
       ></div>
 
       <div class="col2 cell default" [id]="'col2-' + monthYear.value" [ngClass]="monthYear.value">
-        @for (project of projectsByDate | keyvalue; track project) {
-          @if (project.key == monthYear.value && getPosition(project.value) == 'left') {
+        @for (project of projects | keyvalue; track project) {
+          @if (project.value.dateKey == monthYear.value && project.value.position == 'left') {
             <!-- @TODO: fix not hover effect on scroll -->
             <div
               class="project-container"
-              [id]="project.value.key"
+              [id]="project.key"
               [ngClass]="getColorProject(project.value.contextKey) + '-border'"
-              (click)="openProject(project.value.key || '')"
-              (mouseenter)="hoverProject(getProjectByDate(monthYear.value)?.key || '')"
-              (mouseleave)="leaveProject(getProjectByDate(monthYear.value)?.key || '')"
+              (click)="openProject(project.key)"
+              (mouseenter)="hoverProject(project.key)"
+              (mouseleave)="leaveProject(project.key)"
             >
               <div class="text">
                 <div class="title">
@@ -93,15 +93,15 @@
       </div>
 
       <div class="col4 cell default" [id]="'col4-' + monthYear.value" [ngClass]="monthYear.value">
-        @for (project of projectsByDate | keyvalue; track project) {
-          @if (project.key == monthYear.value && getPosition(project.value) == 'right') {
+        @for (project of projects | keyvalue; track project) {
+          @if (project.value.dateKey == monthYear.value && project.value.position == 'right') {
             <div
               class="project-container"
               [id]="project.value.key"
               [ngClass]="getColorProject(project.value.contextKey) + '-border'"
-              (click)="openProject(project.value.key || '')"
-              (mouseenter)="hoverProject(getProjectByDate(monthYear.value)?.key || '')"
-              (mouseleave)="leaveProject(getProjectByDate(monthYear.value)?.key || '')"
+              (click)="openProject(project.key)"
+              (mouseenter)="hoverProject(project.key)"
+              (mouseleave)="leaveProject(project.key)"
             >
               <div class="text">
                 <div class="title">

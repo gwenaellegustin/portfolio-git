@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ProjectInterface, ProjectsService, timeline, timelines } from './projects.service';
+import { ProjectInterface, DataService, timeline, timelines } from './data.service';
 
 @Component({
   selector: 'app-timeline',
@@ -10,10 +10,10 @@ import { ProjectInterface, ProjectsService, timeline, timelines } from './projec
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Timeline {
-  readonly projectsService = inject(ProjectsService);
+  readonly projectsService = inject(DataService);
   timelines = timelines;
   dateMap = this.projectsService.dateMap;
-  projectsByDate = this.projectsService.projectsByDate;
+  projects = this.projectsService.projects;
 
   constructor() {}
 
@@ -95,7 +95,17 @@ export class Timeline {
   }
 
   getProjectByDate(dateKey: string): ProjectInterface | undefined {
-    return this.projectsByDate.get(dateKey);
+    const matchingProjects = Array.from(this.projects.values()).filter(
+      (project) => project.dateKey === dateKey,
+    );
+
+    if (matchingProjects.length > 1) {
+      console.warn(
+        `Found ${matchingProjects.length} projects with dateKey "${dateKey}". Returning the first one.`,
+      );
+    }
+
+    return matchingProjects[0];
   }
 
   isProjectInTimelineSegment(segments: timeline[], dateKey: string): boolean {
@@ -105,25 +115,6 @@ export class Timeline {
     }
     const activeSegment = segments.find((segment) => this.isBetweenTimeline(dateKey, segment));
     return activeSegment?.contextKey === project.contextKey;
-  }
-
-  // @TODO: improve this by storing value
-  getPosition(project: ProjectInterface): 'left' | 'right' {
-    const timelinesLength = this.timelines.size;
-    const threshold = Math.ceil(timelinesLength / 2);
-
-    let timelineNum = 0;
-    let index = 0;
-
-    for (const [, segments] of this.timelines.entries()) {
-      index++;
-      if (segments.some((segment) => segment.contextKey === project.contextKey)) {
-        timelineNum = index;
-        break;
-      }
-    }
-
-    return timelineNum <= threshold ? 'left' : 'right';
   }
 
   isBetweenTimeline(dateKey: string, value: timeline): boolean {

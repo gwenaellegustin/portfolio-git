@@ -3,22 +3,45 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class ProjectsService {
+export class DataService {
   currentYear = new Date().getFullYear();
   currentMonth = new Date().getMonth() + 1;
   dateMap = new Map<number, string>();
 
   timelines = timelines;
   projects = projects;
-  projectsByDate = new Map<string, ProjectInterface>();
   projectsLeft: ProjectInterface[] = [];
   projectsRight: ProjectInterface[] = [];
 
   constructor() {
     this.setDateMap();
     console.log('dateMap', this.dateMap);
-    this.setProjectByDate();
-    console.log('projectsByDate', this.projectsByDate);
+
+    // Add position property to each project
+    this.projects.forEach((project) => {
+      project.position = this.setProjectPosition(project);
+    });
+    this.projects.forEach((project, key) => {
+      project.key = key;
+    });
+  }
+
+  setProjectPosition(project: ProjectInterface) {
+    const timelinesLength = this.timelines.size;
+    const threshold = Math.ceil(timelinesLength / 2);
+
+    let timelineNum = 0;
+    let index = 0;
+
+    for (const [, segments] of this.timelines.entries()) {
+      index++;
+      if (segments.some((segment) => segment.contextKey === project!.contextKey)) {
+        timelineNum = index;
+        break;
+      }
+    }
+
+    return timelineNum <= threshold ? 'left' : 'right';
   }
 
   getContext(key: string): ContextInfo {
@@ -47,20 +70,7 @@ export class ProjectsService {
       add(`${month.toString().padStart(2, '0')}.1996`);
     }
   }
-
-  private setProjectByDate() {
-    this.projects.forEach((project, value) => {
-      if (!project.month || !project.year) {
-        return;
-      }
-
-      const key = `${project.month.toString().padStart(2, '0')}.${project.year}`;
-
-      this.projectsByDate.set(key, { ...project, key: value });
-    });
-  }
 }
-
 //  interface and class
 export class Url {
   url: string = '';
@@ -82,12 +92,12 @@ export interface ProjectInterface {
   key?: string;
   title: string;
   contextKey: string;
-  month?: number;
-  year?: number;
+  dateKey: string;
   subtitle?: string;
   urls?: Url[];
   description: string;
   images: Url[];
+  position?: 'left' | 'right';
 }
 
 // Data
@@ -271,8 +281,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'This website',
       contextKey: 'MAIN',
-      month: 2,
-      year: 2026,
+      dateKey: '02.2026',
       subtitle: 'Angular 21',
       description:
         'I wanted to create a website that would allow visitors to view projects in their context (school, work) and in chronological order. The principle of git, used in development, was perfect for this. So I used it as inspiration for this portfolio. The page with the timelines was created from scratch using HTML and CSS.',
@@ -284,8 +293,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Reality Check',
       contextKey: 'DXD',
-      month: 1,
-      year: 2026,
+      dateKey: '01.2026',
       subtitle: 'UX research',
       urls: [
         {
@@ -325,8 +333,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Pixel Perfect',
       contextKey: 'DXD',
-      month: 12,
-      year: 2025,
+      dateKey: '12.2025',
       subtitle: 'UI Figma',
       urls: [
         {
@@ -366,8 +373,7 @@ export const projects = new Map<string, ProjectInterface>([
       title: 'Modular Mindset',
       contextKey: 'DXD',
       // date: '17-21.11.2025',
-      month: 11,
-      year: 2025,
+      dateKey: '11.2025',
       subtitle: 'Cavalry Workshop',
       description:
         '<p>During a week-long workshop, we were trained on Calvary by Antonin Waterkeyn. It was my first experience with animation.</p><p>We had to create animated covers for three albums (by the same artist or label) with vertical variations, as well as a horizontal format for a billboard. I chose to illustrate the work of Paul Sabin.</p>',
@@ -404,8 +410,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Visualization tool',
       contextKey: 'HES',
-      month: 7,
-      year: 2025,
+      dateKey: '7.2025',
       subtitle: 'Angular 20, UX',
       urls: [
         { url: 'https://citiwatts.eu/', text: 'Website' },
@@ -432,8 +437,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Swiss Cyber Grid',
       contextKey: 'HES',
-      month: 12,
-      year: 2024,
+      dateKey: '12.2024',
       subtitle: 'Angular 18',
       urls: [
         { url: 'https://swisscybergrid.iigweb.hevs.ch/', text: 'Website' },
@@ -461,8 +465,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Pantagruel',
       contextKey: 'BSC',
-      month: 8,
-      year: 2023,
+      dateKey: '8.2023',
       subtitle: 'Angular 15',
       urls: [
         { url: 'https://etranselec.ch/pantafrontend/', text: 'Website' },
@@ -485,8 +488,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Happy birthday !',
       contextKey: 'MAIN',
-      month: 2,
-      year: 2023,
+      dateKey: '2.2023',
       subtitle: 'React18',
       urls: [
         { url: 'https://skraydd-birthday-2022.netlify.app/', text: 'Website' },
@@ -507,8 +509,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Tlearning',
       contextKey: 'BSC',
-      month: 9,
-      year: 2022,
+      dateKey: '9.2022',
       subtitle: 'Flutter',
       urls: [
         // Private
@@ -532,8 +533,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'VAST app',
       contextKey: 'BSC',
-      month: 6,
-      year: 2022,
+      dateKey: '6.2022',
       subtitle: 'React18, PWA',
       urls: [
         { url: 'https://vast-hes.netlify.app/', text: 'Website' },
@@ -555,8 +555,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'SwissVia',
       contextKey: 'BSC',
-      month: 2,
-      year: 2022,
+      dateKey: '2.2022',
       subtitle: 'Java Android',
       urls: [
         // {
@@ -579,8 +578,7 @@ export const projects = new Map<string, ProjectInterface>([
     {
       title: 'Droppy',
       contextKey: 'BSC',
-      month: 6,
-      year: 2021,
+      dateKey: '6.2021',
       subtitle: 'JavaScript',
       urls: [
         { url: 'https://letsdrop.gwengustin.ch/letsDrop.html', text: 'Website' },
