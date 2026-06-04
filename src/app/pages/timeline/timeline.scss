@@ -187,6 +187,10 @@
         color: $background;
         background-color: $green;
       }
+      .project-container:not(.opened).red-border:hover {
+        color: $background;
+        background-color: $red;
+      }
     }
   }
 }
