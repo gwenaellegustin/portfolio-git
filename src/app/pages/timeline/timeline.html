@@ -8,34 +8,31 @@
       ></div>
 
       <div class="col2 cell default" [id]="'col2-' + monthYear.value" [ngClass]="monthYear.value">
-        @for (project of projects | keyvalue; track project) {
-          @if (project.value.dateKey == monthYear.value && project.value.position == 'left') {
+        @for (project of projects; track project) {
+          @if (project.dateKey == monthYear.value && project.position == 'left') {
             <!-- @TODO: fix not hover effect on scroll -->
             <div
               class="project-container"
               [id]="project.key"
-              [ngClass]="getColorProject(project.value.contextKey) + '-border'"
+              [ngClass]="getColorProject(project.contextKey) + '-border'"
               (click)="openProject(project.key)"
               (mouseenter)="hoverProject(project.key)"
               (mouseleave)="leaveProject(project.key)"
             >
               <div class="text">
                 <div class="title">
-                  {{ project.value.title }}
+                  {{ project.title }}
                 </div>
-                <div class="subtitle">{{ project.value.subtitle }}</div>
+                <div class="subtitle">{{ project.subtitle }}</div>
               </div>
 
               <div class="main-image">
-                <img
-                  [src]="project.value.images[0].url"
-                  onerror="this.style.visibility = 'hidden'"
-                />
+                <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
               </div>
               <div class="content">
-                <p class="intro-text" [innerHTML]="project.value.description"></p>
+                <p class="intro-text" [innerHTML]="project.description"></p>
 
-                @for (image of project.value.images; track $index) {
+                @for (image of project.images; track $index) {
                   @if (image.url !== '' && $index != 0) {
                     <div class="image">
                       @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
@@ -93,33 +90,30 @@
       </div>
 
       <div class="col4 cell default" [id]="'col4-' + monthYear.value" [ngClass]="monthYear.value">
-        @for (project of projects | keyvalue; track project) {
-          @if (project.value.dateKey == monthYear.value && project.value.position == 'right') {
+        @for (project of projects; track project) {
+          @if (project.dateKey == monthYear.value && project.position == 'right') {
             <div
               class="project-container"
-              [id]="project.value.key"
-              [ngClass]="getColorProject(project.value.contextKey) + '-border'"
+              [id]="project.key"
+              [ngClass]="getColorProject(project.contextKey) + '-border'"
               (click)="openProject(project.key)"
               (mouseenter)="hoverProject(project.key)"
               (mouseleave)="leaveProject(project.key)"
             >
               <div class="text">
                 <div class="title">
-                  {{ project.value.title }}
+                  {{ project.title }}
                 </div>
-                <div class="subtitle">{{ project.value.subtitle }}</div>
+                <div class="subtitle">{{ project.subtitle }}</div>
               </div>
 
               <div class="main-image">
-                <img
-                  [src]="project.value.images[0].url"
-                  onerror="this.style.visibility = 'hidden'"
-                />
+                <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
               </div>
               <div class="content">
-                <p class="intro-text" [innerHTML]="project.value.description"></p>
+                <p class="intro-text" [innerHTML]="project.description"></p>
 
-                @for (image of project.value.images; track $index) {
+                @for (image of project.images; track $index) {
                   @if (image.url !== '' && $index != 0) {
                     <div class="image">
                       @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {

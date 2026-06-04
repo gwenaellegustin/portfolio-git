@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ProjectInterface, DataService, timeline, timelines } from './data.service';
+import { DataService, ProjectInterface, timeline, timelines } from './data.service';
 
 @Component({
   selector: 'app-timeline',
@@ -14,6 +14,8 @@ export class Timeline {
   timelines = timelines;
   dateMap = this.projectsService.dateMap;
   projects = this.projectsService.projects;
+  projectsByKey = this.projectsService.projectsByKey;
+  projectsByDate = this.projectsService.projectsByDate;
 
   constructor() {}
 
@@ -95,17 +97,7 @@ export class Timeline {
   }
 
   getProjectByDate(dateKey: string): ProjectInterface | undefined {
-    const matchingProjects = Array.from(this.projects.values()).filter(
-      (project) => project.dateKey === dateKey,
-    );
-
-    if (matchingProjects.length > 1) {
-      console.warn(
-        `Found ${matchingProjects.length} projects with dateKey "${dateKey}". Returning the first one.`,
-      );
-    }
-
-    return matchingProjects[0];
+    return this.projectsByDate.get(dateKey);
   }
 
   isProjectInTimelineSegment(segments: timeline[], dateKey: string): boolean {
