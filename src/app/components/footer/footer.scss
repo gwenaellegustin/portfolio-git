@@ -6,13 +6,13 @@
     padding: $space-small $space;
     display: flex;
     flex-direction: column;
-    gap: $space / 2;
+    gap: calc($space / 2);
     justify-content: center;
 
     text-align: center;
 
     .contact {
-      height: $space;
+      height: $space-big;
       display: flex;
       align-items: center;
       justify-content: center;
