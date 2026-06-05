@@ -178,11 +178,6 @@
         padding: 0;
       }
       .project-container.opened {
-        .close {
-          cursor: pointer;
-          display: block;
-          align-items: center;
-        }
         .content {
           opacity: 100;
           width: auto;
@@ -192,6 +187,7 @@
           // transition-delay: 0;
           .image {
             flex-basis: 30%;
+            border-radius: $space;
             img,
             video {
               // max-height: 80vh;
@@ -202,32 +198,32 @@
       }
 
       .first-line.black-border.hover,
-      .first-line.black-border.opened {
+      .project-container.opened .first-line.black-border {
         color: $background;
         background-color: $on-background;
       }
       .first-line.blue-border.hover,
-      .first-line.blue-border.opened {
+      .project-container.opened .first-line.blue-border {
         color: $background;
         background-color: $blue;
       }
       .first-line.cyan-border.hover,
-      .first-line.cyan-border.opened {
+      .project-container.opened .first-line.cyan-border {
         color: $background;
         background-color: $cyan;
       }
       .first-line.green-border.hover,
-      .first-line.green-border.opened {
+      .project-container.opened .first-line.green-border {
         color: $background;
         background-color: $green;
       }
       .first-line.red-border.hover,
-      .first-line.red-border.opened {
+      .project-container.opened .first-line.red-border {
         color: $background;
         background-color: $red;
       }
       .first-line.orange-border.hover,
-      .first-line.orange-border.opened {
+      .project-container.opened .first-line.orange-border {
         color: $background;
         background-color: $orange;
       }

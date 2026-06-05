@@ -106,6 +106,7 @@ export class Timeline {
   }
 
   openProject(projectKey: string) {
+    // Close other project
     const project = this.projectsByKey.get(projectKey);
     const projects = document.getElementsByClassName('project-container');
     for (let element of projects) {
@@ -114,18 +115,25 @@ export class Timeline {
         return;
       }
     }
+    const commits = document.getElementsByClassName('commit');
+    for (let element of commits) {
+      element.classList.remove('hover');
+      element.classList.remove('opened');
+    }
+
     const cells = document.getElementsByClassName('cell');
     for (let element of cells) {
+      // Remove extreme columns
       if (element.classList.contains('col1') || element.classList.contains('col5')) {
         element.classList.add('hidden');
       }
-
+      // Resize other column of project
       if (project?.position == 'left') {
         if (element.classList.contains('col2')) {
-          element.classList.remove('default');
+          // element.classList.remove('default');
           element.classList.remove('hidden');
           element.classList.remove('opened');
-          element.classList.add('empty');
+          // element.classList.add('empty');
         } else if (element.classList.contains('col4')) {
           element.classList.remove('default');
           element.classList.remove('empty');
@@ -148,16 +156,9 @@ export class Timeline {
       }
     }
 
-    const commits = document.getElementsByClassName('commit');
-    for (let element of commits) {
-      element.classList.remove('hover');
-      element.classList.remove('opened');
-    }
-
     for (let element of projects) {
       if (element.id == projectKey) {
         element.classList.add('opened');
-
         // cell
         element.parentElement?.classList.add('opened');
 
