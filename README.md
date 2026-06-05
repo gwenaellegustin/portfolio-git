@@ -63,9 +63,9 @@ git push
 - Dark mode
 - Loader image/video
 - robot.txt / indexation
-- align top to 3 dots
 
 ### Refactor
+- all workshop code
 - Improve hierarchy of text / sentence summary by projects / tags
 - How to import css variables
 - Json for timeline info

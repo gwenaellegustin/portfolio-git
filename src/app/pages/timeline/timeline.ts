@@ -26,7 +26,9 @@ export class Timeline {
 
   defineLegendByProject(contextKey: string) {
     const context = this.dataService.getContext(contextKey);
-    this.navbarService.legend$.set(context.title);
+    if (context.title != 'empty') {
+      this.navbarService.legend$.set(context.title);
+    }
     const legendElement = document.getElementById('legend');
     if (legendElement) {
       legendElement.className = '';
@@ -38,7 +40,9 @@ export class Timeline {
     const segment = this.getSegmentOfTimelines(timelines, monthYear);
     if (segment) {
       const context = this.dataService.getContext(segment.contextKey);
-      this.navbarService.legend$.set(context.title);
+      if (context.title != 'empty') {
+        this.navbarService.legend$.set(context.title);
+      }
       const legendElement = document.getElementById('legend');
       if (legendElement) {
         legendElement.className = '';
