@@ -5,7 +5,7 @@
     opacity: 0;
     display: flex;
     position: relative;
-    transition: 500ms ease-in;
+    transition: 300ms ease-in-out;
     transition-delay: 100ms;
     span {
       align-self: flex-end;
@@ -32,8 +32,15 @@
     justify-content: center;
     margin: $space $page-margin;
     .month:hover {
-      border-bottom: 1px solid $on-background;
-      // background-color: #3838380e;
+      .col5 {
+        // justify-content: right;
+        align-items: center;
+        // background-color: #8686860e;
+        // border-bottom: 1px solid $on-background;
+        .date-text {
+          // background-color: #3838380e;
+        }
+      }
     }
     .month {
       display: flex;
@@ -91,7 +98,7 @@
             justify-content: start;
             align-items: center;
             .top-line {
-              height: calc($space-smallest * 10);
+              height: calc($space-smallest * 11);
               width: $width-line;
               margin: -$space-smallest 0;
               border-radius: $month;
@@ -105,7 +112,7 @@
             .bottom-line {
               flex: 1;
               width: $width-line;
-              margin: -2px 0;
+              margin: -$space-smallest 0;
               border-radius: $month;
             }
           }
@@ -161,16 +168,21 @@
 
         .content {
           border: solid $background 1px; // this fix to auto height
-          transition: 100ms ease-in-out;
+          transition: 200ms ease-in-out;
           transition-delay: 0ms; // when changing or closing
-          flex-wrap: wrap;
-          display: flex;
-          gap: $space;
+
           opacity: 0;
           width: 0;
           height: 0;
-          img {
-            padding: $space;
+          .images {
+            display: flex;
+            flex-wrap: wrap;
+            // align-content: space-around;
+            justify-content: space-evenly;
+            gap: $space;
+            img {
+              // padding: $space;
+            }
           }
         }
       }
@@ -183,14 +195,20 @@
           width: auto;
           height: auto;
           transition-delay: 500ms; // when opening first
-          // transition: 100ms ease-in-out;
-          // transition-delay: 0;
+
+          margin-top: -$space-big;
+          border: 2px solid;
+          border-top: 0;
+          border-bottom-left-radius: $space;
+          border-bottom-right-radius: $space;
+          padding: $space;
           .image {
-            flex-basis: 30%;
+            flex-basis: 45%;
             border-radius: $space;
             img,
             video {
               // max-height: 80vh;
+              flex: 1;
               max-width: 100%;
             }
           }
@@ -201,31 +219,37 @@
       .project-container.opened .first-line.black-border {
         color: $background;
         background-color: $on-background;
+        border-color: $background;
       }
       .first-line.blue-border.hover,
       .project-container.opened .first-line.blue-border {
         color: $background;
         background-color: $blue;
+        border-color: $blue;
       }
       .first-line.cyan-border.hover,
       .project-container.opened .first-line.cyan-border {
         color: $background;
         background-color: $cyan;
+        border-color: $cyan;
       }
       .first-line.green-border.hover,
       .project-container.opened .first-line.green-border {
         color: $background;
         background-color: $green;
+        border-color: $green;
       }
       .first-line.red-border.hover,
       .project-container.opened .first-line.red-border {
         color: $background;
         background-color: $red;
+        border-color: $red;
       }
       .first-line.orange-border.hover,
       .project-container.opened .first-line.orange-border {
         color: $background;
         background-color: $orange;
+        border-color: $orange;
       }
     }
   }
@@ -260,16 +284,15 @@
     }
     .first-line {
       height: auto !important;
-      word-break: break-all;
     }
-    .content {
+    .images {
       gap: $space-smallest !important;
     }
     .image {
       flex-basis: 80% !important;
       width: 100% !important;
       img {
-        padding: $space-small $space !important;
+        // padding: $space-small $space !important;
       }
     }
   }

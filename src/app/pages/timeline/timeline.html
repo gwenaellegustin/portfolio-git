@@ -1,11 +1,11 @@
 <div class="container">
   @for (monthYear of dateMap | keyvalue; track monthYear.key) {
     <div class="month" [id]="monthYear.value">
-      <div class="col1 cell default" [id]="'col1-' + monthYear.value" [ngClass]="monthYear.value">
-        <div class="date-text">
-          <span>{{ monthYear.value }}</span>
-        </div>
-      </div>
+      <div
+        class="col1 cell default"
+        [id]="'col1-' + monthYear.value"
+        [ngClass]="monthYear.value"
+      ></div>
 
       <div class="col2 cell default" [id]="'col2-' + monthYear.value" [ngClass]="monthYear.value">
         @for (project of projects; track project) {
@@ -24,15 +24,15 @@
                 (mouseleave)="leaveProject(project.key)"
               >
                 <div class="text" (click)="openProject(project.key)">
-                  <div class="title">
+                  <h4 class="title">
                     {{ project.title }}
-                  </div>
-                  <div class="subtitle">{{ project.subtitle }}</div>
+                  </h4>
+                  <h6>{{ project.subtitle }}</h6>
                 </div>
                 <div class="close" (click)="closeProject()">✖</div>
               </div>
 
-              <div class="content">
+              <div class="content" [ngClass]="getColorContext(project.contextKey) + '-border'">
                 <!-- <div class="main-image image-radius">
                   <img
                     class="image"
@@ -43,27 +43,31 @@
 
                 <!-- <span class="intro-text" [innerHTML]="project.description"></span> -->
 
-                @for (image of project.images; track $index) {
-                  @if (
-                    image.url !== '' && !(image.url.endsWith('.mp4') || image.url.endsWith('.mov'))
-                  ) {
-                    <div class="image">
-                      <!-- @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
+                <p>{{ project.dateKey }}</p>
+                <div class="images">
+                  @for (image of project.images; track $index) {
+                    @if (
+                      image.url !== '' &&
+                      !(image.url.endsWith('.mp4') || image.url.endsWith('.mov'))
+                    ) {
+                      <div class="image">
+                        <!-- @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
                         <video class="image-radius" autoplay loop controls>
                           <source [src]="image.url" type="video/mp4" />
                         </video>
                         <span>{{ image.text }}</span>
                       } @else { -->
-                      <img
-                        class="image-radius"
-                        [src]="image.url"
-                        onerror="this.style.visibility = 'hidden'"
-                      />
-                      <!-- <span>{{ image.text }}</span> -->
-                      <!-- } -->
-                    </div>
+                        <img
+                          class="image-radius"
+                          [src]="image.url"
+                          onerror="this.style.visibility = 'hidden'"
+                        />
+                        <!-- <span>{{ image.text }}</span> -->
+                        <!-- } -->
+                      </div>
+                    }
                   }
-                }
+                </div>
               </div>
             </div>
           }
@@ -161,15 +165,14 @@
                 (mouseleave)="leaveProject(project.key)"
               >
                 <div class="text" (click)="openProject(project.key)">
-                  <div class="title">
+                  <h4 class="title">
                     {{ project.title }}
-                  </div>
-                  <div class="subtitle">{{ project.subtitle }}</div>
+                  </h4>
+                  <h6>{{ project.subtitle }}</h6>
                 </div>
-                <div class="close" (click)="closeProject()">✖</div>
               </div>
 
-              <div class="content">
+              <div class="content" [ngClass]="getColorContext(project.contextKey) + '-border'">
                 <!-- <div class="main-image image-radius">
                   <img
                     class="image"
@@ -177,30 +180,32 @@
                     onerror="this.style.visibility = 'hidden'"
                   />
                 </div> -->
-
+                <p>{{ project.dateKey }}</p>
                 <!-- <span class="intro-text" [innerHTML]="project.description"></span> -->
-
-                @for (image of project.images; track $index) {
-                  @if (
-                    image.url !== '' && !(image.url.endsWith('.mp4') || image.url.endsWith('.mov'))
-                  ) {
-                    <div class="image">
-                      <!-- @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
+                <div class="images">
+                  @for (image of project.images; track $index) {
+                    @if (
+                      image.url !== '' &&
+                      !(image.url.endsWith('.mp4') || image.url.endsWith('.mov'))
+                    ) {
+                      <div class="image">
+                        <!-- @if (image.url.endsWith('.mp4') || image.url.endsWith('.mov')) {
                         <video class="image-radius" autoplay loop controls>
                           <source [src]="image.url" type="video/mp4" />
                         </video>
                         <span>{{ image.text }}</span>
                       } @else { -->
-                      <img
-                        class="image-radius"
-                        [src]="image.url"
-                        onerror="this.style.visibility = 'hidden'"
-                      />
-                      <!-- <span>{{ image.text }}</span> -->
-                      <!-- } -->
-                    </div>
+                        <img
+                          class="image-radius"
+                          [src]="image.url"
+                          onerror="this.style.visibility = 'hidden'"
+                        />
+                        <!-- <span>{{ image.text }}</span> -->
+                        <!-- } -->
+                      </div>
+                    }
                   }
-                }
+                </div>
               </div>
             </div>
           }
@@ -209,7 +214,7 @@
 
       <div class="col5 cell default" [id]="'col5-' + monthYear.value" [ngClass]="monthYear.value">
         <div class="date-text">
-          <span>{{ monthYear.value }}</span>
+          <h4>{{ monthYear.value }}</h4>
         </div>
       </div>
     </div>
