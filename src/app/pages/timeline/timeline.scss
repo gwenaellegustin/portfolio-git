@@ -5,8 +5,8 @@
     opacity: 0;
     display: flex;
     position: relative;
-    transition: 300ms ease-in-out;
-    transition-delay: 100ms;
+    transition: 100ms ease-in-out;
+    // transition-delay: 500ms;
     span {
       align-self: flex-end;
       padding-bottom: $space-small;
@@ -55,7 +55,7 @@
         flex: 1;
         display: flex;
         justify-content: space-around;
-        transition: 500ms ease-in-out;
+        transition: 300ms ease-in-out;
         transition-delay: 100ms;
         overflow: hidden; // remove glitch timeline
       }
@@ -194,7 +194,7 @@
           opacity: 100;
           width: auto;
           height: auto;
-          transition-delay: 500ms; // when opening first
+          transition-delay: 300ms; // when opening first
 
           margin-top: -$space-big;
           border: 2px solid;

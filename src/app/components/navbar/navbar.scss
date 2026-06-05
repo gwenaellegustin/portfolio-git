@@ -22,12 +22,15 @@
     right: $space;
     display: flex;
     align-items: center;
+    width: auto;
     max-width: $head-width;
     // background-color: $background;
     border-radius: $month;
-    padding: $space-small $space-bigger;
-    text-align: end;
-    transition: 300ms ease-in-out;
+    text-align: center;
+    transition: 100ms ease-in-out;
+  }
+  #legend.hovered {
+    padding: $space-small $space;
   }
 
   @media only screen and (max-width: 1000px) {

@@ -43,7 +43,9 @@
 
                 <!-- <span class="intro-text" [innerHTML]="project.description"></span> -->
 
-                <p>{{ project.dateKey }}</p>
+                <p>
+                  {{ dataService.getContext(project.contextKey).title }} - {{ project.dateKey }}
+                </p>
                 <div class="images">
                   @for (image of project.images; track $index) {
                     @if (
@@ -180,7 +182,9 @@
                     onerror="this.style.visibility = 'hidden'"
                   />
                 </div> -->
-                <p>{{ project.dateKey }}</p>
+                <p>
+                  {{ dataService.getContext(project.contextKey).title }} - {{ project.dateKey }}
+                </p>
                 <!-- <span class="intro-text" [innerHTML]="project.description"></span> -->
                 <div class="images">
                   @for (image of project.images; track $index) {

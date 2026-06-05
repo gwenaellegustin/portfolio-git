@@ -11,7 +11,7 @@ import { DataService, ProjectInterface, TimelineInterface, timelines } from './d
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Timeline {
-  readonly dataService = inject(DataService);
+  public readonly dataService = inject(DataService);
   readonly navbarService = inject(NavbarService);
   timelines = timelines;
   currentYear = this.dataService.currentYear;
@@ -30,6 +30,7 @@ export class Timeline {
     const legendElement = document.getElementById('legend');
     if (legendElement) {
       legendElement.className = '';
+      legendElement?.classList.add('hovered');
       legendElement?.classList.add(context.color + '-background');
     }
   }
@@ -41,6 +42,7 @@ export class Timeline {
       const legendElement = document.getElementById('legend');
       if (legendElement) {
         legendElement.className = '';
+        legendElement?.classList.add('hovered');
         legendElement?.classList.add(context.color + '-background');
       }
     }
