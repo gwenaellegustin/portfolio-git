@@ -86,7 +86,6 @@ export class Timeline {
   }
 
   closeProject() {
-    console.log('close project');
     const cells = document.getElementsByClassName('cell');
     for (let element of cells) {
       element.classList.remove('empty');
