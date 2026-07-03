@@ -102,6 +102,11 @@ export class Timeline {
       element.classList.remove('opened');
     }
 
+    const firstLines = document.getElementsByClassName('first-line');
+    for (let element of firstLines) {
+      element.classList.remove('hover');
+    }
+
     const projects = document.getElementsByClassName('project-container');
     for (let element of projects) {
       element.classList.remove('opened');

@@ -9,7 +9,10 @@
 
       <div class="col2 cell default" [id]="'col2-' + monthYear.value" [ngClass]="monthYear.value">
         @for (project of projects; track project) {
-          @if (project.dateKey == monthYear.value && (openedSide() == 'left' || (openedSide() == null && project.position == 'left'))) {
+          @if (
+            project.dateKey == monthYear.value &&
+            (openedSide() == 'left' || (openedSide() == null && project.position == 'left'))
+          ) {
             <!-- @TODO: fix not hover effect on scroll -->
             <div
               class="project-container"
@@ -23,7 +26,7 @@
                 (mouseenter)="hoverProject(project.key)"
                 (mouseleave)="leaveProject(project.key)"
               >
-                <div class="text" (click)="openProject(project.key)">
+                <div class="text" (click)="openProject(project.key)" lang="en">
                   <h4 class="title">
                     {{ project.title }}
                   </h4>
@@ -153,7 +156,10 @@
 
       <div class="col4 cell default" [id]="'col4-' + monthYear.value" [ngClass]="monthYear.value">
         @for (project of projects; track project) {
-          @if (project.dateKey == monthYear.value && (openedSide() == 'right' || (openedSide() == null && project.position == 'right'))) {
+          @if (
+            project.dateKey == monthYear.value &&
+            (openedSide() == 'right' || (openedSide() == null && project.position == 'right'))
+          ) {
             <div
               class="project-container"
               [id]="project.key"
@@ -166,7 +172,7 @@
                 (mouseenter)="hoverProject(project.key)"
                 (mouseleave)="leaveProject(project.key)"
               >
-                <div class="text" (click)="openProject(project.key)">
+                <div class="text" (click)="openProject(project.key)" lang="en">
                   <h4 class="title">
                     {{ project.title }}
                   </h4>
