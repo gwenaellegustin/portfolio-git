@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { NavbarService } from '../../components/navbar/navbar.service';
 import { DataService, ProjectInterface, TimelineInterface, timelines } from './data.service';
 
@@ -21,6 +21,8 @@ export class Timeline {
   projectsByKey = this.dataService.projectsByKey;
   projectsByDate = this.dataService.projectsByDate;
   legend$ = this.navbarService.legend$;
+  openedSide = signal<'left' | 'right' | null>(null);
+  openedProjectKey = signal<string | null>(null);
 
   constructor() {}
 
@@ -89,8 +91,8 @@ export class Timeline {
     const cells = document.getElementsByClassName('cell');
     for (let element of cells) {
       element.classList.remove('empty');
-      element.classList.remove('hidden');
       element.classList.remove('opened');
+      element.classList.remove('hidden');
       element.classList.add('default');
     }
 
@@ -108,6 +110,8 @@ export class Timeline {
       // cell
       element.parentElement?.classList.remove('opened');
     }
+    this.openedProjectKey.set(null);
+    this.openedSide.set(null);
   }
 
   openProject(projectKey: string) {
@@ -126,19 +130,20 @@ export class Timeline {
       element.classList.remove('opened');
     }
 
+    // If a project is already open, keep opening on the same side
+    const effectiveSide = this.openedProjectKey() !== null
+      ? this.openedSide()!
+      : (project?.position as 'left' | 'right');
+
     const cells = document.getElementsByClassName('cell');
     for (let element of cells) {
-      // Remove extreme columns
       if (element.classList.contains('col1') || element.classList.contains('col5')) {
         element.classList.add('hidden');
       }
-      // Resize other column of project
-      if (project?.position == 'left') {
+      if (effectiveSide == 'left') {
         if (element.classList.contains('col2')) {
-          // element.classList.remove('default');
           element.classList.remove('hidden');
           element.classList.remove('opened');
-          // element.classList.add('empty');
         } else if (element.classList.contains('col4')) {
           element.classList.remove('default');
           element.classList.remove('empty');
@@ -146,12 +151,10 @@ export class Timeline {
           element.classList.add('hidden');
         }
       }
-      if (project?.position == 'right') {
+      if (effectiveSide == 'right') {
         if (element.classList.contains('col4')) {
-          // element.classList.remove('default');
           element.classList.remove('hidden');
           element.classList.remove('opened');
-          // element.classList.add('empty');
         } else if (element.classList.contains('col2')) {
           element.classList.remove('default');
           element.classList.remove('empty');
@@ -160,6 +163,9 @@ export class Timeline {
         }
       }
     }
+
+    this.openedSide.set(effectiveSide);
+    this.openedProjectKey.set(projectKey);
 
     for (let element of projects) {
       if (element.id == projectKey) {
