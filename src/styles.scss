@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
 
-@import './variables';
+@use 'variables' as *;
 
 // MATERIAL (for tootlip)
 html {

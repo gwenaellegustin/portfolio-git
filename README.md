@@ -2,14 +2,13 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
 
-
 ## Build and serve in production
+
 ```bash
 npm run serve-prod
 ```
 
 It will do `ng build --configuration production && npx serve dist/portfolio-git/browser -s`
-
 
 ### Deploy on Github
 
@@ -17,8 +16,6 @@ It will do `ng build --configuration production && npx serve dist/portfolio-git/
 ng build --configuration github
 git push
 ```
-
-
 
 ## Development server
 
@@ -29,6 +26,7 @@ ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
 ## Code scaffolding
 
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
@@ -42,7 +40,6 @@ For a complete list of available schematics (such as `components`, `directives`,
 ```bash
 ng generate --help
 ```
-
 
 ## Backlog (todo)
 
@@ -63,12 +60,11 @@ ng generate --help
 - email: copy and not open mail software
 - Dark mode
 - Loader image/video
-- robot.txt / indexation
 
 ### Refactor
+
 - all workshop code
 - Improve hierarchy of text / sentence summary by projects / tags
-- How to import css variables
 - Json for timeline info
 
 ### Bug
