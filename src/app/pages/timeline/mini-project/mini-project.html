@@ -1,7 +1,7 @@
 <div class="no-size">
   <a [routerLink]="['/project', key]">
     <div class="project-container" [ngClass]="color" [class]="position">
-      <div class="text">
+      <div class="left">
         <div class="point blue-background"></div>
         <div class="title">
           {{ project.title }}
@@ -9,7 +9,7 @@
         <div class="subtitle">{{ project.subtitle }}</div>
       </div>
 
-      <div class="img">
+      <div class="right">
         <img [src]="project.images[0].url" onerror="this.style.visibility = 'hidden'" />
       </div>
     </div>

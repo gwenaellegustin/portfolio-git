@@ -1,6 +1,6 @@
-<div class="container">
+<div class="page">
   <div class="project-container">
-    <div class="text">
+    <div class="left">
       <div class="line">
         <a class="back tooltip" href="/">
           <img src="./logo/GG_Racoon_Body.gif" />
@@ -30,7 +30,7 @@
       <p class="intro-text" [innerHTML]="project.description"></p>
     </div>
 
-    <div class="images">
+    <div class="right">
       @for (image of project.images; track $index) { @if(image.url !== ""){
       <div class="image">
         @if(image.url.endsWith(".mp4") || image.url.endsWith(".mov") ){

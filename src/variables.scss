@@ -1,4 +1,24 @@
-$month: 16px;
-$year: $month * 12;
-$width-line: $month/2;
-$app-bar-height: min(10vw, 30px);
+$space-smallest: 4px;
+$space-small: 8px;
+$space: 16px;
+$space-big: 24px;
+$space-bigger: 32px;
+$space-biggest: 64px;
+$space-giant: 72px;
+$space-gargantuan: 128px;
+
+$month: $space;
+$year: calc($month * 12);
+$width-line: calc($month/2);
+$app-bar-height: min(10vw, $space-bigger);
+
+$background: #ffffff;
+$on-background: #000000;
+$blue: #354be2;
+$pink: #db66a7; // #ce5e5d;
+$cyan: #4fa8e6;
+$green: #41d8ae;
+$red: #ba162c;
+$purple: #ba78e8;
+$beige: #c6c1b7;
+$orange: #e56758;

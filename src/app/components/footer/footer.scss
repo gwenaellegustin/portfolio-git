@@ -3,20 +3,20 @@
 :host {
   .footer-container {
     border-top: 1px solid;
-    padding: 0 10px;
+    padding: $space-small $space;
     display: flex;
     flex-direction: column;
-    gap: $month / 2;
+    gap: $space / 2;
     justify-content: center;
-    padding: $month;
+
     text-align: center;
 
     .contact {
-      height: 20px;
+      height: $space;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: $month;
+      gap: $space-small;
 
       img {
         height: 100%;

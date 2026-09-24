@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { ProjectInterface, projects } from '../../project/projects.service';
 
 @Component({
-  selector: 'app-min-project',
+  selector: 'app-mini-project',
   templateUrl: './mini-project.html',
   styleUrl: './mini-project.scss',
   imports: [RouterLink, NgClass],
