@@ -135,20 +135,21 @@
               @if ($index == 2) {
                 <div class="dot black-background"></div>
               }
-              @if ($index == 4 && monthYear.key >= 122 && monthYear.key <= 126) {
+              @if ($index == 4 && monthYear.key - gapStartKey < 6) {
                 <div class="dot green-background"></div>
+              }
+            } @else if (monthYear.value == birthDate) {
+              @if ($index == 2) {
+                <a href="/me">
+                  <div class="racoon">
+                    <img class="racoon-face" src="./logo/GG_Racoon_Face.png" /></div
+                ></a>
               }
             } @else {
               <div
                 class="timeline"
                 [ngClass]="getColorForDate(monthYear.value, timeline.value) + '-background'"
               ></div>
-            }
-            @if ($index == 2 && monthYear.key == 139) {
-              <a href="/me">
-                <div class="racoon">
-                  <img class="racoon-face" src="./logo/GG_Racoon_Face.png" /></div
-              ></a>
             }
           </div>
         }

@@ -7,6 +7,9 @@ export class DataService {
   currentYear = new Date().getFullYear();
   currentMonth = new Date().getMonth() + 1;
   dateMap = new Map<number, string>();
+  birthDate = '09.06.1996';
+  // Key of the first row of the gap between 2017 and 1996
+  gapStartKey = 0;
 
   timelines = timelines;
   projects = projects;
@@ -77,8 +80,9 @@ export class DataService {
         add(`${month.toString().padStart(2, '0')}.${year}`);
       }
     }
+    this.gapStartKey = index;
     for (let emptyIndex = 13; emptyIndex <= 24; emptyIndex++) {
-      if (index % 2 == 0) {
+      if (emptyIndex % 2 == 0) {
         add('');
       } else {
         add('empty');
@@ -87,7 +91,7 @@ export class DataService {
     for (let month = 12; month >= 7; month--) {
       add(`${month.toString().padStart(2, '0')}.1996`);
     }
-    add(`09.06.1996`);
+    add(this.birthDate);
   }
 }
 //  interface and class

@@ -17,6 +17,8 @@ export class Timeline {
   currentYear = this.dataService.currentYear;
   currentMonth = this.dataService.currentMonth;
   dateMap = this.dataService.dateMap;
+  birthDate = this.dataService.birthDate;
+  gapStartKey = this.dataService.gapStartKey;
   projects = this.dataService.projects;
   projectsByKey = this.dataService.projectsByKey;
   projectsByDate = this.dataService.projectsByDate;
