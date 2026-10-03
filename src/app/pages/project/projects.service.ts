@@ -223,10 +223,10 @@ export const projects = new Map<string, ProjectInterface>([
   [
     'up4it',
     {
-      title: 'Dev and design',
+      title: 'Up4It',
       context: 'UP4',
       date: 'Since 04.2024',
-      subtitle: '',
+      subtitle: 'Angular and UX',
       urls: [{ url: 'https://up4it.io/', text: 'Website' }],
       description:
         "<p>Up4it is social network that aims to encourage people to organize real life activities with friends.<p/><p>I first joined the development team to improve my knowledge of Angular. Since late 2025, I have been contributing my knowledge, acquired during my master's degree, to UX and participating in UI.</p>",

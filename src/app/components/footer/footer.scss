@@ -1,4 +1,4 @@
-@import '../../../variables';
+@use '../../../variables' as *;
 
 :host {
   .footer-container {
@@ -6,7 +6,7 @@
     padding: $space-small $space;
     display: flex;
     flex-direction: column;
-    gap: $space / 2;
+    gap: calc($space / 2);
     justify-content: center;
 
     text-align: center;
